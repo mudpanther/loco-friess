@@ -3,94 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOCO FRIES - Spring Valley's Wildest Fries</title>
+    <meta name="description" content="Loco Fries - Authentic Latin American street food in Spring Valley, NY. Experience the passion of Ecuador through our Salchi, Pinchos, Patacones, and more. Food truck serving the best Latin cuisine.">
+    <meta name="keywords" content="Latin food, Ecuadorian food, Spring Valley restaurant, food truck, Salchi, Pinchos, Patacon, Encebollado, authentic Latin cuisine">
+    <meta property="og:title" content="Loco Fries - Taste the Passion of Latin America">
+    <meta property="og:description" content="Authentic Ecuadorian & Latin American street food in Spring Valley, NY">
+    <meta property="og:type" content="restaurant">
+    <meta property="og:image" content="logo.png">
+    <title>LOCO FRIES - Taste the Passion of Latin America | Spring Valley's Premier Latin Food Truck</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data for Local Business -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Loco Fries",
+        "image": "logo.png",
+        "description": "Authentic Latin American and Ecuadorian street food in Spring Valley, NY",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "240 N Main Street",
+            "addressLocality": "Spring Valley",
+            "addressRegion": "NY",
+            "postalCode": "10977",
+            "addressCountry": "US"
+        },
+        "servesCuisine": ["Latin American", "Ecuadorian", "Street Food"],
+        "priceRange": "$$",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday"],
+                "opens": "13:00",
+                "closes": "01:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "12:00",
+                "closes": "01:00"
+            }
+        ]
+    }
+    </script>
+    
     <style>
+        :root {
+            --primary-red: #B32B27;
+            --primary-gold: #E5B53E;
+            --charcoal: #1B1B1B;
+            --off-white: #F7F5EF;
+            --accent-orange: #ff6b35;
+            --warm-yellow: #ffd700;
+            --deep-green: #2d5016;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Arial Black', 'Arial', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-            background: linear-gradient(135deg, #ffd700 0%, #ffcc02 100%);
+        html {
+            scroll-behavior: smooth;
         }
 
-        /* Animated Background */
-        .bg-animation {
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--charcoal);
+            background: var(--off-white);
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Elements */
+        .floating-logos {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
-            opacity: 0.1;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.03;
         }
 
-        .fry-float {
+        .floating-logo {
             position: absolute;
-            font-size: 2rem;
-            animation: float 6s ease-in-out infinite;
+            animation: float-diagonal 25s infinite ease-in-out;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(10deg); }
+        .floating-logo:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; animation-duration: 20s; }
+        .floating-logo:nth-child(2) { top: 30%; right: 10%; animation-delay: 3s; animation-duration: 25s; }
+        .floating-logo:nth-child(3) { bottom: 15%; left: 15%; animation-delay: 6s; animation-duration: 22s; }
+        .floating-logo:nth-child(4) { top: 60%; right: 5%; animation-delay: 9s; animation-duration: 28s; }
+        .floating-logo:nth-child(5) { bottom: 30%; right: 20%; animation-delay: 12s; animation-duration: 24s; }
+
+        @keyframes float-diagonal {
+            0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+            25% { transform: translate(30px, -30px) rotate(5deg) scale(1.1); }
+            50% { transform: translate(0, -60px) rotate(-5deg) scale(0.9); }
+            75% { transform: translate(-30px, -30px) rotate(3deg) scale(1.05); }
         }
 
         /* Header */
         header {
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(10px);
             position: fixed;
-            width: 100%;
             top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(27, 27, 27, 0.95);
+            backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 1rem 0;
+            padding: 0.8rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
         }
 
+        header.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(27, 27, 27, 0.98);
+        }
+
         nav {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
+            padding: 0 3rem;
         }
 
-        .logo {
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 0 10px rgba(229, 181, 62, 0.3));
+        }
+
+        .logo-container:hover .logo-img {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
             font-size: 2rem;
-            font-weight: bold;
-            color: #ffd700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary-gold), var(--warm-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
+            align-items: center;
         }
 
         .nav-links a {
-            color: white;
+            color: var(--off-white);
             text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.95rem;
             position: relative;
-        }
-
-        .nav-links a:hover {
-            color: #ffd700;
-            transform: translateY(-2px);
+            transition: color 0.3s ease;
+            letter-spacing: 0.5px;
         }
 
         .nav-links a::after {
@@ -100,32 +191,107 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #ffd700;
+            background: linear-gradient(90deg, var(--primary-gold), var(--accent-orange));
             transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
         }
 
         .nav-links a:hover::after {
             width: 100%;
         }
 
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary-red), var(--accent-orange));
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(179, 43, 39, 0.3);
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(179, 43, 39, 0.5);
+            background: linear-gradient(135deg, #d43430, var(--accent-orange));
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 30px;
+            height: 3px;
+            background: var(--primary-gold);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
         /* Hero Section */
         .hero {
+            position: relative;
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            position: relative;
-            background: linear-gradient(135deg, #ffd700 0%, #ffcc02 50%, #fff200 100%);
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(27, 27, 27, 0.7), rgba(179, 43, 39, 0.6)), 
+                        url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1920') center/cover;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%);
+        }
+
+        .hero-logo-backdrop {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            opacity: 0.08;
+            animation: spin-slow 60s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes spin-slow {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
         .hero-content {
-            max-width: 800px;
-            padding: 2rem;
-            animation: slideUp 1s ease-out;
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 900px;
+            padding: 3rem;
+            animation: fadeInUp 1.2s ease-out;
         }
 
-        @keyframes slideUp {
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(50px);
@@ -136,68 +302,338 @@
             }
         }
 
-        .hero h1 {
-            font-size: 4rem;
-            color: white;
-            margin-bottom: 1rem;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-            animation: glow 3s ease-in-out infinite alternate;
+        .hero-logo-featured {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+            animation: bounce-gentle 3s ease-in-out infinite;
+            filter: drop-shadow(0 10px 30px rgba(229, 181, 62, 0.6));
         }
 
-        @keyframes glow {
-            from { text-shadow: 3px 3px 6px rgba(0,0,0,0.5), 0 0 20px rgba(255,215,0,0.5); }
-            to { text-shadow: 3px 3px 6px rgba(0,0,0,0.5), 0 0 40px rgba(255,215,0,0.8); }
+        @keyframes bounce-gentle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
 
-        .hero p {
-            font-size: 1.5rem;
-            color: white;
-            margin-bottom: 2rem;
-            font-weight: bold;
-        }
-
-        .cta-button {
-            background: linear-gradient(45deg, #f9d71c, #ffd700);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
+        .coming-soon-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, var(--primary-red), var(--accent-orange));
+            padding: 1rem 2.5rem;
             border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-        }
-
-        /* Sections */
-        section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 2.5rem;
             margin-bottom: 2rem;
+            animation: pulse-glow 2s ease-in-out infinite;
+            box-shadow: 0 10px 40px rgba(179, 43, 39, 0.6);
+            border: 3px solid var(--primary-gold);
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 10px 40px rgba(179, 43, 39, 0.6), 0 0 30px rgba(229, 181, 62, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 15px 50px rgba(179, 43, 39, 0.8), 0 0 50px rgba(229, 181, 62, 0.6);
+            }
+        }
+
+        .badge-icon {
+            font-size: 2rem;
+            animation: wiggle 2s ease-in-out infinite;
+        }
+
+        .badge-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 900;
             color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
+            letter-spacing: 3px;
+            line-height: 1.1;
+        }
+
+        .hero-tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+            font-style: italic;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--off-white);
+            margin-bottom: 3rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button.primary {
+            background: linear-gradient(135deg, var(--primary-gold), var(--warm-yellow));
+            color: var(--charcoal);
+            font-size: 1.1rem;
+            padding: 1rem 2.5rem;
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 3px solid var(--primary-gold);
+            color: var(--primary-gold);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--primary-gold);
+            color: var(--charcoal);
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce-arrow 2s infinite;
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 30px;
+            height: 50px;
+            border: 2px solid var(--primary-gold);
+            border-radius: 25px;
+            position: relative;
+        }
+
+        .scroll-indicator span::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--primary-gold);
+            border-radius: 50%;
+            animation: scroll-dot 2s infinite;
+        }
+
+        @keyframes bounce-arrow {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        @keyframes scroll-dot {
+            0% { transform: translateX(-50%) translateY(0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(-50%) translateY(20px); opacity: 0; }
+        }
+
+        /* Section Styling */
+        section {
+            padding: 6rem 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            opacity: 0.9;
+            animation: pulse-logo 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-logo {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-red), var(--primary-gold));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            font-style: italic;
+            max-width: 700px;
+            margin: 1.5rem auto 0;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, var(--off-white), #fff);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: url('logo.png') no-repeat center;
+            background-size: contain;
+            opacity: 0.03;
+            transform: rotate(15deg);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            height: 500px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.1);
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(179, 43, 39, 0.3), rgba(229, 181, 62, 0.2));
+            pointer-events: none;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary-red);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            background: linear-gradient(135deg, rgba(229, 181, 62, 0.1), rgba(255, 107, 53, 0.1));
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-gold);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(229, 181, 62, 0.2);
+        }
+
+        .highlight-item h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-red);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .highlight-item p {
+            font-size: 0.95rem;
+            margin: 0;
         }
 
         /* Menu Section */
         .menu {
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 20px;
-            padding: 3rem;
-            margin: 2rem 0;
-            backdrop-filter: blur(10px);
+            background: var(--charcoal);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: -200px;
+            width: 600px;
+            height: 600px;
+            background: url('logo.png') no-repeat center;
+            background-size: contain;
+            opacity: 0.02;
+            transform: rotate(-20deg);
+        }
+
+        .menu .section-title {
+            color: white;
+        }
+
+        .menu .section-subtitle {
+            color: rgba(255,255,255,0.7);
         }
 
         .menu-categories {
@@ -209,215 +645,516 @@
         }
 
         .category-btn {
-            background: linear-gradient(45deg, #ffd700, #ffcc02);
-            color: white;
+            background: linear-gradient(135deg, var(--primary-gold), var(--warm-yellow));
+            color: var(--charcoal);
             border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            font-weight: bold;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .category-btn:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .category-btn:hover, .category-btn.active {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
-            background: linear-gradient(45deg, #f9d71c, #ffd700);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(229, 181, 62, 0.5);
+        }
+
+        .category-btn.active {
+            background: linear-gradient(135deg, var(--primary-red), var(--accent-orange));
+            color: white;
         }
 
         .menu-category {
             display: none;
-            animation: fadeInUp 0.5s ease;
+            animation: fadeInScale 0.5s ease;
         }
 
         .menu-category.active {
             display: block;
         }
 
-        @keyframes fadeInUp {
+        @keyframes fadeInScale {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: scale(0.9);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: scale(1);
             }
         }
 
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
             margin-top: 2rem;
         }
 
         .menu-item {
-            background: linear-gradient(135deg, rgba(255,107,53,0.9), rgba(247,147,30,0.9));
-            padding: 1.5rem;
-            border-radius: 15px;
-            transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(179, 43, 39, 0.9), rgba(255, 107, 53, 0.8));
+            padding: 2rem;
+            border-radius: 20px;
+            transition: all 0.4s ease;
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            border: 2px solid rgba(255,255,255,0.1);
+            border: 2px solid rgba(229, 181, 62, 0.3);
         }
 
         .menu-item::before {
             content: '';
             position: absolute;
             top: -50%;
-            left: -50%;
+            right: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: url('logo.png') no-repeat center;
+            background-size: 150px;
+            opacity: 0.05;
             transform: rotate(45deg);
             transition: all 0.6s ease;
-            opacity: 0;
         }
 
         .menu-item:hover::before {
-            animation: shine 0.6s ease-out;
-        }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+            transform: rotate(60deg) scale(1.2);
         }
 
         .menu-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-            border-color: rgba(255,255,255,0.3);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border-color: var(--primary-gold);
         }
 
         .menu-item-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.8rem;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
         }
 
         .menu-item h3 {
-            font-size: 1.3rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
             color: white;
             margin: 0;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            flex: 1;
+        }
+
+        .menu-emoji {
+            font-size: 2.5rem;
+            margin-right: 1rem;
+            display: inline-block;
+            animation: wiggle 3s ease-in-out infinite;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
         }
 
         .menu-price {
-            font-size: 1.2rem;
-            color: #fff200;
-            font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--warm-yellow);
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 2;
+            white-space: nowrap;
         }
 
         .menu-item p {
             color: rgba(255,255,255,0.95);
-            font-size: 0.9rem;
-            line-height: 1.4;
+            font-size: 1rem;
+            line-height: 1.6;
             margin: 0;
+            position: relative;
+            z-index: 2;
         }
 
-        .menu-emoji {
-            font-size: 2rem;
-            margin-right: 0.5rem;
-            display: inline-block;
-            animation: bounce 2s infinite;
+        /* Gallery Section */
+        .gallery {
+            background: linear-gradient(to bottom, #fff, var(--off-white));
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-8px); }
-            60% { transform: translateY(-4px); }
-        }
-
-        /* Location & Hours */
-        .info-grid {
+        .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 350px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('logo.png') no-repeat center;
+            background-size: 80px;
+            opacity: 0;
+            z-index: 2;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 0.15;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.15);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(27,27,27,0.9), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-caption {
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        /* Reservations / Location Section */
+        .reservations {
+            background: var(--charcoal);
+            color: white;
+            position: relative;
+        }
+
+        .reservations::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: url('logo.png') no-repeat center;
+            background-size: contain;
+            opacity: 0.03;
+            transform: rotate(-30deg);
+        }
+
+        .reservations .section-title {
+            color: white;
+        }
+
+        .reservations .section-subtitle {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .reservation-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
         }
 
         .info-card {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
+            background: linear-gradient(135deg, rgba(179, 43, 39, 0.2), rgba(229, 181, 62, 0.1));
+            padding: 2.5rem;
+            border-radius: 20px;
+            border-left: 5px solid var(--primary-gold);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 107, 53, 0.3);
             transition: all 0.3s ease;
         }
 
         .info-card:hover {
-            border-color: #ff6b35;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+            transform: translateX(10px);
+            border-left-width: 8px;
+            box-shadow: 0 10px 40px rgba(229, 181, 62, 0.2);
         }
 
         .info-card h3 {
-            color: #ff6b35;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-gold);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .info-card h3 .icon {
+            font-size: 2.5rem;
         }
 
         .info-card p {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .info-card strong {
+            color: var(--primary-gold);
+            display: block;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Map Container */
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            height: 500px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            position: relative;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-red), var(--accent-orange));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
             color: white;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .map-placeholder .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .map-placeholder h4 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .map-placeholder p {
+            font-size: 1.2rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Contact / CTA Section */
+        .contact-cta {
+            background: linear-gradient(135deg, var(--primary-gold), var(--warm-yellow));
+            padding: 5rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: url('logo.png') no-repeat center;
+            background-size: contain;
+            opacity: 0.1;
+            animation: rotate-pulse 20s linear infinite;
+        }
+
+        @keyframes rotate-pulse {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+            50% { transform: translate(-50%, -50%) rotate(180deg) scale(1.1); }
+        }
+
+        .contact-cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+        }
+
+        .contact-cta p {
+            font-size: 1.5rem;
+            color: var(--charcoal);
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background: var(--charcoal);
+            color: var(--primary-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            background: var(--primary-gold);
+            color: var(--charcoal);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
 
         /* Footer */
         footer {
-            background: rgba(0, 0, 0, 0.95);
-            color: white;
+            background: var(--charcoal);
+            color: rgba(255,255,255,0.8);
+            padding: 4rem 3rem 2rem;
+            position: relative;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-gold);
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
             text-align: center;
-            padding: 2rem;
-            margin-top: 2rem;
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .menu-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .menu-categories {
-                gap: 0.5rem;
-            }
-            
-            .category-btn {
-                padding: 0.6rem 1rem;
-                font-size: 0.8rem;
-            }
-            
-            .menu-item-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
-            }
-            
-            section {
-                padding: 2rem 1rem;
-            }
+        .footer-bottom p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
         }
 
-        /* Scroll animations */
+        /* Animations */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -428,289 +1165,642 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero h1 { font-size: 4rem; }
+            .section-title { font-size: 3rem; }
+            .footer-content { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 968px) {
+            nav { padding: 0 2rem; }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(27, 27, 27, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .hero h1 { font-size: 3rem; }
+            .hero-tagline { font-size: 1.5rem; }
+            .hero-subtitle { font-size: 1.1rem; }
+            
+            .about-content,
+            .reservation-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            section {
+                padding: 4rem 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-logo-featured { width: 150px; height: 150px; }
+            .section-title { font-size: 2.5rem; }
+            .contact-cta h2 { font-size: 3rem; }
+            
+            .coming-soon-badge {
+                padding: 0.8rem 1.5rem;
+                gap: 0.5rem;
+            }
+
+            .badge-text {
+                font-size: 0.9rem;
+                letter-spacing: 1px;
+            }
+
+            .badge-icon {
+                font-size: 1.5rem;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .cta-button {
+                width: 100%;
+            }
+
+            .menu-categories {
+                gap: 0.5rem;
+            }
+
+            .category-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.85rem;
+            }
+
+            .about-highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .page-loader {
+            position: fixed;
+            inset: 0;
+            background: var(--charcoal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .page-loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-logo {
+            width: 200px;
+            height: 200px;
+            animation: pulse-grow 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-grow {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
     </style>
 </head>
 <body>
-    <div class="bg-animation">
-        <div class="fry-float" style="top: 10%; left: 10%; animation-delay: 0s;">🍟</div>
-        <div class="fry-float" style="top: 20%; left: 80%; animation-delay: 1s;">🍳</div>
-        <div class="fry-float" style="top: 50%; left: 5%; animation-delay: 2s;">🥚</div>
-        <div class="fry-float" style="top: 70%; left: 90%; animation-delay: 3s;">🥩</div>
-        <div class="fry-float" style="top: 30%; left: 70%; animation-delay: 4s;">🍤</div>
-        <div class="fry-float" style="top: 80%; left: 20%; animation-delay: 5s;">🥗</div>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <img src="logo.png" alt="Loading" class="loader-logo">
     </div>
 
+    <!-- Floating Background Logos -->
+    <div class="floating-logos">
+        <img src="logo.png" alt="" class="floating-logo" style="width: 150px; opacity: 0.05;">
+        <img src="logo.png" alt="" class="floating-logo" style="width: 200px; opacity: 0.04;">
+        <img src="logo.png" alt="" class="floating-logo" style="width: 120px; opacity: 0.06;">
+        <img src="logo.png" alt="" class="floating-logo" style="width: 180px; opacity: 0.03;">
+        <img src="logo.png" alt="" class="floating-logo" style="width: 160px; opacity: 0.05;">
+    </div>
+
+    <!-- Header -->
     <header>
         <nav>
-            <div class="logo">🍟 LOCO FRIES</div>
+            <a href="#home" class="logo-container">
+                <img src="logo.png" alt="Loco Fries Logo" class="logo-img">
+                <span class="logo-text">LOCO FRIES</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#location">Location</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <a href="#location" class="cta-button">Find Our Truck</a>
+            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
+        <img src="logo.png" alt="" class="hero-logo-backdrop">
         <div class="hero-content">
+            <img src="logo.png" alt="Loco Fries" class="hero-logo-featured">
+            <div class="coming-soon-badge">
+                <span class="badge-icon">🏪</span>
+                <span class="badge-text">RESTAURANT COMING SOON!</span>
+                <span class="badge-icon">🏪</span>
+            </div>
             <h1>LOCO FRIES</h1>
-            <p>Authentic Latin American Street Food in Spring Valley!</p>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">🇪🇨 Salchi • Pinchos • Patacones • Encebollado • Cevichochos 🇪🇨</p>
-            <a href="#menu" class="cta-button">Explore Our Menu!</a>
+            <p class="hero-tagline">Taste the Passion of Latin America</p>
+            <p class="hero-subtitle">Authentic Ecuadorian Street Food • 240 N Main St, Spring Valley, NY</p>
+            <div class="hero-ctas">
+                <a href="#menu" class="cta-button primary">Explore Menu</a>
+                <a href="#location" class="cta-button secondary">Find Us</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
         </div>
     </section>
 
-    <section id="menu">
-        <div class="menu fade-in">
-            <h2>Our Loco Menu</h2>
-            <div class="menu-categories">
-                <button class="category-btn active" onclick="showCategory('salchi')">🍟 Salchi & Loaded Fries</button>
-                <button class="category-btn" onclick="showCategory('pinchos')">🍢 Pinchos</button>
-                <button class="category-btn" onclick="showCategory('patacon')">🥪 Patacón</button>
-                <button class="category-btn" onclick="showCategory('specialties')">🍲 Specialties</button>
-                <button class="category-btn" onclick="showCategory('sides')">🥘 Sides & Drinks</button>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-header fade-in">
+            <img src="logo.png" alt="" class="section-logo">
+            <h2 class="section-title">Our Story</h2>
+            <p class="section-subtitle">Where Ecuadorian Tradition Meets Street Food Culture</p>
+        </div>
+        <div class="about-content">
+            <div class="about-image slide-in-left">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800" alt="Traditional Latin cooking">
             </div>
+            <div class="about-text slide-in-right">
+                <h3>¡Sabor que te vuelve loco!</h3>
+                <p>Born from the vibrant streets of Ecuador, Loco Fries brings authentic Latin American flavors to the heart of Spring Valley, New York. Our bright orange food truck is a beacon of tradition, passion, and unforgettable taste.</p>
+                
+                <p>Every dish tells a story — from the sizzling Salchi loaded with savory toppings, to the crispy Patacones that transport you to coastal Ecuador, to the soul-warming Encebollado that's been perfected over generations.</p>
 
-            <!-- Salchi & Loaded Fries Category -->
-            <div class="menu-category active" id="salchi">
-                <div class="menu-grid">
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🌭</span>Salchi Classic</h3>
-                            <span class="menu-price">$9.00</span>
-                        </div>
-                        <p>Fries, beef hot dog, onion/tomato salad, sauces (papas fritas, salchicha, encebollado, salsas)</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🍗</span>Salchi Chicken</h3>
-                            <span class="menu-price">$11.00</span>
-                        </div>
-                        <p>Fries, grilled chicken, onion/tomato salad, sauces (papas fritas, pollo asado, encebollado, salsas)</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🥩</span>Salchi Carne Asada</h3>
-                            <span class="menu-price">$11.00</span>
-                        </div>
-                        <p>Fries, grilled steak, onion/tomato salad, sauces (papas fritas, carne asada, encebollado, salsas)</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🍖</span>Salchi Mix</h3>
-                            <span class="menu-price">$13.38</span>
-                        </div>
-                        <p>Fries, grilled chicken, shrimp, grilled steak, onion/tomato salad, sauces (papas fritas, pollo asado, carne asada, camarones)</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🍳</span>Salchi Churrasco</h3>
-                            <span class="menu-price">$13.38</span>
-                        </div>
-                        <p>Fries, grilled steak, fried egg, sausage, sweet plantains, onion/tomato salad (papas fritas, carne asada, huevo frito, chorizo, maduros)</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🍗</span>Chicken Wings</h3>
-                            <span class="menu-price">$12.00</span>
-                        </div>
-                        <p>Fries, chicken wings, onion/tomato salad, sauces (papas fritas, alitas, encebollado, salsas)</p>
-                    </div>
-                </div>
-            </div>
+                <p><strong style="color: var(--primary-red); font-size: 1.2rem;">🏪 Exciting News:</strong> We're expanding! While our food truck continues serving you at 240 N Main Street, we're working on opening a full restaurant location. Stay tuned for updates on our brick-and-mortar spot where you can enjoy even more authentic Latin cuisine!</p>
 
-            <!-- Pinchos Category -->
-            <div class="menu-category" id="pinchos">
-                <div class="menu-grid">
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🍢</span>Pinchos De Carne</h3>
-                            <span class="menu-price">$11.00</span>
-                        </div>
-                        <p>Grilled steak, pork sausage, green pepper, sweet plantain, sauces (carne asada, chorizo, pimiento verde, maduro)</p>
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <h4>🇪🇨 Authentic Recipes</h4>
+                        <p>Traditional Ecuadorian family recipes passed down through generations</p>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🍢</span>Pinchos De Pollo</h3>
-                            <span class="menu-price">$11.00</span>
-                        </div>
-                        <p>Grilled chicken, pork sausage, green pepper, sweet plantain, sauces (pollo asado, chorizo, pimiento verde, maduro)</p>
+                    <div class="highlight-item">
+                        <h4>🍟 Fresh Daily</h4>
+                        <p>Everything made fresh to order with quality ingredients</p>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🍤</span>Pinchos De Camaron</h3>
-                            <span class="menu-price">$13.25</span>
-                        </div>
-                        <p>Shrimp, pork sausage, green pepper, sweet plantain, sauces (camarones, chorizo, pimiento verde, maduro)</p>
+                    <div class="highlight-item">
+                        <h4>🌮 Street Food Passion</h4>
+                        <p>Bold flavors and generous portions that satisfy every craving</p>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🍢</span>Pincho Mix</h3>
-                            <span class="menu-price">$13.25</span>
-                        </div>
-                        <p>Grilled chicken, grilled steak, pork sausage, green pepper, sweet plantain (pollo asado, carne asada, chorizo)</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Patacon Category -->
-            <div class="menu-category" id="patacon">
-                <div class="menu-grid">
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🍌</span>Chicken Patacon</h3>
-                            <span class="menu-price">$11.25</span>
-                        </div>
-                        <p>Fried green plantain, grilled chicken, lettuce, tomatoes, sauces (patacon, pollo asado, lechuga, tomate, salsas)</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🍌</span>Steak Patacon</h3>
-                            <span class="menu-price">$11.25</span>
-                        </div>
-                        <p>Fried green plantain, grilled steak, lettuce, tomatoes, sauces (patacon, carne asada, lechuga, tomate, salsas)</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🍌</span>Patacon Mix</h3>
-                            <span class="menu-price">$13.00</span>
-                        </div>
-                        <p>Fried green plantain, grilled steak, grilled chicken, lettuce, tomatoes, sauces (patacon, carne asada, pollo asado)</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Specialties Category -->
-            <div class="menu-category" id="specialties">
-                <div class="menu-grid">
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🐟</span>Encebollado Ecuatoriano</h3>
-                            <span class="menu-price">$14.00</span>
-                        </div>
-                        <p>Traditional Ecuadorian tuna fish stew with rice, toasted corn, plantain chips (albacora, arroz, tostado, chifles)</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🥗</span>Grilled Chicken Salad</h3>
-                            <span class="menu-price">$13.00</span>
-                        </div>
-                        <p>Grilled chicken, tomato, cucumber, lettuce, mozzarella cheese, shredded carrots, dressing (pollo asado, tomate, cebolla, lechuga)</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🍌</span>Maduros Con Queso</h3>
-                            <span class="menu-price">$7.50</span>
-                        </div>
-                        <p>Sweet plantains with cheese and sauces</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🌽</span>Elote Con Queso</h3>
-                            <span class="menu-price">$5.00</span>
-                        </div>
-                        <p>Corn with cheese</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🫘</span>Cevichocho Mix</h3>
-                            <span class="menu-price">$12.25</span>
-                        </div>
-                        <p>Lupini beans, shrimp, chicken breast, pork skin, onion/tomato ceviche (chochos, pollo, cuero, camaron, encebollado)</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sides & Drinks Category -->
-            <div class="menu-category" id="sides">
-                <div class="menu-grid">
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🍚</span>White Rice</h3>
-                            <span class="menu-price">Side</span>
-                        </div>
-                        <p>Arroz blanco</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🍌</span>Tostones</h3>
-                            <span class="menu-price">$1.50</span>
-                        </div>
-                        <p>Green plantains</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🍌</span>Maduros</h3>
-                            <span class="menu-price">$1.50</span>
-                        </div>
-                        <p>Sweet plantains</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🥤</span>Natural Juices</h3>
-                            <span class="menu-price">$5.25</span>
-                        </div>
-                        <p>Maracuya, Limonada, Mora, Machica (Passion fruit, Lemonade, Blackberry, Mixed)</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🥤</span>Sodas</h3>
-                            <span class="menu-price">$1.50</span>
-                        </div>
-                        <p>Coca Cola, Ginger Ale, Brisk Ice Tea, Orange Soda, Water</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3><span class="menu-emoji">🍤</span>Extras</h3>
-                            <span class="menu-price">$1.50+</span>
-                        </div>
-                        <p>Cheese, Chorizo, Egg, Plantains, Lettuce (+$1.50) | Shrimp (+$3.00) | Extra Meat (+$2.00)</p>
+                    <div class="highlight-item">
+                        <h4>❤️ Family Owned</h4>
+                        <p>Serving our community with love and authentic Latin hospitality</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="location">
-        <h2>Find Our Food Truck</h2>
-        <div class="info-grid fade-in">
-            <div class="info-card">
-                <h3>📍 Location</h3>
-                <p>240 N Main Street</p>
-                <p>Spring Valley, NY</p>
-                <p>Look for the bright orange truck!</p>
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="section-header fade-in">
+            <img src="logo.png" alt="" class="section-logo">
+            <h2 class="section-title">Our Loco Menu</h2>
+            <p class="section-subtitle">Authentic Latin flavors that'll drive your taste buds crazy</p>
+        </div>
+
+        <div class="menu-categories">
+            <button class="category-btn active" onclick="showCategory('salchi')">🍟 Salchi & Loaded Fries</button>
+            <button class="category-btn" onclick="showCategory('pinchos')">🍢 Pinchos</button>
+            <button class="category-btn" onclick="showCategory('patacon')">🥪 Patacón</button>
+            <button class="category-btn" onclick="showCategory('specialties')">🍲 Specialties</button>
+            <button class="category-btn" onclick="showCategory('sides')">🥘 Sides & Drinks</button>
+        </div>
+
+        <!-- Salchi Category -->
+        <div class="menu-category active" id="salchi">
+            <div class="menu-grid fade-in">
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🌭</span>Salchi Classic</h3>
+                        <span class="menu-price">$9.00</span>
+                    </div>
+                    <p>Golden fries loaded with savory beef hot dog, fresh onion & tomato salad, and our signature sauces. A street food legend!</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🍗</span>Salchi Chicken</h3>
+                        <span class="menu-price">$11.00</span>
+                    </div>
+                    <p>Crispy fries topped with tender grilled chicken, vibrant encebollado, and zesty sauces. Pure Latin flavor!</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🥩</span>Salchi Carne Asada</h3>
+                        <span class="menu-price">$11.00</span>
+                    </div>
+                    <p>Premium grilled steak over crispy fries with fresh salsa and authentic Ecuadorian sauces. ¡Delicioso!</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🍖</span>Salchi Mix</h3>
+                        <span class="menu-price">$13.38</span>
+                    </div>
+                    <p>The ultimate loaded fries! Grilled chicken, succulent shrimp, carne asada, encebollado - pure indulgence.</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🍳</span>Salchi Churrasco</h3>
+                        <span class="menu-price">$13.38</span>
+                    </div>
+                    <p>The king of loaded fries! Grilled steak, fried egg, chorizo, sweet plantains. A complete meal in every bite.</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🍗</span>Chicken Wings</h3>
+                        <span class="menu-price">$12.00</span>
+                    </div>
+                    <p>Crispy wings served over golden fries with our signature encebollado and house sauces. Finger-licking good!</p>
+                </div>
             </div>
-            <div class="info-card">
-                <h3>🕐 Hours</h3>
-                <p><strong>Monday - Wednesday</strong></p>
-                <p>1:00 PM - 1:00 AM</p>
-                <p><strong>Thursday - Sunday</strong></p>
-                <p>12:00 PM - 1:00 AM</p>
+        </div>
+
+        <!-- Pinchos Category -->
+        <div class="menu-category" id="pinchos">
+            <div class="menu-grid fade-in">
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🍢</span>Pinchos De Carne</h3>
+                        <span class="menu-price">$11.00</span>
+                    </div>
+                    <p>Grilled steak skewers with chorizo, peppers, and sweet plantains. Ecuadorian street food at its finest!</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🍢</span>Pinchos De Pollo</h3>
+                        <span class="menu-price">$11.00</span>
+                    </div>
+                    <p>Tender chicken skewers perfectly grilled with chorizo, peppers, and maduros. Authentic Latin flavors!</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🍤</span>Pinchos De Camaron</h3>
+                        <span class="menu-price">$13.25</span>
+                    </div>
+                    <p>Succulent shrimp skewers with chorizo, peppers, and plantains. A coastal Ecuadorian delicacy!</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🍢</span>Pincho Mix</h3>
+                        <span class="menu-price">$13.25</span>
+                    </div>
+                    <p>Can't decide? Get them all! Chicken, steak, chorizo, peppers, and sweet plantains on one glorious skewer.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Patacon Category -->
+        <div class="menu-category" id="patacon">
+            <div class="menu-grid fade-in">
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🍌</span>Chicken Patacon</h3>
+                        <span class="menu-price">$11.25</span>
+                    </div>
+                    <p>Crispy fried green plantain sandwich loaded with juicy grilled chicken, fresh veggies, and zesty sauces.</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🍌</span>Steak Patacon</h3>
+                        <span class="menu-price">$11.25</span>
+                    </div>
+                    <p>Premium carne asada tucked between crispy plantain "buns" with lettuce, tomato, and our secret sauces.</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🍌</span>Patacon Mix</h3>
+                        <span class="menu-price">$13.00</span>
+                    </div>
+                    <p>Double the protein, double the flavor! Chicken and steak combined in this Latin sandwich sensation.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Specialties Category -->
+        <div class="menu-category" id="specialties">
+            <div class="menu-grid fade-in">
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🐟</span>Encebollado Ecuatoriano</h3>
+                        <span class="menu-price">$14.00</span>
+                    </div>
+                    <p>Ecuador's national treasure! Traditional tuna stew with rice, toasted corn, and crispy plantain chips. Soul food!</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🥗</span>Grilled Chicken Salad</h3>
+                        <span class="menu-price">$13.00</span>
+                    </div>
+                    <p>Fresh and vibrant! Grilled chicken over crisp lettuce, tomatoes, cucumber, mozzarella, and carrots.</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🍌</span>Maduros Con Queso</h3>
+                        <span class="menu-price">$7.50</span>
+                    </div>
+                    <p>Sweet caramelized plantains with melted cheese - the perfect sweet & savory combination!</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🌽</span>Elote Con Queso</h3>
+                        <span class="menu-price">$5.00</span>
+                    </div>
+                    <p>Grilled corn smothered in cheese - a simple Latin street food classic that never disappoints!</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🫘</span>Cevichocho Mix</h3>
+                        <span class="menu-price">$12.25</span>
+                    </div>
+                    <p>Ecuadorian delicacy! Lupini beans with shrimp, chicken, pork skin in tangy ceviche marinade.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sides Category -->
+        <div class="menu-category" id="sides">
+            <div class="menu-grid fade-in">
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🍚</span>White Rice</h3>
+                        <span class="menu-price">Side</span>
+                    </div>
+                    <p>Perfectly fluffy arroz blanco - the perfect complement to any dish.</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🍌</span>Tostones / Maduros</h3>
+                        <span class="menu-price">$1.50</span>
+                    </div>
+                    <p>Choose crispy green plantains (tostones) or sweet caramelized plantains (maduros).</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🥤</span>Natural Juices</h3>
+                        <span class="menu-price">$5.25</span>
+                    </div>
+                    <p>Freshly made! Maracuya (passion fruit), Limonada, Mora (blackberry), or Machica (mixed).</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">🥤</span>Sodas & Water</h3>
+                        <span class="menu-price">$1.50</span>
+                    </div>
+                    <p>Coca Cola, Ginger Ale, Brisk Ice Tea, Orange Soda, Bottled Water</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3><span class="menu-emoji">➕</span>Extras</h3>
+                        <span class="menu-price">$1.50+</span>
+                    </div>
+                    <p>Customize your meal! Cheese, Chorizo, Egg, Plantains (+$1.50) | Shrimp (+$3.00) | Extra Meat (+$2.00)</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="fade-in">
-        <h2>¡Ven a Comer!</h2>
-        <div class="info-card" style="max-width: 500px; margin: 0 auto;">
-            <h3>🍟 Ready for Authentic Latin Flavors?</h3>
-            <p>Follow us on social media for daily specials</p>
-            <p>Call ahead for large orders & catering</p>
-            <p>Authentic Ecuadorian & Latin American cuisine!</p>
-            <div style="margin-top: 1rem;">
-                <a href="#" class="cta-button">Follow Us on Instagram</a>
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="section-header fade-in">
+            <img src="logo.png" alt="" class="section-logo">
+            <h2 class="section-title">Food Gallery</h2>
+            <p class="section-subtitle">A visual feast of authentic Latin American cuisine</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800" alt="Loaded fries dish">
+                <div class="gallery-overlay">
+                    <p class="gallery-caption">Our Famous Salchi</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1599974624612-53000936068d?w=800" alt="Grilled meat skewers">
+                <div class="gallery-overlay">
+                    <p class="gallery-caption">Authentic Pinchos</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?w=800" alt="Traditional Latin soup">
+                <div class="gallery-overlay">
+                    <p class="gallery-caption">Encebollado Ecuatoriano</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=800" alt="Street tacos">
+                <div class="gallery-overlay">
+                    <p class="gallery-caption">Fresh Ingredients</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800" alt="Latin American street food">
+                <div class="gallery-overlay">
+                    <p class="gallery-caption">Patacón Perfection</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1625938145312-47f173e42bfe?w=800" alt="Food truck atmosphere">
+                <div class="gallery-overlay">
+                    <p class="gallery-caption">Our Bright Orange Truck</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Reservations / Location Section -->
+    <section id="location" class="reservations">
+        <div class="section-header fade-in">
+            <img src="logo.png" alt="" class="section-logo">
+            <h2 class="section-title">Find Our Truck</h2>
+            <p class="section-subtitle">Come visit us for authentic Latin flavors!</p>
+        </div>
+        <div class="reservation-content">
+            <div class="info-cards slide-in-left">
+                <div class="info-card">
+                    <h3><span class="icon">📍</span>Food Truck Location</h3>
+                    <p><strong>240 N Main Street</strong></p>
+                    <p>Spring Valley, NY 10977</p>
+                    <p>Look for our bright orange food truck - you can't miss us!</p>
+                    <strong>We're the one with all the delicious aromas! 🍟</strong>
+                </div>
+                <div class="info-card">
+                    <h3><span class="icon">🏪</span>Restaurant Coming Soon!</h3>
+                    <p><strong>New Location Opening</strong></p>
+                    <p>We're expanding beyond our food truck! Our full restaurant is in the works, bringing you more seating, an expanded menu, and the same authentic flavors you love.</p>
+                    <strong>Follow us on social media for grand opening updates! 🎉</strong>
+                </div>
+                <div class="info-card">
+                    <h3><span class="icon">🕐</span>Hours</h3>
+                    <p><strong>Monday - Wednesday</strong></p>
+                    <p>1:00 PM - 1:00 AM</p>
+                    <p><strong>Thursday - Sunday</strong></p>
+                    <p>12:00 PM - 1:00 AM</p>
+                    <strong>Late-night cravings? We've got you covered!</strong>
+                </div>
+                <div class="info-card">
+                    <h3><span class="icon">📞</span>Contact</h3>
+                    <p>Call ahead for large orders</p>
+                    <p>Catering available for events</p>
+                    <p>Follow us on social media for daily specials</p>
+                    <strong>¡Ven a comer!</strong>
+                </div>
+            </div>
+            <div class="map-container slide-in-right">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3005.521169542277!2d-74.04314292395368!3d41.12314747133466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2dd8ed69e0fc5%3A0xf9247f0ea5c5f7f4!2sLOCO%20FRIES!5e0!3m2!1sen!2sus!4v1762366723430!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section id="contact" class="contact-cta">
+        <div class="contact-cta-content fade-in">
+            <h2>¡Ven a Comer!</h2>
+            <p>Experience the authentic taste of Ecuador in every bite</p>
+            <p style="font-size: 1.3rem; color: var(--charcoal); font-weight: 700; margin-top: 1.5rem;">
+                🏪 Restaurant Location Coming Soon! 🏪
+            </p>
+            <div class="hero-ctas">
+                <a href="#menu" class="cta-button">View Full Menu</a>
+                <a href="#location" class="cta-button secondary">Get Directions</a>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                <a href="#" class="social-link" aria-label="TikTok">🎵</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 LOCO FRIES - Spring Valley's Authentic Latin Food Truck</p>
-        <p>🍟 ¡Sabor que te vuelve loco! 🍟</p>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="logo.png" alt="Loco Fries" class="footer-logo">
+                <h3>LOCO FRIES</h3>
+                <p>Bringing authentic Ecuadorian and Latin American street food to Spring Valley, NY. Every dish is made with passion, tradition, and the freshest ingredients.</p>
+                <p style="margin-top: 1rem; color: var(--primary-gold); font-weight: 600;">¡Sabor que te vuelve loco! 🍟</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#location">Location</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Menu</h4>
+                <ul class="footer-links">
+                    <li><a href="#salchi">Salchi & Fries</a></li>
+                    <li><a href="#pinchos">Pinchos</a></li>
+                    <li><a href="#patacon">Patacón</a></li>
+                    <li><a href="#specialties">Specialties</a></li>
+                    <li><a href="#sides">Sides & Drinks</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Visit Us</h4>
+                <ul class="footer-links">
+                    <li>240 N Main Street</li>
+                    <li>Spring Valley, NY 10977</li>
+                    <li style="margin-top: 1rem; color: var(--primary-gold);">Mon-Wed: 1PM-1AM</li>
+                    <li style="color: var(--primary-gold);">Thu-Sun: 12PM-1AM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Loco Fries. All rights reserved. | Authentic Latin American & Ecuadorian Cuisine</p>
+            <p style="margin-top: 0.5rem;">🇪🇨 Proudly serving Spring Valley with tradition & flavor 🇪🇨</p>
+        </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Page Loader
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.querySelector('.page-loader').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -720,17 +1810,34 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    // Close mobile menu if open
+                    document.querySelector('.nav-links').classList.remove('active');
                 }
             });
         });
 
-        // Fade in animation on scroll
+        // Header Scroll Effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Intersection Observer for Fade-In Animations
         const observerOptions = {
-            threshold: 0.1,
+            threshold: 0.15,
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
@@ -738,54 +1845,12 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.fade-in').forEach(el => {
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
             observer.observe(el);
         });
 
-        // Header background change on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(0, 0, 0, 0.95)';
-            } else {
-                header.style.background = 'rgba(0, 0, 0, 0.9)';
-            }
-        });
-
-        // Add random floating fries animation
-        function createFloatingFry() {
-            const fry = document.createElement('div');
-            fry.innerHTML = '🍟';
-            fry.style.position = 'fixed';
-            fry.style.left = Math.random() * 100 + 'vw';
-            fry.style.top = '100vh';
-            fry.style.fontSize = '1.5rem';
-            fry.style.pointerEvents = 'none';
-            fry.style.zIndex = '1';
-            fry.style.animation = `float-up 8s linear forwards`;
-            document.body.appendChild(fry);
-
-            setTimeout(() => {
-                fry.remove();
-            }, 8000);
-        }
-
-        // Add CSS for floating up animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes float-up {
-                to {
-                    transform: translateY(-100vh) rotate(360deg);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Create floating fry every 3 seconds
-        setInterval(createFloatingFry, 3000);
-
-        // Menu category switching
+        // Menu Category Switching
         function showCategory(categoryId) {
             // Hide all categories
             document.querySelectorAll('.menu-category').forEach(category => {
@@ -802,17 +1867,70 @@
             
             // Add active class to clicked button
             event.target.classList.add('active');
+
+            // Re-observe new elements
+            document.querySelectorAll(`#${categoryId} .fade-in`).forEach(el => {
+                observer.observe(el);
+            });
         }
 
-        // Menu item click effect
+        // Menu Item Interaction
         document.querySelectorAll('.menu-item').forEach(item => {
             item.addEventListener('click', function() {
-                this.style.transform = 'scale(0.95)';
+                this.style.transform = 'translateY(-10px) scale(0.98)';
                 setTimeout(() => {
-                    this.style.transform = 'translateY(-8px)';
-                }, 100);
+                    this.style.transform = 'translateY(-10px) scale(1)';
+                }, 150);
             });
         });
+
+        // Parallax Effect for Hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero-logo-backdrop');
+            if (hero) {
+                hero.style.transform = `translate(-50%, -50%) rotate(${scrolled * 0.05}deg)`;
+            }
+        });
+
+        // Add dynamic floating fries
+        function createFloatingFry() {
+            const fry = document.createElement('div');
+            fry.innerHTML = '🍟';
+            fry.style.position = 'fixed';
+            fry.style.left = Math.random() * 100 + 'vw';
+            fry.style.bottom = '-50px';
+            fry.style.fontSize = (Math.random() * 1.5 + 1) + 'rem';
+            fry.style.pointerEvents = 'none';
+            fry.style.zIndex = '1';
+            fry.style.opacity = '0.3';
+            fry.style.animation = `float-up ${Math.random() * 5 + 10}s linear forwards`;
+            document.body.appendChild(fry);
+
+            setTimeout(() => {
+                fry.remove();
+            }, 15000);
+        }
+
+        // Add CSS for floating up animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float-up {
+                to {
+                    transform: translateY(-120vh) rotate(${Math.random() * 720 - 360}deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Create floating fry every 4 seconds
+        setInterval(createFloatingFry, 4000);
+
+        // Console Easter Egg
+        console.log('%c🍟 LOCO FRIES 🍟', 'font-size: 40px; color: #E5B53E; font-weight: bold; text-shadow: 2px 2px 4px #B32B27;');
+        console.log('%c¡Sabor que te vuelve loco!', 'font-size: 16px; color: #ff6b35; font-style: italic;');
+        console.log('%cVisit us at 240 N Main Street, Spring Valley, NY!', 'font-size: 14px; color: #1B1B1B;');
     </script>
 </body>
 </html>
