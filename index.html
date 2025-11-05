@@ -62,7 +62,7 @@
       "description": "Authentic Ecuadorian and Latin American street food in Spring Valley, NY. Specializing in Salchi, Pinchos, Patacones, Encebollado, and traditional Ecuadorian cuisine.",
       "@id": "https://locofries.com",
       "url": "https://locofries.com",
-      "telephone": "+1-XXX-XXX-XXXX",
+      "telephone": "+1-845-535-1185",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -78,21 +78,11 @@
         "longitude": -74.043143
       },
       "servesCuisine": ["Ecuadorian", "Latin American", "South American", "Street Food"],
-      "menu": "https://locofries.com/#menu",
+      "menu": "https://locofries.com/#menu-section",
       "acceptsReservations": "False",
       "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday"],
-          "opens": "13:00",
-          "closes": "01:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Thursday", "Friday", "Saturday", "Sunday"],
-          "opens": "12:00",
-          "closes": "01:00"
-        }
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday"], "opens": "13:00", "closes": "01:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Thursday","Friday","Saturday","Sunday"], "opens": "12:00", "closes": "01:00" }
       ],
       "paymentAccepted": "Cash, Credit Card, Debit Card",
       "currenciesAccepted": "USD",
@@ -117,7 +107,7 @@
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://locofries.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Menu", "item": "https://locofries.com/#menu" },
+        { "@type": "ListItem", "position": 2, "name": "Menu", "item": "https://locofries.com/#menu-section" },
         { "@type": "ListItem", "position": 3, "name": "Location", "item": "https://locofries.com/#location" }
       ]
     }
@@ -128,101 +118,65 @@
        THEME — Modernized Palette
     --------------------------------*/
     :root {
-      /* Core */
       --bg-deep: #0c0c0f;
       --bg-page: #141417;
       --text: #eae9f2;
       --muted: #b5b3c2;
 
-      /* Brand (modernized amber/gold + lava) */
-      --amber-1: #ffd36a;   /* highlight */
-      --amber-2: #ffb629;   /* primary glass border glow */
-      --lava-1: #ff5a3d;    /* accent edge */
-      --lava-2: #c61d1a;    /* deep accent */
+      --amber-1: #ffd36a;
+      --amber-2: #ffb629;
+      --lava-1: #ff5a3d;
+      --lava-2: #c61d1a;
 
-      /* Glass + strokes */
       --glass: rgba(255, 255, 255, 0.08);
       --glass-strong: rgba(255, 255, 255, 0.12);
       --stroke: rgba(255, 255, 255, 0.16);
 
-      /* Gradients */
       --g-hero: radial-gradient(1200px 600px at 20% 10%, rgba(255, 182, 41, 0.25), transparent 60%),
                 radial-gradient(1000px 500px at 80% 30%, rgba(255, 90, 61, 0.20), transparent 60%),
                 linear-gradient(180deg, rgba(20, 20, 23, 0.85), rgba(12, 12, 15, 0.98));
       --g-line: linear-gradient(90deg, rgba(255, 182, 41, 0) 0%, rgba(255, 182, 41, 0.8) 15%, rgba(255, 90, 61, 0.8) 85%, rgba(255, 90, 61, 0) 100%);
       --g-button: linear-gradient(135deg, #ffb629 0%, #ffd36a 60%, #fff1b3 100%);
 
-      /* Shadows */
       --shadow-1: 0 8px 30px rgba(0, 0, 0, 0.5);
       --shadow-2: 0 12px 40px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 182, 41, 0.08);
 
-      /* Radii */
-      --r-xl: 24px;
-      --r-lg: 18px;
-      --r-md: 14px;
+      --r-xl: 24px; --r-lg: 18px; --r-md: 14px;
 
-      /* Speeds */
-      --fast: 160ms;
-      --med: 320ms;
-      --slow: 800ms;
+      --fast: 160ms; --med: 320ms; --slow: 800ms;
     }
 
-    /* -------------------------------
-       RESET + BASE
-    --------------------------------*/
+    /* RESET + BASE */
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
-      background: var(--bg-page);
-      color: var(--text);
-      line-height: 1.65;
-      overflow-x: hidden;
+      margin: 0; font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg-page); color: var(--text); line-height: 1.65; overflow-x: hidden;
     }
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
     ::selection { background: rgba(255, 182, 41, 0.25); }
-
-    /* Optional reduced motion */
     @media (prefers-reduced-motion: reduce) {
       * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
     }
 
-    /* -------------------------------
-       UTILS
-    --------------------------------*/
+    /* UTILS */
     .container { max-width: 1320px; margin: 0 auto; padding: 0 24px; }
     .section { padding: 90px 0; position: relative; }
     .section-header { text-align: center; margin-bottom: 40px; }
     .eyebrow {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 8px 14px; border-radius: 999px;
+      display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px; border-radius: 999px;
       background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-      border: 1px solid var(--stroke);
-      box-shadow: inset 0 1px rgba(255,255,255,0.12);
+      border: 1px solid var(--stroke); box-shadow: inset 0 1px rgba(255,255,255,0.12);
       font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
       backdrop-filter: blur(10px);
     }
-    .glow-line {
-      height: 3px; width: 220px; margin: 18px auto 0; border-radius: 999px;
-      background: var(--g-line); filter: drop-shadow(0 0 14px rgba(255, 182, 41, 0.35));
-    }
-    .title {
-      font-family: 'Playfair Display', serif;
-      font-weight: 900;
-      font-size: clamp(28px, 4vw, 48px);
-      letter-spacing: 0.5px;
-      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
-    }
+    .glow-line { height: 3px; width: 220px; margin: 18px auto 0; border-radius: 999px; background: var(--g-line); filter: drop-shadow(0 0 14px rgba(255, 182, 41, 0.35)); }
+    .title { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(28px, 4vw, 48px); letter-spacing: 0.5px; text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6); }
     .subtitle { color: var(--muted); max-width: 760px; margin: 14px auto 0; }
 
-    /* -------------------------------
-       HEADER (Glass Nav)
-    --------------------------------*/
-    header {
-      position: fixed; inset: 16px 16px auto; z-index: 1000;
-    }
+    /* HEADER */
+    header { position: fixed; inset: 16px 16px auto; z-index: 1000; }
     .nav {
       display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 18px;
       padding: 12px 18px; border-radius: 16px;
@@ -232,19 +186,14 @@
       transition: transform var(--med), background var(--med), box-shadow var(--med);
     }
     .nav.scrolled { transform: translateY(-6px); background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03)); box-shadow: var(--shadow-2); }
-    .brand {
-      display: flex; align-items: center; gap: 12px;
-    }
+    .brand { display: flex; align-items: center; gap: 12px; }
     .brand img { width: 54px; height: 54px; object-fit: contain; filter: drop-shadow(0 6px 22px rgba(255,182,41,0.25)); }
     .brand .name {
       font-family: 'Playfair Display', serif; font-weight: 900; letter-spacing: 2px;
       background: linear-gradient(120deg, #ffe39a, #ffb629 55%, #ff8a58);
       -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
     }
-    .menu {
-      display: flex; justify-content: center; align-items: center; gap: clamp(12px, 2vw, 24px);
-      list-style: none; margin: 0; padding: 0;
-    }
+    .menu { display: flex; justify-content: center; align-items: center; gap: clamp(12px, 2vw, 24px); list-style: none; margin: 0; padding: 0; }
     .menu a {
       position: relative; display: inline-flex; align-items: center; padding: 8px 12px; border-radius: 10px; color: var(--muted);
       transition: color var(--fast), transform var(--fast);
@@ -255,16 +204,13 @@
     }
     .menu a:hover { color: var(--text); transform: translateY(-1px); }
     .menu a:hover::after { transform: scaleX(1); }
-    .nav-cta {
-      display: flex; gap: 12px; align-items: center;
-    }
+    .nav-cta { display: flex; gap: 12px; align-items: center; }
     .btn {
       --btn-bg: var(--g-button);
       position: relative; display: inline-flex; align-items: center; justify-content: center;
       padding: 12px 18px; border-radius: 14px; font-weight: 700; letter-spacing: 0.04em; color: #2a220b;
       background: var(--btn-bg); border: 1px solid rgba(255, 248, 220, 0.6); box-shadow: 0 6px 22px rgba(255, 182, 41, 0.35);
-      transition: transform var(--fast), box-shadow var(--fast);
-      will-change: transform;
+      transition: transform var(--fast), box-shadow var(--fast); will-change: transform;
     }
     .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(255, 182, 41, 0.5); }
     .btn.secondary {
@@ -274,46 +220,25 @@
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
     .hamburger span { width: 26px; height: 2px; background: #ffd36a; border-radius: 2px; }
 
-    /* -------------------------------
-       HERO (Cinematic + Glass)
-       Swapped background to glassy/blurred Latin-street vibes
-    --------------------------------*/
-    .hero {
-      position: relative; min-height: 100svh; display: grid; place-items: center; overflow: clip;
-      background: var(--g-hero);
-      isolation: isolate;
-    }
-    /* Ambient moving orbs */
+    /* HERO */
+    .hero { position: relative; min-height: 100svh; display: grid; place-items: center; overflow: clip; background: var(--g-hero); isolation: isolate; }
     .hero .orb {
-      position: absolute; border-radius: 50%;
-      filter: blur(60px); opacity: 0.35; z-index: -1;
-      mix-blend-mode: screen; pointer-events: none;
-      animation: floatOrbs 16s ease-in-out infinite alternate;
+      position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.35; z-index: -1;
+      mix-blend-mode: screen; pointer-events: none; animation: floatOrbs 16s ease-in-out infinite alternate;
     }
     .orb.o1 { width: 520px; height: 520px; left: -120px; top: -140px; background: radial-gradient(#ffb629, rgba(255,182,41,0)); }
     .orb.o2 { width: 420px; height: 420px; right: -80px; top: 10%; background: radial-gradient(#ff5a3d, rgba(255,90,61,0)); animation-delay: 1.2s; }
     .orb.o3 { width: 380px; height: 380px; left: 15%; bottom: -120px; background: radial-gradient(#ffd36a, rgba(255,211,106,0)); animation-delay: 2.4s; }
-
-    @keyframes floatOrbs {
-      0% { transform: translateY(0) translateX(0) scale(1); }
-      100% { transform: translateY(-24px) translateX(18px) scale(1.06); }
-    }
-
+    @keyframes floatOrbs { 0% { transform: translateY(0) translateX(0) scale(1); } 100% { transform: translateY(-24px) translateX(18px) scale(1.06); } }
     .hero-inner { width: 100%; }
-    .hero-wrap {
-      display: grid; place-items: center; text-align: center; gap: 20px;
-      padding: 120px 0 80px;
-    }
+    .hero-wrap { display: grid; place-items: center; text-align: center; gap: 20px; padding: 120px 0 80px; }
     .hero-logo {
-      width: clamp(120px, 16vw, 200px); aspect-ratio: 1; border-radius: 28%;
-      padding: 18px; background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      width: clamp(120px, 16vw, 200px); aspect-ratio: 1; border-radius: 28%; padding: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
       border: 1px solid var(--stroke); backdrop-filter: blur(12px); box-shadow: var(--shadow-2);
       animation: floatLogo 6s ease-in-out infinite;
     }
-    @keyframes floatLogo {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
+    @keyframes floatLogo { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
     .badge {
       display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 999px;
       background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
@@ -321,177 +246,103 @@
       backdrop-filter: blur(10px); font-weight: 800; letter-spacing: 0.08em; color: #fff;
     }
     .hero-title {
-      font-family: 'Playfair Display', serif; font-weight: 900;
-      font-size: clamp(32px, 5vw, 64px);
-      line-height: 1.12;
+      font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(32px, 5vw, 64px); line-height: 1.12;
       background: linear-gradient(180deg, #ffffff 10%, #ffe8a8 85%);
       -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-      text-shadow: 0 10px 60px rgba(255, 182, 41, 0.12);
-      margin: 10px 0 0;
+      text-shadow: 0 10px 60px rgba(255, 182, 41, 0.12); margin: 10px 0 0;
     }
     .hero-tag { font-family: 'Playfair Display', serif; font-style: italic; color: #ffd36a; font-size: clamp(18px, 2.4vw, 28px); }
     .hero-sub { color: var(--muted); font-size: 16px; }
     .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
-
-    /* Scroll cue */
     .scroll-cue { position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); opacity: 0.9; }
-    .mouse {
-      width: 28px; height: 44px; border: 2px solid rgba(255,255,255,0.6); border-radius: 18px; position: relative;
-    }
-    .mouse::after {
-      content: ""; width: 4px; height: 8px; background: #ffd36a; border-radius: 4px; position: absolute; left: 50%; transform: translateX(-50%);
-      top: 8px; animation: wheel 2s infinite;
-    }
-    @keyframes wheel {
-      0% { opacity: 0; transform: translate(-50%, 0); }
-      50% { opacity: 1; transform: translate(-50%, 10px); }
-      100% { opacity: 0; transform: translate(-50%, 20px); }
-    }
+    .mouse { width: 28px; height: 44px; border: 2px solid rgba(255,255,255,0.6); border-radius: 18px; position: relative; }
+    .mouse::after { content: ""; width: 4px; height: 8px; background: #ffd36a; border-radius: 4px; position: absolute; left: 50%; transform: translateX(-50%); top: 8px; animation: wheel 2s infinite; }
+    @keyframes wheel { 0% { opacity: 0; transform: translate(-50%, 0); } 50% { opacity: 1; transform: translate(-50%, 10px); } 100% { opacity: 0; transform: translate(-50%, 20px); } }
 
-    /* -------------------------------
-       ABOUT (Glass Panels)
-    --------------------------------*/
-    .about-grid {
-      display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: center;
-    }
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: center; }
     .about-card, .info-card, .menu-card, .gallery-item, .map-frame, .footer-card {
       background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-      border: 1px solid var(--stroke);
-      backdrop-filter: blur(12px);
-      border-radius: var(--r-xl);
-      box-shadow: var(--shadow-1), inset 0 1px rgba(255,255,255,0.12);
-      position: relative;
-      overflow: hidden;
+      border: 1px solid var(--stroke); backdrop-filter: blur(12px);
+      border-radius: var(--r-xl); box-shadow: var(--shadow-1), inset 0 1px rgba(255,255,255,0.12);
+      position: relative; overflow: hidden;
     }
     .about-card { padding: 28px; }
     .about-card::before {
       content: ""; position: absolute; inset: -1px; border-radius: inherit; padding: 1px;
       background: linear-gradient(180deg, rgba(255,255,255,0.36), rgba(255,255,255,0.04));
       -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor; mask-composite: exclude;
-      pointer-events: none;
+      -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
     }
-    .about-media {
-      position: relative; height: min(56vw, 460px); border-radius: var(--r-xl); overflow: hidden;
-    }
+    .about-media { position: relative; height: min(56vw, 460px); border-radius: var(--r-xl); overflow: hidden; }
     .about-media img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); filter: saturate(1.1) contrast(1.05); }
-    .about-bullets {
-      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 18px;
-    }
-    .chip {
-      padding: 12px 14px; border-radius: 14px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-      border: 1px solid var(--stroke); backdrop-filter: blur(8px);
-      font-size: 14px;
-    }
+    .about-bullets { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+    .chip { padding: 12px 14px; border-radius: 14px; background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); border: 1px solid var(--stroke); backdrop-filter: blur(8px); font-size: 14px; }
 
-    /* -------------------------------
-       MENU (Glass Cards + Tilt)
-    --------------------------------*/
+    /* OVERVIEW (your text block, above Menu) */
+    .overview { padding-top: 40px; }
+    .overview-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 18px; align-items: start; }
+    .overview-card { padding: 22px; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .pill { border: 1px solid var(--stroke); border-radius: 999px; padding: 8px 12px; background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); backdrop-filter: blur(8px); font-weight: 600; font-size: 13px; color: #ffd36a; }
+    .price-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-top: 10px; }
+    .price-item { padding: 12px; border-radius: 14px; border: 1px solid var(--stroke); background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); display: flex; justify-content: space-between; gap: 10px; }
+    .price-title { font-weight: 700; }
+    .price-amt { color: #ffe39a; font-weight: 800; }
+
+    /* MENU */
     .menu .title { text-align: center; }
-    .category-row {
-      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 18px 0 4px;
-    }
+    .category-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 18px 0 4px; }
     .category-btn {
       cursor: pointer; border: 1px solid var(--stroke); border-radius: 999px; padding: 10px 14px; font-weight: 700; color: var(--text);
       background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-      backdrop-filter: blur(10px); transition: transform var(--fast), box-shadow var(--fast), background var(--fast);
-      box-shadow: inset 0 1px rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px); transition: transform var(--fast), box-shadow var(--fast), background var(--fast); box-shadow: inset 0 1px rgba(255,255,255,0.12);
     }
     .category-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(255, 182, 41, 0.28); }
-    .category-btn.active {
-      background: linear-gradient(135deg, rgba(255,182,41,0.18), rgba(255, 90, 61, 0.18));
-      border-color: rgba(255, 182, 41, 0.55);
-    }
-
-    .menu-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px; margin-top: 18px;
-    }
-    .menu-card {
-      padding: 18px; transition: transform var(--med), box-shadow var(--med);
-      will-change: transform;
-    }
+    .category-btn.active { background: linear-gradient(135deg, rgba(255,182,41,0.18), rgba(255, 90, 61, 0.18)); border-color: rgba(255, 182, 41, 0.55); }
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 18px; }
+    .menu-card { padding: 18px; transition: transform var(--med), box-shadow var(--med); will-change: transform; }
     .menu-card:hover { transform: translateY(-6px) rotate3d(1, -1, 0, 6deg); box-shadow: 0 14px 34px rgba(0,0,0,0.6), 0 0 36px rgba(255,182,41,0.12); }
     .menu-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-    .menu-top h3 {
-      font-family: 'Playfair Display', serif; font-size: 20px; margin: 0; letter-spacing: 0.2px;
-    }
-    .price {
-      display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 12px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-      border: 1px solid var(--stroke); color: #ffe39a; font-weight: 800;
-    }
+    .menu-top h3 { font-family: 'Playfair Display', serif; font-size: 20px; margin: 0; letter-spacing: 0.2px; }
+    .price { display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 12px; background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); border: 1px solid var(--stroke); color: #ffe39a; font-weight: 800; }
     .menu-desc { color: var(--muted); margin-top: 8px; font-size: 14px; }
 
-    /* -------------------------------
-       GALLERY (Masonry-like Grid)
-    --------------------------------*/
-    .gallery-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 16px;
-    }
+    /* GALLERY */
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 16px; }
     .gallery-item { height: 280px; cursor: pointer; overflow: hidden; position: relative; }
     .gallery-item img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform var(--slow); }
     .gallery-item:hover img { transform: scale(1.08); }
-    .gallery-item::after {
-      content: ""; position: absolute; inset: 0;
-      background: radial-gradient(80% 60% at 50% 85%, rgba(0,0,0,0.55), transparent 60%);
-      transition: opacity var(--med);
-      opacity: 0;
-    }
+    .gallery-item::after { content: ""; position: absolute; inset: 0; background: radial-gradient(80% 60% at 50% 85%, rgba(0,0,0,0.55), transparent 60%); transition: opacity var(--med); opacity: 0; }
     .gallery-item:hover::after { opacity: 1; }
-    .gallery-caption {
-      position: absolute; left: 16px; bottom: 14px; padding: 8px 12px; border-radius: 12px; font-weight: 700;
-      background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04)); border: 1px solid var(--stroke); backdrop-filter: blur(8px);
-    }
+    .gallery-caption { position: absolute; left: 16px; bottom: 14px; padding: 8px 12px; border-radius: 12px; font-weight: 700; background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04)); border: 1px solid var(--stroke); backdrop-filter: blur(8px); }
 
-    /* -------------------------------
-       LOCATION (Glass Info + Map)
-    --------------------------------*/
-    .info-grid {
-      display: grid; grid-template-columns: 1.1fr 1fr; gap: 18px; align-items: start;
-    }
+    /* LOCATION */
+    .info-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 18px; align-items: start; }
     .info-stack { display: grid; gap: 14px; }
     .info-card { padding: 18px; }
-    .info-card h3 {
-      display: flex; align-items: center; gap: 10px; margin: 0 0 8px;
-      font-family: 'Playfair Display', serif;
-    }
+    .info-card h3 { display: flex; align-items: center; gap: 10px; margin: 0 0 8px; font-family: 'Playfair Display', serif; }
     .info-card strong { color: #ffd36a; }
     .map-frame { height: 420px; overflow: clip; }
     .map-frame iframe { width: 100%; height: 100%; border: 0; filter: saturate(1.05) contrast(1.02) drop-shadow(0 20px 50px rgba(0,0,0,0.4)); }
 
-    /* -------------------------------
-       CONTACT CTA
-    --------------------------------*/
-    .cta {
-      text-align: center;
-      background:
-        radial-gradient(1000px 400px at 15% 40%, rgba(255,182,41,0.15), transparent 60%),
-        radial-gradient(800px 300px at 85% 60%, rgba(255,90,61,0.12), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-      border-top: 1px solid var(--stroke);
-      border-bottom: 1px solid var(--stroke);
-      position: relative; overflow: clip;
-    }
+    /* CTA */
+    .cta { text-align: center;
+      background: radial-gradient(1000px 400px at 15% 40%, rgba(255,182,41,0.15), transparent 60%),
+                  radial-gradient(800px 300px at 85% 60%, rgba(255,90,61,0.12), transparent 60%),
+                  linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      border-top: 1px solid var(--stroke); border-bottom: 1px solid var(--stroke); position: relative; overflow: clip; }
     .cta .title { color: #fff; }
     .cta .subtitle { color: #1e1c13; font-weight: 700; }
     .social { display: flex; gap: 12px; justify-content: center; margin-top: 16px; }
-    .social a {
-      width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%;
+    .social a { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%;
       background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-      border: 1px solid var(--stroke); backdrop-filter: blur(8px);
-      transition: transform var(--fast), box-shadow var(--fast);
-    }
+      border: 1px solid var(--stroke); backdrop-filter: blur(8px); transition: transform var(--fast), box-shadow var(--fast); }
     .social a:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(255,182,41,0.28); }
 
-    /* -------------------------------
-       FOOTER (Glass Footer)
-    --------------------------------*/
+    /* FOOTER */
     footer { padding: 60px 0 24px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)); border-top: 1px solid var(--stroke); }
-    .footer-grid {
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 18px;
-    }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 18px; }
     .footer-card { padding: 18px; height: 100%; }
     .foot-title { font-family: 'Playfair Display', serif; color: #ffd36a; margin: 0 0 8px; }
     .foot-list { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 6px; color: var(--muted); }
@@ -501,17 +352,13 @@
     .foot-brand img { width: 90px; height: 90px; object-fit: contain; filter: drop-shadow(0 10px 28px rgba(255,182,41,0.25)); }
     .foot-bottom { margin-top: 18px; text-align: center; color: var(--muted); font-size: 14px; }
 
-    /* -------------------------------
-       REVEAL ANIMATIONS
-    --------------------------------*/
+    /* REVEAL */
     .reveal { opacity: 0; transform: translateY(20px); will-change: transform, opacity; }
     .reveal.visible { opacity: 1; transform: translateY(0); transition: opacity var(--slow) ease, transform var(--slow) ease; }
 
-    /* -------------------------------
-       RESPONSIVE
-    --------------------------------*/
+    /* RESPONSIVE */
     @media (max-width: 1060px) {
-      .about-grid, .info-grid { grid-template-columns: 1fr; }
+      .about-grid, .info-grid, .overview-grid { grid-template-columns: 1fr; }
       header { inset: 12px; }
       .menu { display: none; }
       .hamburger { display: flex; }
@@ -536,6 +383,7 @@
       <ul class="menu" id="menu">
         <li><a href="#home" aria-label="Home">Home</a></li>
         <li><a href="#about" aria-label="About">About</a></li>
+        <li><a href="#overview" aria-label="Overview">Overview</a></li>
         <li><a href="#menu-section" aria-label="Menu">Menu</a></li>
         <li><a href="#gallery" aria-label="Gallery">Gallery</a></li>
         <li><a href="#location" aria-label="Location">Location</a></li>
@@ -553,10 +401,7 @@
 
   <!-- HERO -->
   <section class="hero" id="home" aria-label="Hero">
-    <!-- Ambient Orbs (alive glass vibe) -->
-    <span class="orb o1"></span>
-    <span class="orb o2"></span>
-    <span class="orb o3"></span>
+    <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
 
     <div class="hero-inner container">
       <div class="hero-wrap">
@@ -598,10 +443,83 @@
           </div>
         </div>
 
+        <!-- Replaced the political-hall image with a warm night-market ambience -->
         <div class="about-media reveal" aria-hidden="true">
-          <!-- Replaced busy photo with soft, glassy Latin-street blur -->
-          <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1600&auto=format&fit=crop" alt="Warm Latin street ambience" />
+          <img src="https://images.unsplash.com/photo-1613470207359-78ac8b12cc2c?q=80&w=1600&auto=format&fit=crop"
+               alt="Vibrant Latin street market at night with warm lighting and people enjoying food" />
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW (your provided content) -->
+  <section class="section overview" id="overview" aria-label="Restaurant Overview">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow reveal">Restaurant Overview</span>
+        <h2 class="title reveal">Located at 240 N Main St, Spring Valley, NY</h2>
+        <div class="glow-line reveal"></div>
+        <p class="subtitle reveal">LOCO FRIES offers an eclectic fusion of flavors that promises to excite your palate. A must-visit food truck for mouthwatering fries, succulent shrimp, and authentic empanadas.</p>
+      </div>
+
+      <div class="overview-grid">
+        <article class="overview-card about-card reveal">
+          <p><strong>Each dish</strong> is crafted with flavor in mind, ensuring you leave satisfied — as echoed by customers like <em>Jazmin Acevedo</em> and <em>Connie Zhen</em>, who rave about the generous portions and tasty options. The charming vibe is complemented by attentive staff, such as <em>Diana</em>, who are dedicated to enhancing your dining experience.</p>
+          <p>Whether you’re a fan of Ecuadorian cuisine or simply seeking a delightful meal, LOCO FRIES brings a taste of home and a vibrant atmosphere that should not be missed. You’ll find yourself eagerly returning for more culinary adventures!</p>
+
+          <!-- Friendly contact + hours -->
+          <div class="pill-row">
+            <span class="pill">📍 240 N Main St, Spring Valley, NY 10977</span>
+            <span class="pill">☎️ Hotline: +1 845-535-1185</span>
+            <span class="pill">🕐 Mon–Wed: 1:00 PM – 1:00 AM</span>
+            <span class="pill">🕐 Thu–Sun: 12:00 PM – 1:00 AM</span>
+          </div>
+        </article>
+
+        <aside class="overview-card about-card reveal">
+          <!-- Item index from your text -->
+          <h3 class="foot-title">Menu Highlights Index</h3>
+          <div class="pill-row" aria-label="Menu categories">
+            <span class="pill">LOCO FRIES 1</span>
+            <span class="pill">LOCO FRIES 2</span>
+            <span class="pill">LOCO FRIES 3</span>
+            <span class="pill">LOCO FRIES 4</span>
+            <span class="pill">LOCO FRIES 5</span>
+            <span class="pill">LOCO FRIES 6</span>
+            <span class="pill">Cevichochos</span>
+            <span class="pill">Pinchos</span>
+            <span class="pill">Ensalada</span>
+            <span class="pill">Drinks/Bebidas</span>
+            <span class="pill">Loaded Fries</span>
+            <span class="pill">Patacon Sandwich</span>
+            <span class="pill">Others</span>
+          </div>
+
+          <!-- Prices you provided -->
+          <div class="price-list" aria-label="Quick price list">
+            <div class="price-item"><span class="price-title">Cevichcocho De Pollo</span><span class="price-amt">US$10.25</span></div>
+            <div class="price-item"><span class="price-title">Cevichocho De Cuero</span><span class="price-amt">US$10.25</span></div>
+            <div class="price-item"><span class="price-title">Cevichocho De Camaron</span><span class="price-amt">US$11.25</span></div>
+            <div class="price-item"><span class="price-title">Cevichocho Mix</span><span class="price-amt">US$12.25</span></div>
+            <div class="price-item"><span class="price-title">Salchi Classic</span><span class="price-amt">US$9.00</span></div>
+            <div class="price-item"><span class="price-title">Salchi Chicken</span><span class="price-amt">US$11.00</span></div>
+            <div class="price-item"><span class="price-title">Salchi Carne Asada</span><span class="price-amt">US$11.00</span></div>
+            <div class="price-item"><span class="price-title">Salchi Mix</span><span class="price-amt">US$13.38</span></div>
+            <div class="price-item"><span class="price-title">Salchi Churrasco</span><span class="price-amt">US$13.38</span></div>
+            <div class="price-item"><span class="price-title">Chicken Wings</span><span class="price-amt">US$12.00</span></div>
+            <div class="price-item"><span class="price-title">Pinchos De Carne</span><span class="price-amt">US$11.00</span></div>
+            <div class="price-item"><span class="price-title">Pinchos De Pollo</span><span class="price-amt">US$11.00</span></div>
+            <div class="price-item"><span class="price-title">Pinchos De Camaron</span><span class="price-amt">US$13.25</span></div>
+            <div class="price-item"><span class="price-title">Pincho Mix</span><span class="price-amt">US$13.25</span></div>
+            <div class="price-item"><span class="price-title">Steak Patacon</span><span class="price-amt">US$11.25</span></div>
+            <div class="price-item"><span class="price-title">Patacon Mix</span><span class="price-amt">US$13.00</span></div>
+            <div class="price-item"><span class="price-title">Chicken Patacon</span><span class="price-amt">US$11.25</span></div>
+            <div class="price-item"><span class="price-title">Grilled Chicken Salad</span><span class="price-amt">US$13.00</span></div>
+            <div class="price-item"><span class="price-title">Elote Con Queso</span><span class="price-amt">US$5.00</span></div>
+            <div class="price-item"><span class="price-title">Platanos Con Queso</span><span class="price-amt">US$7.50</span></div>
+            <div class="price-item"><span class="price-title">Drinks / Bebidas</span><span class="price-amt">Varies</span></div>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
@@ -627,139 +545,53 @@
       <!-- Salchi -->
       <div class="menu-panel" id="salchi">
         <div class="menu-grid">
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top">
-              <h3>🌭 Salchi Classic</h3><span class="price">$9.00</span>
-            </div>
-            <p class="menu-desc">Golden fries with savory beef hot dog, fresh onion & tomato salad, and signature sauces.</p>
-          </article>
-
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top">
-              <h3>🍗 Salchi Chicken</h3><span class="price">$11.00</span>
-            </div>
-            <p class="menu-desc">Crispy fries topped with tender grilled chicken, vibrant encebollado, and zesty sauces.</p>
-          </article>
-
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top">
-              <h3>🥩 Salchi Carne Asada</h3><span class="price">$11.00</span>
-            </div>
-            <p class="menu-desc">Premium grilled steak over fries with fresh salsa and authentic Ecuadorian sauces.</p>
-          </article>
-
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top">
-              <h3>🍖 Salchi Mix</h3><span class="price">$13.38</span>
-            </div>
-            <p class="menu-desc">The ultimate loaded fries—chicken, shrimp, carne asada, encebollado. Pure indulgence.</p>
-          </article>
-
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top">
-              <h3>🍳 Salchi Churrasco</h3><span class="price">$13.38</span>
-            </div>
-            <p class="menu-desc">Grilled steak, fried egg, chorizo, and sweet plantains. A complete meal in every bite.</p>
-          </article>
-
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top">
-              <h3>🍗 Chicken Wings</h3><span class="price">$12.00</span>
-            </div>
-            <p class="menu-desc">Crispy wings over golden fries with our signature sauces. Finger-licking good!</p>
-          </article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🌭 Salchi Classic</h3><span class="price">$9.00</span></div><p class="menu-desc">Golden fries with savory beef hot dog, fresh onion & tomato salad, and signature sauces.</p></article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🍗 Salchi Chicken</h3><span class="price">$11.00</span></div><p class="menu-desc">Crispy fries topped with tender grilled chicken, vibrant encebollado, and zesty sauces.</p></article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🥩 Salchi Carne Asada</h3><span class="price">$11.00</span></div><p class="menu-desc">Premium grilled steak over fries with fresh salsa and authentic Ecuadorian sauces.</p></article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🍖 Salchi Mix</h3><span class="price">$13.38</span></div><p class="menu-desc">The ultimate loaded fries—chicken, shrimp, carne asada, encebollado. Pure indulgence.</p></article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🍳 Salchi Churrasco</h3><span class="price">$13.38</span></div><p class="menu-desc">Grilled steak, fried egg, chorizo, and sweet plantains. A complete meal in every bite.</p></article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🍗 Chicken Wings</h3><span class="price">$12.00</span></div><p class="menu-desc">Crispy wings over golden fries with our signature sauces. Finger-licking good!</p></article>
         </div>
       </div>
 
       <!-- Pinchos -->
       <div class="menu-panel" id="pinchos" hidden>
         <div class="menu-grid">
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top"><h3>🍢 Pinchos De Carne</h3><span class="price">$11.00</span></div>
-            <p class="menu-desc">Grilled steak skewers with chorizo, peppers, and sweet plantains.</p>
-          </article>
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top"><h3>🍢 Pinchos De Pollo</h3><span class="price">$11.00</span></div>
-            <p class="menu-desc">Tender chicken skewers with chorizo, peppers, and maduros.</p>
-          </article>
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top"><h3>🍤 Pinchos De Camaron</h3><span class="price">$13.25</span></div>
-            <p class="menu-desc">Succulent shrimp skewers with chorizo, peppers, and plantains.</p>
-          </article>
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top"><h3>🍢 Pincho Mix</h3><span class="price">$13.25</span></div>
-            <p class="menu-desc">Chicken, steak, chorizo, peppers, and sweet plantains on one glorious skewer.</p>
-          </article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🍢 Pinchos De Carne</h3><span class="price">$11.00</span></div><p class="menu-desc">Grilled steak skewers with chorizo, peppers, and sweet plantains.</p></article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🍢 Pinchos De Pollo</h3><span class="price">$11.00</span></div><p class="menu-desc">Tender chicken skewers with chorizo, peppers, and maduros.</p></article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🍤 Pinchos De Camaron</h3><span class="price">$13.25</span></div><p class="menu-desc">Succulent shrimp skewers with chorizo, peppers, and plantains.</p></article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🍢 Pincho Mix</h3><span class="price">$13.25</span></div><p class="menu-desc">Chicken, steak, chorizo, peppers, and sweet plantains on one glorious skewer.</p></article>
         </div>
       </div>
 
       <!-- Patacon -->
       <div class="menu-panel" id="patacon" hidden>
         <div class="menu-grid">
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top"><h3>🍌 Chicken Patacon</h3><span class="price">$11.25</span></div>
-            <p class="menu-desc">Crispy plantain sandwich with juicy grilled chicken, fresh veggies, and zesty sauces.</p>
-          </article>
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top"><h3>🍌 Steak Patacon</h3><span class="price">$11.25</span></div>
-            <p class="menu-desc">Carne asada tucked between crispy plantain “buns” with lettuce, tomato, and secret sauces.</p>
-          </article>
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top"><h3>🍌 Patacon Mix</h3><span class="price">$13.00</span></div>
-            <p class="menu-desc">Double the protein—chicken and steak combined in this Latin sensation.</p>
-          </article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🍌 Chicken Patacon</h3><span class="price">$11.25</span></div><p class="menu-desc">Crispy plantain sandwich with juicy grilled chicken, fresh veggies, and zesty sauces.</p></article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🍌 Steak Patacon</h3><span class="price">$11.25</span></div><p class="menu-desc">Carne asada tucked between crispy plantain “buns” with lettuce, tomato, and secret sauces.</p></article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🍌 Patacon Mix</h3><span class="price">$13.00</span></div><p class="menu-desc">Double the protein—chicken and steak combined in this Latin sensation.</p></article>
         </div>
       </div>
 
       <!-- Specialties -->
       <div class="menu-panel" id="specialties" hidden>
         <div class="menu-grid">
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top"><h3>🐟 Encebollado Ecuatoriano</h3><span class="price">$14.00</span></div>
-            <p class="menu-desc">Traditional tuna stew with rice, toasted corn, and crispy plantain chips.</p>
-          </article>
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top"><h3>🥗 Grilled Chicken Salad</h3><span class="price">$13.00</span></div>
-            <p class="menu-desc">Grilled chicken over crisp lettuce, tomatoes, cucumber, mozzarella, and carrots.</p>
-          </article>
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top"><h3>🍌 Maduros Con Queso</h3><span class="price">$7.50</span></div>
-            <p class="menu-desc">Sweet caramelized plantains with melted cheese—sweet & savory perfection.</p>
-          </article>
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top"><h3>🌽 Elote Con Queso</h3><span class="price">$5.00</span></div>
-            <p class="menu-desc">Grilled corn smothered in cheese—Latin street food classic.</p>
-          </article>
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top"><h3>🫘 Cevichocho Mix</h3><span class="price">$12.25</span></div>
-            <p class="menu-desc">Lupini beans with shrimp, chicken, and pork skin in tangy ceviche marinade.</p>
-          </article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🐟 Encebollado Ecuatoriano</h3><span class="price">$14.00</span></div><p class="menu-desc">Traditional tuna stew with rice, toasted corn, and crispy plantain chips.</p></article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🥗 Grilled Chicken Salad</h3><span class="price">$13.00</span></div><p class="menu-desc">Grilled chicken over crisp lettuce, tomatoes, cucumber, mozzarella, and carrots.</p></article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🍌 Maduros Con Queso</h3><span class="price">$7.50</span></div><p class="menu-desc">Sweet caramelized plantains with melted cheese—sweet & savory perfection.</p></article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🌽 Elote Con Queso</h3><span class="price">$5.00</span></div><p class="menu-desc">Grilled corn smothered in cheese—Latin street food classic.</p></article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🫘 Cevichocho Mix</h3><span class="price">$12.25</span></div><p class="menu-desc">Lupini beans with shrimp, chicken, and pork skin in tangy ceviche marinade.</p></article>
         </div>
       </div>
 
       <!-- Sides -->
       <div class="menu-panel" id="sides" hidden>
         <div class="menu-grid">
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top"><h3>🍚 White Rice</h3><span class="price">Side</span></div>
-            <p class="menu-desc">Fluffy arroz blanco — perfect complement to any dish.</p>
-          </article>
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top"><h3>🍌 Tostones / Maduros</h3><span class="price">$1.50</span></div>
-            <p class="menu-desc">Crispy tostones or sweet maduros — your choice.</p>
-          </article>
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top"><h3>🥤 Natural Juices</h3><span class="price">$5.25</span></div>
-            <p class="menu-desc">Maracuyá, Limonada, Mora, or Machica (mixed) — freshly made.</p>
-          </article>
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top"><h3>🥤 Sodas & Water</h3><span class="price">$1.50</span></div>
-            <p class="menu-desc">Coca-Cola, Ginger Ale, Brisk Iced Tea, Orange Soda, Water.</p>
-          </article>
-          <article class="menu-card reveal" tabindex="0">
-            <div class="menu-top"><h3>➕ Extras</h3><span class="price">$1.50+</span></div>
-            <p class="menu-desc">Cheese/Chorizo/Egg/Plantains (+$1.50) • Shrimp (+$3.00) • Extra Meat (+$2.00)</p>
-          </article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🍚 White Rice</h3><span class="price">Side</span></div><p class="menu-desc">Fluffy arroz blanco — perfect complement to any dish.</p></article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🍌 Tostones / Maduros</h3><span class="price">$1.50</span></div><p class="menu-desc">Crispy tostones or sweet maduros — your choice.</p></article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🥤 Natural Juices</h3><span class="price">$5.25</span></div><p class="menu-desc">Maracuyá, Limonada, Mora, or Machica (mixed) — freshly made.</p></article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>🥤 Sodas & Water</h3><span class="price">$1.50</span></div><p class="menu-desc">Coca-Cola, Ginger Ale, Brisk Iced Tea, Orange Soda, Water.</p></article>
+          <article class="menu-card reveal" tabindex="0"><div class="menu-top"><h3>➕ Extras</h3><span class="price">$1.50+</span></div><p class="menu-desc">Cheese/Chorizo/Egg/Plantains (+$1.50) • Shrimp (+$3.00) • Extra Meat (+$2.00)</p></article>
         </div>
       </div>
     </div>
@@ -780,24 +612,31 @@
           <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=80&auto=format&fit=crop" alt="Loaded fries dish" />
           <span class="gallery-caption">Our Famous Salchi</span>
         </a>
+
+        <!-- Authentic Pinchos (fixed) -->
         <a class="gallery-item reveal" href="#menu-section" aria-label="Authentic Pinchos">
-          <img src="https://images.unsplash.com/photo-1599974624612-53000936068d?w=1200&q=80&auto=format&fit=crop" alt="Grilled meat skewers" />
+          <img src="https://images.unsplash.com/photo-1601924579440-834a34bfa5d2?q=80&w=1200&auto=format&fit=crop" alt="Grilled Pinchos skewers on street grill" />
           <span class="gallery-caption">Authentic Pinchos</span>
         </a>
+
         <a class="gallery-item reveal" href="#menu-section" aria-label="Encebollado Ecuatoriano">
           <img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?w=1200&q=80&auto=format&fit=crop" alt="Traditional Latin soup" />
           <span class="gallery-caption">Encebollado Ecuatoriano</span>
         </a>
+
         <a class="gallery-item reveal" href="#menu-section" aria-label="Fresh Ingredients">
           <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=1200&q=80&auto=format&fit=crop" alt="Fresh ingredients" />
           <span class="gallery-caption">Fresh Ingredients</span>
         </a>
+
         <a class="gallery-item reveal" href="#menu-section" aria-label="Patacón Perfection">
           <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=1200&q=80&auto=format&fit=crop" alt="Patacón perfection" />
           <span class="gallery-caption">Patacón Perfection</span>
         </a>
-        <a class="gallery-item reveal" href="#menu-section" aria-label="The Orange Truck">
-          <img src="https://images.unsplash.com/photo-1625938145312-47f173e42bfe?w=1200&q=80&auto=format&fit=crop" alt="Food truck atmosphere" />
+
+        <!-- Our Bright Orange Truck (fixed) -->
+        <a class="gallery-item reveal" href="#menu-section" aria-label="Our Bright Orange Truck">
+          <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?q=80&w=1200&auto=format&fit=crop" alt="Bright orange Latin food truck at night" />
           <span class="gallery-caption">Our Bright Orange Truck</span>
         </a>
       </div>
@@ -842,6 +681,7 @@
 
           <article class="info-card reveal">
             <h3>📞 Contact</h3>
+            <p>Hotline: <strong>+1 845-535-1185</strong></p>
             <p>Call ahead for large orders</p>
             <p>Catering available for events</p>
             <p>Follow us on social media for daily specials</p>
@@ -892,8 +732,8 @@
         <div class="footer-card foot-brand reveal">
           <img src="logo.png" alt="Loco Fries" />
           <h3 class="foot-title">LOCO FRIES</h3>
-          <p>Bringing authentic Ecuadorian and Latin American street food to Spring Valley, NY. Every dish is made with passion, tradition, and the freshest ingredients.</p>
-          <p style="margin-top:6px;color:#ffd36a;font-weight:700;">¡Sabor que te vuelve loco! 🍟</p>
+          <p>Discover LOCO FRIES at 240 N Main St, Spring Valley, NY. Indulge in delicious Ecuadorian-inspired fare, from mouthwatering fries to savory shrimp and empanadas. Enjoy friendly service and vibrant vibes that have customers raving. Join us today!</p>
+          <p style="margin-top:6px;color:#ffd36a;font-weight:700;">Hotline: +1 845-535-1185</p>
         </div>
 
         <div class="footer-card reveal">
@@ -901,6 +741,7 @@
           <ul class="foot-list">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Us</a></li>
+            <li><a href="#overview">Overview</a></li>
             <li><a href="#menu-section">Menu</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#location">Location</a></li>
@@ -934,9 +775,7 @@
   </footer>
 
   <script>
-    // ---------------------------
     // Mobile Nav
-    // ---------------------------
     const nav = document.getElementById('nav');
     const hamburger = document.getElementById('hamburger');
     const menu = document.getElementById('menu');
@@ -944,68 +783,40 @@
       const open = nav.classList.toggle('mobile-open');
       hamburger.setAttribute('aria-expanded', String(open));
     });
+    menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('mobile-open')));
 
-    // Close menu on link click (mobile)
-    menu?.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => nav.classList.remove('mobile-open'));
-    });
-
-    // ---------------------------
     // Header scroll state
-    // ---------------------------
-    const onScrollNav = () => {
-      if (window.scrollY > 24) nav.classList.add('scrolled');
-      else nav.classList.remove('scrolled');
-    };
+    const onScrollNav = () => { if (window.scrollY > 24) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); };
     window.addEventListener('scroll', onScrollNav); onScrollNav();
 
-    // ---------------------------
-    // Smooth scrolling for hash links
-    // ---------------------------
+    // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', (e) => {
-        const id = anchor.getAttribute('href');
-        if (!id || id === '#') return;
+        const id = anchor.getAttribute('href'); if (!id || id === '#') return;
         const target = document.querySelector(id);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
       });
     });
 
-    // ---------------------------
     // Intersection reveal
-    // ---------------------------
     const io = new IntersectionObserver((entries) => {
-      entries.forEach((en) => {
-        if (en.isIntersecting) {
-          en.target.classList.add('visible');
-          io.unobserve(en.target);
-        }
-      });
+      entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); } });
     }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
-
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    // ---------------------------
-    // Category switching (accessible)
-    // ---------------------------
+    // Category switching
     function showCategory(el, id) {
       document.querySelectorAll('.category-btn').forEach(b => {
         b.classList.toggle('active', b.dataset.target === id);
         b.setAttribute('aria-selected', String(b.dataset.target === id));
       });
-      document.querySelectorAll('.menu-panel').forEach(panel => {
-        panel.hidden = panel.id !== id;
-      });
-      // re-observe new visible items for reveal
+      document.querySelectorAll('.menu-panel').forEach(panel => { panel.hidden = panel.id !== id; });
       document.querySelectorAll(`#${id} .reveal`).forEach(item => io.observe(item));
+      // allow anchor navigation to panel ids within footer links
+      history.replaceState(null, "", `#${id}`);
     }
 
-    // ---------------------------
-    // Alive interactions: press ripple on .btn & .menu-card
-    // ---------------------------
+    // Ripple on .btn & .menu-card
     function addRipple(e) {
       const el = e.currentTarget;
       const rect = el.getBoundingClientRect();
@@ -1022,21 +833,15 @@
       span.style.opacity = '0.9';
       span.style.transition = 'transform 700ms ease, opacity 900ms ease';
       el.appendChild(span);
-      requestAnimationFrame(() => {
-        span.style.transform = 'scale(1)';
-        span.style.opacity = '0';
-      });
+      requestAnimationFrame(() => { span.style.transform = 'scale(1)'; span.style.opacity = '0'; });
       setTimeout(() => span.remove(), 900);
     }
     document.querySelectorAll('.btn, .menu-card').forEach(el => {
-      el.style.position = 'relative';
-      el.style.overflow = 'hidden';
+      el.style.position = 'relative'; el.style.overflow = 'hidden';
       el.addEventListener('pointerdown', addRipple);
     });
 
-    // ---------------------------
     // Subtle parallax on hero logo
-    // ---------------------------
     const heroLogo = document.querySelector('.hero-logo');
     document.addEventListener('pointermove', (e) => {
       if (!heroLogo) return;
@@ -1045,9 +850,7 @@
       heroLogo.style.transform = `translate3d(${x}px, ${y}px, 0)`;
     });
 
-    // ---------------------------
     // Console Easter Egg
-    // ---------------------------
     console.log('%c🍟 LOCO FRIES 🍟', 'font-size: 36px; color: #ffd36a; font-weight: 900; text-shadow: 0 2px 16px #ffb629;');
     console.log('%c¡Sabor que te vuelve loco!', 'font-size: 16px; color: #ff8a58; font-style: italic;');
     console.log('%cVisit us at 240 N Main Street, Spring Valley, NY!', 'font-size: 14px; color: #eae9f2;');
