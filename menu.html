@@ -6,599 +6,122 @@
   <title>Menu — Loco Fries | Fine Ecuadorian Cuisine</title>
   <meta name="description" content="Explore our curated menu of refined Ecuadorian specialties. From signature Salchi preparations to artisanal Pinchos and traditional Cevichochos, each dish celebrates heritage through contemporary technique." />
   <link rel="canonical" href="https://locofries.com/menu.html"/>
-
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-
   <style>
-    :root{
-      --black:#0a0a0a;
-      --charcoal:#1a1a1a;
-      --dark-gray:#2a2a2a;
-      --mid-gray:#666666;
-      --light-gray:#999999;
-      --cream:#f8f6f3;
-      --off-white:#fafaf8;
-      --gold:#d4af37;
-      --gold-dark:#b8962e;
-      --gold-light:#e8d292;
-      --accent:#8b7355;
-      
-      --serif:'Cormorant Garamond',Georgia,serif;
-      --display:'Playfair Display',Georgia,serif;
-      --sans:'Montserrat',-apple-system,system-ui,sans-serif;
-      
-      --transition:all 0.4s cubic-bezier(0.4,0,0.2,1);
-      --shadow-sm:0 2px 8px rgba(0,0,0,0.08);
-      --shadow-md:0 4px 24px rgba(0,0,0,0.12);
-      --shadow-lg:0 8px 40px rgba(0,0,0,0.16);
-    }
-    
+    :root{--black:#0a0a0a;--charcoal:#1a1a1a;--dark-gray:#2a2a2a;--mid-gray:#666666;--light-gray:#999999;--cream:#f8f6f3;--off-white:#fafaf8;--gold:#d4af37;--gold-dark:#b8962e;--gold-light:#e8d292;--accent:#8b7355;--serif:'Cormorant Garamond',Georgia,serif;--display:'Playfair Display',Georgia,serif;--sans:'Montserrat',-apple-system,system-ui,sans-serif;--transition:all 0.6s cubic-bezier(0.4,0,0.2,1);--shadow-sm:0 2px 8px rgba(0,0,0,0.08);--shadow-md:0 4px 24px rgba(0,0,0,0.12);--shadow-lg:0 8px 40px rgba(0,0,0,0.16)}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    
     html{scroll-behavior:smooth;font-size:16px}
-    
-    body{
-      font-family:var(--sans);
-      font-weight:300;
-      line-height:1.7;
-      color:var(--dark-gray);
-      background:var(--off-white);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
-    
+    body{font-family:var(--sans);font-weight:300;line-height:1.7;color:var(--dark-gray);background:var(--off-white);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
     img{max-width:100%;display:block;height:auto}
     a{text-decoration:none;color:inherit;transition:var(--transition)}
-    
-    .container{
-      max-width:1400px;
-      margin:0 auto;
-      padding:0 clamp(20px,5vw,80px);
-    }
-    
-    /* Navigation */
-    .nav-wrapper{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:rgba(250,250,248,0.98);
-      backdrop-filter:blur(20px) saturate(180%);
-      border-bottom:1px solid rgba(212,175,55,0.15);
-      box-shadow:var(--shadow-sm);
-    }
-    
-    nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:20px 0;
-      max-width:1400px;
-      margin:0 auto;
-      padding-left:clamp(20px,5vw,80px);
-      padding-right:clamp(20px,5vw,80px);
-    }
-    
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:16px;
-      font-family:var(--display);
-      font-size:clamp(18px,2.5vw,24px);
-      font-weight:600;
-      letter-spacing:0.5px;
-      color:var(--charcoal);
-    }
-    
-    .brand img{
-      width:50px;
-      height:50px;
-      border-radius:50%;
-      border:2px solid var(--gold);
-      padding:4px;
-      background:white;
-    }
-    
-    .nav-actions{
-      display:flex;
-      gap:16px;
-      align-items:center;
-    }
-    
-    .btn{
-      padding:12px 28px;
-      font-size:13px;
-      font-weight:600;
-      letter-spacing:1.2px;
-      text-transform:uppercase;
-      border:1px solid;
-      transition:var(--transition);
-      display:inline-block;
-    }
-    
-    .btn-primary{
-      background:var(--gold);
-      color:var(--charcoal);
-      border-color:var(--gold);
-    }
-    
-    .btn-primary:hover{
-      background:var(--gold-dark);
-      border-color:var(--gold-dark);
-      transform:translateY(-2px);
-      box-shadow:0 8px 24px rgba(212,175,55,0.3);
-    }
-    
-    .btn-secondary{
-      background:transparent;
-      color:var(--mid-gray);
-      border-color:rgba(42,42,42,0.2);
-    }
-    
-    .btn-secondary:hover{
-      background:var(--cream);
-      color:var(--charcoal);
-      border-color:var(--mid-gray);
-    }
-    
-    /* Hero */
-    .menu-hero{
-      min-height:50vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-      background:
-        linear-gradient(rgba(10,10,10,0.5),rgba(10,10,10,0.7)),
-        url('https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?q=80&w=2000&auto=format&fit=crop') center/cover;
-      background-attachment:fixed;
-      text-align:center;
-      color:white;
-      padding:100px 20px 80px;
-    }
-    
-    .menu-hero-content{
-      max-width:800px;
-    }
-    
-    .menu-hero h1{
-      font-family:var(--display);
-      font-size:clamp(40px,6vw,64px);
-      font-weight:500;
-      margin-bottom:20px;
-      color:white;
-    }
-    
-    .menu-hero p{
-      font-family:var(--serif);
-      font-size:clamp(18px,2.5vw,24px);
-      font-style:italic;
-      color:var(--gold-light);
-      margin-bottom:12px;
-    }
-    
-    .menu-hero .subtitle{
-      font-size:16px;
-      font-style:normal;
-      color:rgba(255,255,255,0.8);
-      max-width:600px;
-      margin:0 auto;
-      line-height:1.8;
-    }
-    
-    /* Quick Nav */
-    .quick-nav{
-      background:white;
-      border-bottom:1px solid rgba(212,175,55,0.15);
-      padding:32px 0;
-      position:sticky;
-      top:89px;
-      z-index:100;
-      box-shadow:var(--shadow-sm);
-    }
-    
-    .quick-nav-links{
-      display:flex;
-      justify-content:center;
-      gap:clamp(16px,3vw,40px);
-      flex-wrap:wrap;
-      list-style:none;
-    }
-    
-    .quick-nav-links a{
-      font-size:13px;
-      font-weight:600;
-      letter-spacing:1.5px;
-      text-transform:uppercase;
-      color:var(--mid-gray);
-      padding:8px 16px;
-      border-bottom:2px solid transparent;
-      transition:var(--transition);
-    }
-    
-    .quick-nav-links a:hover{
-      color:var(--gold);
-      border-bottom-color:var(--gold);
-    }
-    
-    /* Menu Section */
-    .menu-section{
-      padding:clamp(60px,10vw,100px) 0;
-    }
-    
-    .menu-section:nth-child(even){
-      background:white;
-    }
-    
-    .section-intro{
-      text-align:center;
-      max-width:900px;
-      margin:0 auto 60px;
-    }
-    
-    .section-label{
-      display:inline-block;
-      font-size:11px;
-      font-weight:600;
-      letter-spacing:3px;
-      text-transform:uppercase;
-      color:var(--gold);
-      margin-bottom:16px;
-    }
-    
-    .section-title{
-      font-family:var(--display);
-      font-size:clamp(32px,5vw,48px);
-      font-weight:500;
-      color:var(--charcoal);
-      margin-bottom:20px;
-    }
-    
-    .section-divider{
-      width:100px;
-      height:1px;
-      background:linear-gradient(90deg,transparent,var(--gold),transparent);
-      margin:24px auto;
-    }
-    
-    .section-description{
-      font-family:var(--serif);
-      font-size:18px;
-      font-style:italic;
-      color:var(--mid-gray);
-      line-height:1.8;
-    }
-    
-    /* Menu Grid */
-    .menu-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-      gap:clamp(24px,4vw,40px);
-      max-width:1200px;
-      margin:0 auto;
-    }
-    
-    .menu-item{
-      background:white;
-      border:1px solid rgba(212,175,55,0.1);
-      padding:32px;
-      transition:var(--transition);
-      position:relative;
-    }
-    
-    .menu-item:hover{
-      border-color:var(--gold);
-      box-shadow:var(--shadow-md);
-      transform:translateY(-4px);
-    }
-    
-    .menu-item-header{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      margin-bottom:16px;
-      gap:20px;
-    }
-    
-    .menu-item h3{
-      font-family:var(--display);
-      font-size:22px;
-      font-weight:500;
-      color:var(--charcoal);
-      line-height:1.3;
-    }
-    
-    .menu-item-price{
-      font-family:var(--serif);
-      font-size:20px;
-      font-weight:600;
-      color:var(--gold);
-      white-space:nowrap;
-    }
-    
-    .menu-item-description{
-      font-size:15px;
-      line-height:1.7;
-      color:var(--mid-gray);
-      margin-bottom:20px;
-    }
-    
-    .menu-item-tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
-    
-    .tag{
-      font-size:11px;
-      font-weight:600;
-      letter-spacing:1px;
-      text-transform:uppercase;
-      padding:6px 12px;
-      background:var(--cream);
-      color:var(--accent);
-      border:1px solid rgba(139,115,85,0.2);
-    }
-    
-    .tag.signature{
-      background:rgba(212,175,55,0.1);
-      color:var(--gold-dark);
-      border-color:var(--gold);
-    }
-    
-    /* Category Feature */
-    .category-feature{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:60px;
-      align-items:center;
-      max-width:1200px;
-      margin:0 auto 80px;
-      padding:60px 0;
-    }
-    
-    .category-image{
-      height:500px;
-      overflow:hidden;
-      position:relative;
-    }
-    
-    .category-image img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      transition:transform 0.6s ease;
-    }
-    
-    .category-feature:hover .category-image img{
-      transform:scale(1.05);
-    }
-    
-    .category-content h3{
-      font-family:var(--display);
-      font-size:36px;
-      margin-bottom:24px;
-      color:var(--charcoal);
-    }
-    
-    .category-content p{
-      font-size:16px;
-      line-height:1.9;
-      color:var(--mid-gray);
-      margin-bottom:16px;
-    }
-    
-    /* Wine Pairing Box */
-    .pairing-suggestion{
-      margin-top:20px;
-      padding:16px 20px;
-      background:rgba(212,175,55,0.05);
-      border-left:3px solid var(--gold);
-    }
-    
-    .pairing-suggestion label{
-      font-size:11px;
-      font-weight:700;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      color:var(--gold);
-      display:block;
-      margin-bottom:8px;
-    }
-    
-    .pairing-suggestion p{
-      font-size:14px;
-      font-style:italic;
-      color:var(--mid-gray);
-      margin:0;
-    }
-    
-    /* Beverage Section */
-    .beverage-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:32px;
-      max-width:1000px;
-      margin:0 auto;
-    }
-    
-    .beverage-category{
-      text-align:center;
-      padding:32px 24px;
-      background:white;
-      border:1px solid rgba(212,175,55,0.1);
-      transition:var(--transition);
-    }
-    
-    .beverage-category:hover{
-      border-color:var(--gold);
-      box-shadow:var(--shadow-sm);
-    }
-    
-    .beverage-category h4{
-      font-family:var(--display);
-      font-size:24px;
-      margin-bottom:12px;
-      color:var(--charcoal);
-    }
-    
-    .beverage-category p{
-      font-size:14px;
-      color:var(--mid-gray);
-      margin-bottom:16px;
-    }
-    
-    .beverage-price{
-      font-family:var(--serif);
-      font-size:18px;
-      font-weight:600;
-      color:var(--gold);
-    }
-    
-    /* Footer Info */
-    .menu-footer-info{
-      text-align:center;
-      padding:80px 20px;
-      background:var(--charcoal);
-      color:white;
-    }
-    
-    .menu-footer-info h3{
-      font-family:var(--display);
-      font-size:36px;
-      color:white;
-      margin-bottom:24px;
-    }
-    
-    .menu-footer-info p{
-      font-size:16px;
-      color:rgba(255,255,255,0.7);
-      max-width:700px;
-      margin:0 auto 32px;
-      line-height:1.8;
-    }
-    
-    .footer-note{
-      font-size:13px;
-      color:rgba(255,255,255,0.5);
-      font-style:italic;
-      margin-top:40px;
-      padding-top:32px;
-      border-top:1px solid rgba(255,255,255,0.1);
-    }
-    
-    /* Simple Footer */
-    footer{
-      background:var(--black);
-      color:rgba(255,255,255,0.5);
-      padding:40px 20px;
-      text-align:center;
-      font-size:14px;
-    }
-    
-    footer a{
-      color:var(--gold);
-    }
-    
-    footer a:hover{
-      color:var(--gold-light);
-    }
-    
-    /* Floating Reserve */
-    .float-reserve{
-      position:fixed;
-      bottom:40px;
-      right:40px;
-      z-index:999;
-      animation:float 3s ease-in-out infinite;
-    }
-    
-    @keyframes float{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-10px)}
-    }
-    
-    .float-reserve a{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      padding:16px 28px;
-      background:var(--gold);
-      color:var(--charcoal);
-      font-size:13px;
-      font-weight:700;
-      letter-spacing:1.2px;
-      text-transform:uppercase;
-      border-radius:50px;
-      box-shadow:0 8px 32px rgba(212,175,55,0.4);
-      transition:var(--transition);
-    }
-    
-    .float-reserve a:hover{
-      background:var(--gold-dark);
-      transform:translateY(-4px);
-      box-shadow:0 12px 40px rgba(212,175,55,0.5);
-    }
-    
-    /* Responsive */
-    @media (max-width:1024px){
-      .category-feature{
-        grid-template-columns:1fr;
-        gap:40px;
-      }
-      
-      .category-image{
-        height:400px;
-      }
-    }
+    .container{max-width:1400px;margin:0 auto;padding:0 clamp(20px,5vw,80px)}
+    
+    .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));z-index:9998;transform-origin:left;transform:scaleX(0);transition:transform 0.1s ease}
+    
+    .nav-wrapper{position:sticky;top:0;z-index:1000;background:rgba(250,250,248,0.95);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid rgba(212,175,55,0.15);box-shadow:var(--shadow-sm)}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;max-width:1400px;margin:0 auto;padding-left:clamp(20px,5vw,80px);padding-right:clamp(20px,5vw,80px)}
+    .brand{display:flex;align-items:center;gap:16px;font-family:var(--display);font-size:clamp(18px,2.5vw,24px);font-weight:600;letter-spacing:0.5px;color:var(--charcoal);position:relative}
+    .brand::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);transition:width 0.4s ease}
+    .brand:hover::after{width:100%}
+    .brand img{width:50px;height:50px;border-radius:50%;border:2px solid var(--gold);padding:4px;background:white;transition:var(--transition)}
+    .brand:hover img{transform:rotate(360deg) scale(1.1)}
+    .nav-actions{display:flex;gap:16px;align-items:center}
+    .btn{padding:12px 28px;font-size:13px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;border:1px solid;transition:var(--transition);display:inline-block;position:relative;overflow:hidden}
+    .btn-primary{background:var(--gold);color:var(--charcoal);border-color:var(--gold);z-index:1}
+    .btn-primary::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;background:var(--gold-dark);border-radius:50%;transform:translate(-50%,-50%);transition:width 0.6s ease,height 0.6s ease;z-index:-1}
+    .btn-primary:hover::before{width:300px;height:300px}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(212,175,55,0.3)}
+    .btn-secondary{background:transparent;color:var(--mid-gray);border-color:rgba(42,42,42,0.2)}
+    .btn-secondary:hover{background:var(--cream);color:var(--charcoal);border-color:var(--mid-gray)}
+    
+    .menu-hero{min-height:50vh;display:flex;align-items:center;justify-content:center;position:relative;background:linear-gradient(rgba(10,10,10,0.5),rgba(10,10,10,0.7)),url('https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?q=80&w=2000&auto=format&fit=crop') center/cover;background-attachment:fixed;text-align:center;color:white;padding:100px 20px 80px}
+    .menu-hero-content{max-width:800px}
+    .menu-hero h1{font-family:var(--display);font-size:clamp(40px,6vw,64px);font-weight:500;margin-bottom:20px;color:white;opacity:0;animation:fadeInUp 1s ease-out 0.2s forwards}
+    .menu-hero p{font-family:var(--serif);font-size:clamp(18px,2.5vw,24px);font-style:italic;color:var(--gold-light);margin-bottom:12px;opacity:0;animation:fadeInUp 1s ease-out 0.4s forwards}
+    .menu-hero .subtitle{font-size:16px;font-style:normal;color:rgba(255,255,255,0.8);max-width:600px;margin:0 auto;line-height:1.8;opacity:0;animation:fadeInUp 1s ease-out 0.6s forwards}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    
+    .quick-nav{background:white;border-bottom:1px solid rgba(212,175,55,0.15);padding:32px 0;position:sticky;top:89px;z-index:100;box-shadow:var(--shadow-sm)}
+    .quick-nav-links{display:flex;justify-content:center;gap:clamp(16px,3vw,40px);flex-wrap:wrap;list-style:none}
+    .quick-nav-links a{font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid-gray);padding:8px 16px;border-bottom:2px solid transparent;transition:var(--transition)}
+    .quick-nav-links a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+    
+    .menu-section{padding:clamp(60px,10vw,100px) 0}
+    .menu-section:nth-child(even){background:white}
+    .section-intro{text-align:center;max-width:900px;margin:0 auto 60px}
+    .section-label{display:inline-block;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+    .section-title{font-family:var(--display);font-size:clamp(32px,5vw,48px);font-weight:500;color:var(--charcoal);margin-bottom:20px}
+    .section-divider{width:100px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:24px auto;position:relative}
+    .section-divider::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:6px;height:6px;background:var(--gold);border-radius:50%}
+    .section-description{font-family:var(--serif);font-size:18px;font-style:italic;color:var(--mid-gray);line-height:1.8}
+    
+    .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:clamp(24px,4vw,40px);max-width:1200px;margin:0 auto}
+    .menu-item{background:white;border:1px solid rgba(212,175,55,0.1);padding:32px;transition:var(--transition);position:relative;overflow:hidden;opacity:0;transform:translateY(30px);animation:fadeInUp 0.8s ease-out forwards}
+    .menu-item::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(212,175,55,0.05),transparent 70%);transform:scale(0);transition:transform 0.6s ease;pointer-events:none}
+    .menu-item:hover{border-color:var(--gold);box-shadow:var(--shadow-md);transform:translateY(-4px)}
+    .menu-item:hover::before{transform:scale(1)}
+    .menu-item-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;gap:20px}
+    .menu-item h3{font-family:var(--display);font-size:22px;font-weight:500;color:var(--charcoal);line-height:1.3;transition:color 0.3s ease}
+    .menu-item:hover h3{color:var(--gold)}
+    .menu-item-price{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--gold);white-space:nowrap}
+    .menu-item-description{font-size:15px;line-height:1.7;color:var(--mid-gray);margin-bottom:20px}
+    .menu-item-tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;background:var(--cream);color:var(--accent);border:1px solid rgba(139,115,85,0.2);transition:var(--transition)}
+    .tag.signature{background:rgba(212,175,55,0.1);color:var(--gold-dark);border-color:var(--gold)}
+    .menu-item:hover .tag{transform:translateY(-2px)}
+    
+    .pairing-suggestion{margin-top:20px;padding:16px 20px;background:rgba(212,175,55,0.05);border-left:3px solid var(--gold)}
+    .pairing-suggestion label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px}
+    .pairing-suggestion p{font-size:14px;font-style:italic;color:var(--mid-gray);margin:0}
+    
+    .beverage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;max-width:1000px;margin:0 auto}
+    .beverage-category{text-align:center;padding:32px 24px;background:white;border:1px solid rgba(212,175,55,0.1);transition:var(--transition);opacity:0;transform:scale(0.95);animation:fadeInScale 0.8s ease-out forwards}
+    .beverage-category:hover{border-color:var(--gold);box-shadow:var(--shadow-sm);transform:translateY(-4px) scale(1)}
+    @keyframes fadeInScale{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
+    .beverage-category h4{font-family:var(--display);font-size:24px;margin-bottom:12px;color:var(--charcoal)}
+    .beverage-category p{font-size:14px;color:var(--mid-gray);margin-bottom:16px}
+    .beverage-price{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--gold)}
+    
+    .menu-footer-info{text-align:center;padding:80px 20px;background:var(--charcoal);color:white}
+    .menu-footer-info h3{font-family:var(--display);font-size:36px;color:white;margin-bottom:24px}
+    .menu-footer-info p{font-size:16px;color:rgba(255,255,255,0.7);max-width:700px;margin:0 auto 32px;line-height:1.8}
+    .footer-note{font-size:13px;color:rgba(255,255,255,0.5);font-style:italic;margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.1)}
+    
+    footer{background:var(--black);color:rgba(255,255,255,0.5);padding:40px 20px;text-align:center;font-size:14px}
+    footer a{color:var(--gold)}
+    footer a:hover{color:var(--gold-light)}
+    
+    .float-reserve{position:fixed;bottom:40px;right:40px;z-index:999;animation:float 3s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    .float-reserve a{display:flex;align-items:center;gap:12px;padding:16px 28px;background:var(--gold);color:var(--charcoal);font-size:13px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;border-radius:50px;box-shadow:0 8px 32px rgba(212,175,55,0.4);transition:all 0.4s cubic-bezier(0.4,0,0.2,1);position:relative;overflow:hidden}
+    .float-reserve a::before{content:'';position:absolute;top:50%;left:50%;width:0;height:0;background:rgba(255,255,255,0.3);border-radius:50%;transform:translate(-50%,-50%);transition:width 0.6s ease,height 0.6s ease}
+    .float-reserve a:hover::before{width:200px;height:200px}
+    .float-reserve a:hover{background:var(--gold-dark);transform:translateY(-4px) scale(1.05);box-shadow:0 12px 40px rgba(212,175,55,0.5)}
+    
+    .reveal{opacity:0;transform:translateY(40px);transition:all 0.8s cubic-bezier(0.4,0,0.2,1)}
+    .reveal.active{opacity:1;transform:translateY(0)}
     
     @media (max-width:768px){
-      .quick-nav{
-        top:89px;
-      }
-      
-      .menu-grid{
-        grid-template-columns:1fr;
-      }
-      
-      .nav-actions{
-        gap:8px;
-      }
-      
-      .btn{
-        padding:10px 20px;
-        font-size:11px;
-      }
-      
-      .float-reserve{
-        bottom:20px;
-        right:20px;
-      }
-      
-      .float-reserve a{
-        padding:12px 20px;
-        font-size:11px;
-      }
+      .menu-grid{grid-template-columns:1fr}
+      .nav-actions{gap:8px}
+      .btn{padding:10px 20px;font-size:11px}
+      .float-reserve{bottom:20px;right:20px}
+      .float-reserve a{padding:12px 20px;font-size:11px}
     }
   </style>
 </head>
 <body>
-
-  <!-- Navigation -->
+  <div class="scroll-progress"></div>
   <div class="nav-wrapper">
     <nav>
-      <a class="brand" href="index.html">
-        <img src="logo.png" alt="Loco Fries"/>
-        <span>LOCO FRIES</span>
-      </a>
+      <a class="brand" href="index.html"><img src="logo.png" alt="Loco Fries"/><span>LOCO FRIES</span></a>
       <div class="nav-actions">
         <a class="btn btn-secondary" href="index.html">← Home</a>
-        <a class="btn btn-primary" href="https://www.google.com/maps/place/240+N+Main+St,+Spring+Valley,+NY+10977,+United+States" target="_blank" rel="noopener">Reserve</a>
+        <a class="btn btn-primary" href="https://loco-fries.restaurants-world.com/" target="_blank" rel="noopener">Reserve</a>
       </div>
     </nav>
   </div>
-
-  <!-- Hero -->
+  
   <section class="menu-hero">
     <div class="menu-hero-content">
       <h1>Our Menu</h1>
@@ -606,8 +129,7 @@
       <p class="subtitle">Each dish represents a careful balance of tradition and innovation, showcasing the vibrant flavors of Latin America through refined culinary technique.</p>
     </div>
   </section>
-
-  <!-- Quick Navigation -->
+  
   <nav class="quick-nav">
     <ul class="quick-nav-links">
       <li><a href="#salchi">Salchi Specialties</a></li>
@@ -619,424 +141,225 @@
       <li><a href="#beverages">Beverages</a></li>
     </ul>
   </nav>
-
-  <!-- SALCHI SPECIALTIES -->
+  
   <section class="menu-section" id="salchi">
     <div class="container">
-      <div class="section-intro">
+      <div class="section-intro reveal">
         <span class="section-label">Signature Collection</span>
         <h2 class="section-title">Salchi Specialties</h2>
         <div class="section-divider"></div>
-        <p class="section-description">Our interpretation of Ecuador's beloved street food classic, elevated with premium ingredients and refined presentation. Each preparation showcases hand-cut fries, house-made sauces, and carefully selected proteins.</p>
+        <p class="section-description">Our interpretation of Ecuador's beloved street food classic, elevated with premium ingredients and refined presentation.</p>
       </div>
-      
-      <div class="category-feature">
-        <div class="category-image">
-          <img src="https://images.unsplash.com/photo-1630384048699-d9bc2c00cd1c?q=80&w=1600&auto=format&fit=crop" alt="Artisanal loaded fries presentation"/>
-        </div>
-        <div class="category-content">
-          <h3>The Art of Salchi</h3>
-          <p>Originating from the vibrant streets of Quito, Salchipapas has been transformed through our culinary lens while honoring its roots. We begin with Kennebec potatoes, hand-cut and twice-fried to achieve the perfect balance of crispy exterior and fluffy interior.</p>
-          <p>Each component is prepared with intention—from our artisanal sausages to the carefully calibrated sauces that bring harmony to every bite. This is comfort food elevated to an art form.</p>
-        </div>
-      </div>
-      
       <div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Salchi Classic</h3>
-            <span class="menu-item-price">$18</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.1s">
+          <div class="menu-item-header"><h3>Salchi Classic</h3><span class="menu-item-price">$18</span></div>
           <p class="menu-item-description">Hand-cut Kennebec fries, artisanal beef sausage, heirloom tomato and sweet onion salad, signature house sauces including ají amarillo aioli and chimichurri verde.</p>
-          <div class="menu-item-tags">
-            <span class="tag signature">Signature</span>
-            <span class="tag">Traditional</span>
-          </div>
+          <div class="menu-item-tags"><span class="tag signature">Signature</span><span class="tag">Traditional</span></div>
         </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Salchi Pollo</h3>
-            <span class="menu-item-price">$22</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.2s">
+          <div class="menu-item-header"><h3>Salchi Pollo</h3><span class="menu-item-price">$22</span></div>
           <p class="menu-item-description">Crispy fries crowned with achiote-marinated grilled chicken breast, roasted garlic aioli, cilantro-lime crema, pickled red onions, and fresh cilantro.</p>
-          <div class="menu-item-tags">
-            <span class="tag">Chef's Choice</span>
-          </div>
-          <div class="pairing-suggestion">
-            <label>Pairing Suggestion</label>
-            <p>Pairs beautifully with our fresh Maracuyá juice</p>
-          </div>
+          <div class="menu-item-tags"><span class="tag">Chef's Choice</span></div>
+          <div class="pairing-suggestion"><label>Pairing Suggestion</label><p>Pairs beautifully with our fresh Maracuyá juice</p></div>
         </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Salchi Carne Asada</h3>
-            <span class="menu-item-price">$24</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.3s">
+          <div class="menu-item-header"><h3>Salchi Carne Asada</h3><span class="menu-item-price">$24</span></div>
           <p class="menu-item-description">Premium hanger steak marinated in naranjilla and cumin, grilled to perfection, served over golden fries with chimichurri, roasted peppers, and aged queso fresco.</p>
-          <div class="menu-item-tags">
-            <span class="tag signature">Signature</span>
-            <span class="tag">Premium Cut</span>
-          </div>
+          <div class="menu-item-tags"><span class="tag signature">Signature</span><span class="tag">Premium Cut</span></div>
         </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Salchi Mar y Tierra</h3>
-            <span class="menu-item-price">$28</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.4s">
+          <div class="menu-item-header"><h3>Salchi Mar y Tierra</h3><span class="menu-item-price">$28</span></div>
           <p class="menu-item-description">An indulgent composition featuring grilled chicken, seared skirt steak, wild-caught shrimp, finished with encebollado-inspired broth reduction and microgreens.</p>
-          <div class="menu-item-tags">
-            <span class="tag signature">Signature</span>
-            <span class="tag">Premium</span>
-          </div>
+          <div class="menu-item-tags"><span class="tag signature">Signature</span><span class="tag">Premium</span></div>
         </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Salchi Churrasco</h3>
-            <span class="menu-item-price">$26</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.5s">
+          <div class="menu-item-header"><h3>Salchi Churrasco</h3><span class="menu-item-price">$26</span></div>
           <p class="menu-item-description">Inspired by traditional churrasco: grilled steak, farm-fresh fried egg with liquid yolk, house-made chorizo, caramelized sweet plantains, all harmoniously united over crispy fries.</p>
-          <div class="menu-item-tags">
-            <span class="tag">Traditional</span>
-            <span class="tag">Hearty</span>
-          </div>
+          <div class="menu-item-tags"><span class="tag">Traditional</span><span class="tag">Hearty</span></div>
         </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Alitas Doradas</h3>
-            <span class="menu-item-price">$22</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.6s">
+          <div class="menu-item-header"><h3>Alitas Doradas</h3><span class="menu-item-price">$22</span></div>
           <p class="menu-item-description">Crispy chicken wings with choice of sauce—ají amarillo glaze, tamarind BBQ, or traditional hot—served over seasoned fries with blue cheese crema and celery.</p>
-          <div class="menu-item-tags">
-            <span class="tag">Crispy</span>
-          </div>
+          <div class="menu-item-tags"><span class="tag">Crispy</span></div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- PINCHOS -->
+  
   <section class="menu-section" id="pinchos">
     <div class="container">
-      <div class="section-intro">
+      <div class="section-intro reveal">
         <span class="section-label">Grilled Excellence</span>
         <h2 class="section-title">Pinchos</h2>
         <div class="section-divider"></div>
         <p class="section-description">The ancient art of skewer grilling, perfected. Each pincho showcases our commitment to quality proteins, optimal char, and the smoky complexity that only live-fire cooking can achieve.</p>
       </div>
-      
       <div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Pincho de Carne</h3>
-            <span class="menu-item-price">$24</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.1s">
+          <div class="menu-item-header"><h3>Pincho de Carne</h3><span class="menu-item-price">$24</span></div>
           <p class="menu-item-description">Prime beef tenderloin skewer, house chorizo, caramelized plantains, bell peppers, finished with herb chimichurri and served with arroz con ajo.</p>
-          <div class="menu-item-tags">
-            <span class="tag">Charcoal Grilled</span>
-          </div>
+          <div class="menu-item-tags"><span class="tag">Charcoal Grilled</span></div>
         </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Pincho de Pollo</h3>
-            <span class="menu-item-price">$22</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.2s">
+          <div class="menu-item-header"><h3>Pincho de Pollo</h3><span class="menu-item-price">$22</span></div>
           <p class="menu-item-description">Free-range chicken breast, marinated in achiote and citrus, skewered with tricolor peppers, chorizo, served with cilantro rice and ají verde.</p>
-          <div class="menu-item-tags">
-            <span class="tag">Free-Range</span>
-          </div>
+          <div class="menu-item-tags"><span class="tag">Free-Range</span></div>
         </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Pincho de Camarón</h3>
-            <span class="menu-item-price">$26</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.3s">
+          <div class="menu-item-header"><h3>Pincho de Camarón</h3><span class="menu-item-price">$26</span></div>
           <p class="menu-item-description">Wild-caught gulf shrimp, sweet plantain, roasted peppers, glazed with garlic-butter and ají amarillo, accompanied by coconut rice.</p>
-          <div class="menu-item-tags">
-            <span class="tag signature">Signature</span>
-            <span class="tag">Sustainable</span>
-          </div>
-          <div class="pairing-suggestion">
-            <label>Wine Pairing</label>
-            <p>Albariño or Verdejo complements the citrus notes</p>
-          </div>
+          <div class="menu-item-tags"><span class="tag signature">Signature</span><span class="tag">Sustainable</span></div>
+          <div class="pairing-suggestion"><label>Wine Pairing</label><p>Albariño or Verdejo complements the citrus notes</p></div>
         </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Pincho Mixto</h3>
-            <span class="menu-item-price">$28</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.4s">
+          <div class="menu-item-header"><h3>Pincho Mixto</h3><span class="menu-item-price">$28</span></div>
           <p class="menu-item-description">A celebration of flavors: beef tenderloin, chicken breast, chorizo, and sweet plantains, served with dual sauces—chimichurri and ají crema.</p>
-          <div class="menu-item-tags">
-            <span class="tag">For Sharing</span>
-            <span class="tag">Premium</span>
-          </div>
+          <div class="menu-item-tags"><span class="tag">For Sharing</span><span class="tag">Premium</span></div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- PATACON -->
+  
   <section class="menu-section" id="patacon">
     <div class="container">
-      <div class="section-intro">
+      <div class="section-intro reveal">
         <span class="section-label">Ecuadorian Innovation</span>
         <h2 class="section-title">Patacón Sandwiches</h2>
         <div class="section-divider"></div>
-        <p class="section-description">Twice-fried green plantains form the foundation of these unique sandwiches, offering a gluten-free alternative with remarkable texture and subtle sweetness that complements our savory fillings.</p>
+        <p class="section-description">Twice-fried green plantains form the foundation of these unique sandwiches, offering a gluten-free alternative with remarkable texture.</p>
       </div>
-      
       <div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Patacón de Pollo</h3>
-            <span class="menu-item-price">$22</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.1s">
+          <div class="menu-item-header"><h3>Patacón de Pollo</h3><span class="menu-item-price">$22</span></div>
           <p class="menu-item-description">Crispy plantain "buns" embrace achiote-marinated grilled chicken, butter lettuce, heirloom tomatoes, pickled onions, avocado, and cilantro-lime aioli.</p>
-          <div class="menu-item-tags">
-            <span class="tag">Gluten-Free</span>
-            <span class="tag">Traditional</span>
-          </div>
+          <div class="menu-item-tags"><span class="tag">Gluten-Free</span><span class="tag">Traditional</span></div>
         </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Patacón de Carne</h3>
-            <span class="menu-item-price">$24</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.2s">
+          <div class="menu-item-header"><h3>Patacón de Carne</h3><span class="menu-item-price">$24</span></div>
           <p class="menu-item-description">Grilled skirt steak, caramelized onions, roasted red peppers, arugula, aged queso fresco, and house-made ají amarillo sauce between golden plantain patties.</p>
-          <div class="menu-item-tags">
-            <span class="tag">Gluten-Free</span>
-          </div>
+          <div class="menu-item-tags"><span class="tag">Gluten-Free</span></div>
         </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Patacón Mixto</h3>
-            <span class="menu-item-price">$26</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.3s">
+          <div class="menu-item-header"><h3>Patacón Mixto</h3><span class="menu-item-price">$26</span></div>
           <p class="menu-item-description">The best of both worlds—tender steak and marinated chicken, complemented by fresh vegetables, three cheeses, and our signature sauce medley.</p>
-          <div class="menu-item-tags">
-            <span class="tag">Gluten-Free</span>
-            <span class="tag">Premium</span>
-          </div>
+          <div class="menu-item-tags"><span class="tag">Gluten-Free</span><span class="tag">Premium</span></div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- CEVICHOCHOS -->
+  
   <section class="menu-section" id="cevichochos">
     <div class="container">
-      <div class="section-intro">
+      <div class="section-intro reveal">
         <span class="section-label">Coastal Tradition</span>
         <h2 class="section-title">Cevichochos</h2>
         <div class="section-divider"></div>
-        <p class="section-description">A unique Ecuadorian creation where lupini beans meet ceviche preparation—bright, acidic, refreshing. Each bowl showcases the perfect balance of citrus, protein, and textural elements.</p>
+        <p class="section-description">A unique Ecuadorian creation where lupini beans meet ceviche preparation—bright, acidic, refreshing.</p>
       </div>
-      
       <div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Cevichocho de Pollo</h3>
-            <span class="menu-item-price">$20</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.1s">
+          <div class="menu-item-header"><h3>Cevichocho de Pollo</h3><span class="menu-item-price">$20</span></div>
           <p class="menu-item-description">Tender poached chicken, lupini beans, lime-cured red onions, cilantro, tomato, tostado crunch, finished with leche de tigre and ají.</p>
-          <div class="menu-item-tags">
-            <span class="tag">Refreshing</span>
-            <span class="tag">Protein-Rich</span>
-          </div>
+          <div class="menu-item-tags"><span class="tag">Refreshing</span><span class="tag">Protein-Rich</span></div>
         </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Cevichocho de Cuero</h3>
-            <span class="menu-item-price">$20</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.2s">
+          <div class="menu-item-header"><h3>Cevichocho de Cuero</h3><span class="menu-item-price">$20</span></div>
           <p class="menu-item-description">Traditional pork skin, expertly prepared for optimal texture, with chochos, citrus marinade, red onion, cilantro, corn nuts, and house-made hot sauce.</p>
-          <div class="menu-item-tags">
-            <span class="tag">Traditional</span>
-            <span class="tag">Bold</span>
-          </div>
+          <div class="menu-item-tags"><span class="tag">Traditional</span><span class="tag">Bold</span></div>
         </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Cevichocho de Camarón</h3>
-            <span class="menu-item-price">$24</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.3s">
+          <div class="menu-item-header"><h3>Cevichocho de Camarón</h3><span class="menu-item-price">$24</span></div>
           <p class="menu-item-description">Fresh gulf shrimp, cured in lime and citrus, lupini beans, cilantro, tomato, avocado, plantain chips, finished with tiger's milk reduction.</p>
-          <div class="menu-item-tags">
-            <span class="tag signature">Signature</span>
-            <span class="tag">Light</span>
-          </div>
-          <div class="pairing-suggestion">
-            <label>Perfect With</label>
-            <p>Crisp white wine or fresh limonada</p>
-          </div>
+          <div class="menu-item-tags"><span class="tag signature">Signature</span><span class="tag">Light</span></div>
         </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Cevichocho Mar y Tierra</h3>
-            <span class="menu-item-price">$26</span>
-          </div>
-          <p class="menu-item-description">A harmonious trinity: shrimp, chicken, and chicharrón, united with lupini beans, citrus marinade, fresh herbs, and a medley of traditional accompaniments.</p>
-          <div class="menu-item-tags">
-            <span class="tag">Premium</span>
-            <span class="tag">Complex</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.4s">
+          <div class="menu-item-header"><h3>Cevichocho Mar y Tierra</h3><span class="menu-item-price">$26</span></div>
+          <p class="menu-item-description">A harmonious trinity: shrimp, chicken, and chicharrón, united with lupini beans, citrus marinade, fresh herbs, and traditional accompaniments.</p>
+          <div class="menu-item-tags"><span class="tag">Premium</span><span class="tag">Complex</span></div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- ENSALADA -->
+  
   <section class="menu-section" id="ensalada">
     <div class="container">
-      <div class="section-intro">
+      <div class="section-intro reveal">
         <span class="section-label">Fresh & Vibrant</span>
         <h2 class="section-title">Ensalada</h2>
         <div class="section-divider"></div>
-        <p class="section-description">Garden-fresh compositions that celebrate seasonal produce and bold flavors, perfect as a light entrée or refined accompaniment.</p>
+        <p class="section-description">Garden-fresh compositions that celebrate seasonal produce and bold flavors.</p>
       </div>
-      
       <div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Ensalada Pollo a la Parrilla</h3>
-            <span class="menu-item-price">$22</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.1s">
+          <div class="menu-item-header"><h3>Ensalada Pollo a la Parrilla</h3><span class="menu-item-price">$22</span></div>
           <p class="menu-item-description">Grilled chicken breast over mixed organic greens, heirloom tomatoes, English cucumber, julienned carrots, fresh mozzarella pearls, toasted pepitas, citrus vinaigrette.</p>
-          <div class="menu-item-tags">
-            <span class="tag">Light</span>
-            <span class="tag">Fresh</span>
-          </div>
+          <div class="menu-item-tags"><span class="tag">Light</span><span class="tag">Fresh</span></div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- HOUSE SPECIALTIES -->
+  
   <section class="menu-section" id="specialties">
     <div class="container">
-      <div class="section-intro">
+      <div class="section-intro reveal">
         <span class="section-label">Traditional Excellence</span>
         <h2 class="section-title">House Specialties & Accompaniments</h2>
         <div class="section-divider"></div>
-        <p class="section-description">Authentic Ecuadorian specialties and thoughtfully prepared sides that round out your dining experience.</p>
       </div>
-      
       <div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Encebollado Ecuatoriano</h3>
-            <span class="menu-item-price">$28</span>
-          </div>
-          <p class="menu-item-description">Our interpretation of Ecuador's national dish: fresh albacore tuna, yuca, pickled red onions, tomato, cilantro, served with white rice, tostado, and crispy plantain chips.</p>
-          <div class="menu-item-tags">
-            <span class="tag signature">Signature</span>
-            <span class="tag">Traditional</span>
-            <span class="tag">Seafood</span>
-          </div>
-          <div class="pairing-suggestion">
-            <label>Authentic Experience</label>
-            <p>Best enjoyed as a restorative, soul-warming meal</p>
-          </div>
+        <div class="menu-item" style="animation-delay:0.1s">
+          <div class="menu-item-header"><h3>Encebollado Ecuatoriano</h3><span class="menu-item-price">$28</span></div>
+          <p class="menu-item-description">Ecuador's national dish: fresh albacore tuna, yuca, pickled red onions, tomato, cilantro, served with white rice, tostado, and crispy plantain chips.</p>
+          <div class="menu-item-tags"><span class="tag signature">Signature</span><span class="tag">Traditional</span><span class="tag">Seafood</span></div>
         </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Maduros con Queso</h3>
-            <span class="menu-item-price">$14</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.2s">
+          <div class="menu-item-header"><h3>Maduros con Queso</h3><span class="menu-item-price">$14</span></div>
           <p class="menu-item-description">Caramelized ripe plantains with melted aged queso fresco, finished with crema and a touch of cinnamon—sweet, savory, irresistible.</p>
-          <div class="menu-item-tags">
-            <span class="tag">Vegetarian</span>
-            <span class="tag">Sweet & Savory</span>
-          </div>
+          <div class="menu-item-tags"><span class="tag">Vegetarian</span><span class="tag">Sweet & Savory</span></div>
         </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Elote con Queso</h3>
-            <span class="menu-item-price">$12</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.3s">
+          <div class="menu-item-header"><h3>Elote con Queso</h3><span class="menu-item-price">$12</span></div>
           <p class="menu-item-description">Grilled corn on the cob, slathered with herb butter, rolled in cotija cheese, finished with lime and chili powder.</p>
-          <div class="menu-item-tags">
-            <span class="tag">Vegetarian</span>
-          </div>
+          <div class="menu-item-tags"><span class="tag">Vegetarian</span></div>
         </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Tostones o Maduros</h3>
-            <span class="menu-item-price">$8</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.4s">
+          <div class="menu-item-header"><h3>Tostones o Maduros</h3><span class="menu-item-price">$8</span></div>
           <p class="menu-item-description">Your choice of crispy green plantain tostones with garlic mojo, or caramelized sweet maduros with crema.</p>
-          <div class="menu-item-tags">
-            <span class="tag">Side</span>
-            <span class="tag">Vegan Option</span>
-          </div>
+          <div class="menu-item-tags"><span class="tag">Side</span><span class="tag">Vegan Option</span></div>
         </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Arroz Blanco</h3>
-            <span class="menu-item-price">$6</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.5s">
+          <div class="menu-item-header"><h3>Arroz Blanco</h3><span class="menu-item-price">$6</span></div>
           <p class="menu-item-description">Perfectly steamed white rice, the ideal accompaniment to any dish.</p>
-          <div class="menu-item-tags">
-            <span class="tag">Side</span>
-            <span class="tag">Vegan</span>
-          </div>
+          <div class="menu-item-tags"><span class="tag">Side</span><span class="tag">Vegan</span></div>
         </div>
-
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>Premium Enhancements</h3>
-            <span class="menu-item-price">Varies</span>
-          </div>
+        <div class="menu-item" style="animation-delay:0.6s">
+          <div class="menu-item-header"><h3>Premium Enhancements</h3><span class="menu-item-price">Varies</span></div>
           <p class="menu-item-description">Elevate your dish: Aged Queso +$3 | House Chorizo +$3 | Farm Egg +$3 | Sweet Plantains +$3 | Wild Shrimp +$6 | Premium Steak +$8</p>
-          <div class="menu-item-tags">
-            <span class="tag">Customization</span>
-          </div>
+          <div class="menu-item-tags"><span class="tag">Customization</span></div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- BEVERAGES -->
+  
   <section class="menu-section" id="beverages">
     <div class="container">
-      <div class="section-intro">
+      <div class="section-intro reveal">
         <span class="section-label">To Complement</span>
         <h2 class="section-title">Beverages</h2>
         <div class="section-divider"></div>
-        <p class="section-description">Thoughtfully curated refreshments, from traditional Ecuadorian preparations to classic accompaniments.</p>
       </div>
-      
       <div class="beverage-grid">
-        <div class="beverage-category">
+        <div class="beverage-category" style="animation-delay:0.1s">
           <h4>Fresh Juices</h4>
           <p>Maracuyá | Limonada | Mora | Machica<br><em>Made to order with fresh fruit</em></p>
           <div class="beverage-price">$12</div>
         </div>
-
-        <div class="beverage-category">
+        <div class="beverage-category" style="animation-delay:0.2s">
           <h4>Traditional Sodas</h4>
           <p>Cola | Ginger Ale | Iced Tea<br>Orange Soda | Sparkling Water</p>
           <div class="beverage-price">$4</div>
         </div>
-
-        <div class="beverage-category">
+        <div class="beverage-category" style="animation-delay:0.3s">
           <h4>Premium Water</h4>
           <p>Still or Sparkling<br><em>Sourced from mountain springs</em></p>
           <div class="beverage-price">$6</div>
@@ -1044,34 +367,50 @@
       </div>
     </div>
   </section>
-
-  <!-- Footer Info -->
+  
   <section class="menu-footer-info">
     <div class="container">
       <h3>Reserve Your Experience</h3>
-      <p>We welcome you to join us for an unforgettable journey through Ecuadorian cuisine. Reservations are highly recommended to ensure the finest experience. Our culinary team is also available to accommodate dietary restrictions and preferences with advance notice.</p>
-      <div class="hero-cta" style="justify-content:center">
-        <a class="btn btn-primary" href="https://www.google.com/maps/place/240+N+Main+St,+Spring+Valley,+NY+10977,+United+States" target="_blank" rel="noopener">Make Reservation</a>
+      <p>We welcome you to join us for an unforgettable journey through Ecuadorian cuisine. Reservations are highly recommended to ensure the finest experience.</p>
+      <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:32px">
+        <a class="btn btn-primary" href="https://loco-fries.restaurants-world.com/" target="_blank" rel="noopener">Make Reservation</a>
         <a class="btn btn-secondary" href="index.html" style="color:white;border-color:rgba(255,255,255,0.3)">Return Home</a>
       </div>
-      <p class="footer-note">*Menu items and prices subject to change based on seasonal availability and market conditions. Please inform us of any dietary restrictions or allergies.</p>
+      <p class="footer-note">*Menu items and prices subject to change based on seasonal availability and market conditions.</p>
     </div>
   </section>
-
-  <!-- Footer -->
+  
   <footer>
     <div class="container">
       <p>© 2025 Loco Fries | 240 N Main Street, Spring Valley, NY 10977 | <a href="tel:+18455351185">+1 (845) 535-1185</a></p>
       <p style="margin-top:12px">Fine Ecuadorian Cuisine | <a href="index.html">Home</a></p>
     </div>
   </footer>
-
-  <!-- Floating Reserve -->
+  
   <div class="float-reserve">
-    <a href="https://www.google.com/maps/place/240+N+Main+St,+Spring+Valley,+NY+10977,+United+States" target="_blank" rel="noopener">
-      <span>📞</span> Reserve
-    </a>
+    <a href="https://loco-fries.restaurants-world.com/" target="_blank" rel="noopener"><span>📞</span> Reserve</a>
   </div>
-
+  
+  <script>
+    window.addEventListener('scroll',()=>{
+      const scrollProgress=document.querySelector('.scroll-progress');
+      const windowHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+      const scrolled=(window.scrollY/windowHeight);
+      scrollProgress.style.transform=`scaleX(${scrolled})`;
+    });
+    
+    const revealElements=document.querySelectorAll('.reveal');
+    const revealOnScroll=()=>{
+      revealElements.forEach(el=>{
+        const elementTop=el.getBoundingClientRect().top;
+        const elementVisible=100;
+        if(elementTop<window.innerHeight-elementVisible){
+          el.classList.add('active');
+        }
+      });
+    };
+    window.addEventListener('scroll',revealOnScroll);
+    revealOnScroll();
+  </script>
 </body>
 </html>
