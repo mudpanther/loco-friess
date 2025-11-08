@@ -3,291 +3,1017 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Loco Fries | Authentic Ecuadorian Food Truck — Spring Valley, NY</title>
+  <title>Loco Fries | Fine Ecuadorian Cuisine — Spring Valley, NY</title>
 
   <!-- Primary SEO -->
-  <meta name="description" content="Authentic Ecuadorian street food in Spring Valley, NY. Salchi, Pinchos, Patacones & more. Open late. 240 N Main St. Restaurant coming soon." />
+  <meta name="description" content="Experience elevated Ecuadorian cuisine in an intimate fine dining setting. Michelin-quality execution of traditional Latin American flavors. Spring Valley, NY." />
   <link rel="canonical" href="https://locofries.com/" />
-  <meta name="theme-color" content="#141417" />
+  <meta name="theme-color" content="#0a0a0a" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="restaurant" />
-  <meta property="og:title" content="Loco Fries | Authentic Ecuadorian Food Truck — Spring Valley, NY" />
-  <meta property="og:description" content="Taste the Passion of Latin America. Open late 7 days. 240 N Main St, Spring Valley, NY." />
+  <meta property="og:title" content="Loco Fries | Fine Ecuadorian Cuisine — Spring Valley, NY" />
+  <meta property="og:description" content="Where Ecuadorian tradition meets contemporary fine dining excellence." />
   <meta property="og:site_name" content="Loco Fries" />
   <meta property="og:url" content="https://locofries.com/" />
   <meta property="og:image" content="https://locofries.com/logo.png" />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     :root{
-      --bg:#141417;--bg2:#0c0c0f;--text:#ececf3;--muted:#b4b2c0;
-      --glass:rgba(255,255,255,.08);--glass2:rgba(255,255,255,.12);--stroke:rgba(255,255,255,.16);
-      --amber:#ffd36a;--amber2:#ffb629;--lava:#ff5a3d;
-      --r-lg:20px;--r-md:14px;--shadow:0 10px 32px rgba(0,0,0,.55);
+      --black:#0a0a0a;
+      --charcoal:#1a1a1a;
+      --dark-gray:#2a2a2a;
+      --mid-gray:#666666;
+      --light-gray:#999999;
+      --cream:#f8f6f3;
+      --off-white:#fafaf8;
+      --gold:#d4af37;
+      --gold-dark:#b8962e;
+      --gold-light:#e8d292;
+      --accent:#8b7355;
+      
+      --serif:'Cormorant Garamond',Georgia,serif;
+      --display:'Playfair Display',Georgia,serif;
+      --sans:'Montserrat',-apple-system,system-ui,sans-serif;
+      
+      --transition:all 0.4s cubic-bezier(0.4,0,0.2,1);
+      --shadow-sm:0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md:0 4px 24px rgba(0,0,0,0.12);
+      --shadow-lg:0 8px 40px rgba(0,0,0,0.16);
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.65;overflow-x:hidden}
-    img{max-width:100%;display:block}
-    a{text-decoration:none;color:inherit}
-    .container{max-width:1200px;margin:0 auto;padding:0 22px}
-
-    /* Nav */
-    header{position:fixed;inset:16px 16px auto;z-index:50}
-    .nav{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;
-      padding:12px 16px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));
-      border:1px solid var(--stroke);backdrop-filter:blur(12px);box-shadow:var(--shadow)}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{width:50px;height:50px;filter:drop-shadow(0 8px 24px rgba(255,182,41,.25))}
-    .brand span{font-family:"Playfair Display",serif;font-weight:900;
-      background:linear-gradient(120deg,#fff,#ffe39a 55%,#ff8a58);
-      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:1.5px}
-    .menu{display:flex;justify-content:center;gap:18px;list-style:none;margin:0}
-    .menu a{padding:8px 10px;border-radius:10px;color:var(--muted);position:relative}
-    .menu a:hover{color:#fff}
-    .menu a::after{content:"";position:absolute;left:10px;right:10px;bottom:4px;height:2px;background:linear-gradient(90deg,#ffb629,#ff5a3d);opacity:.6;transform:scaleX(0);transform-origin:left;transition:.25s}
-    .menu a:hover::after{transform:scaleX(1)}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;font-weight:800;border:1px solid rgba(255,248,220,.55);
-      background:linear-gradient(135deg,#ffb629,#ffd36a);color:#2a220b;box-shadow:0 10px 26px rgba(255,182,41,.35)}
-    .btn.secondary{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));color:#fff;border:1px solid var(--stroke)}
-
+    
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    
+    html{
+      scroll-behavior:smooth;
+      font-size:16px;
+    }
+    
+    body{
+      font-family:var(--sans);
+      font-weight:300;
+      line-height:1.7;
+      color:var(--dark-gray);
+      background:var(--off-white);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    
+    img{max-width:100%;display:block;height:auto}
+    a{text-decoration:none;color:inherit;transition:var(--transition)}
+    
+    .container{
+      max-width:1400px;
+      margin:0 auto;
+      padding:0 clamp(20px,5vw,80px);
+    }
+    
+    /* Typography */
+    h1,h2,h3,h4,h5,h6{
+      font-family:var(--display);
+      font-weight:500;
+      line-height:1.2;
+      color:var(--charcoal);
+    }
+    
+    /* Navigation */
+    .nav-wrapper{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:1000;
+      background:rgba(250,250,248,0.95);
+      backdrop-filter:blur(20px) saturate(180%);
+      border-bottom:1px solid rgba(212,175,55,0.15);
+      transition:var(--transition);
+    }
+    
+    .nav-wrapper.scrolled{
+      background:rgba(250,250,248,0.98);
+      box-shadow:var(--shadow-sm);
+    }
+    
+    nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:20px 0;
+      max-width:1400px;
+      margin:0 auto;
+      padding-left:clamp(20px,5vw,80px);
+      padding-right:clamp(20px,5vw,80px);
+    }
+    
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      font-family:var(--display);
+      font-size:clamp(18px,2.5vw,24px);
+      font-weight:600;
+      letter-spacing:0.5px;
+      color:var(--charcoal);
+    }
+    
+    .brand img{
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      border:2px solid var(--gold);
+      padding:4px;
+      background:white;
+    }
+    
+    .nav-links{
+      display:flex;
+      gap:clamp(24px,3vw,48px);
+      list-style:none;
+      align-items:center;
+    }
+    
+    .nav-links a{
+      font-size:14px;
+      font-weight:400;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      color:var(--mid-gray);
+      position:relative;
+      padding:8px 0;
+    }
+    
+    .nav-links a::after{
+      content:'';
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:0;
+      height:1px;
+      background:var(--gold);
+      transition:width 0.3s ease;
+    }
+    
+    .nav-links a:hover{
+      color:var(--charcoal);
+    }
+    
+    .nav-links a:hover::after{
+      width:100%;
+    }
+    
+    .btn-reserve{
+      padding:12px 32px;
+      background:var(--gold);
+      color:var(--charcoal);
+      font-size:13px;
+      font-weight:600;
+      letter-spacing:1.2px;
+      text-transform:uppercase;
+      border:1px solid var(--gold);
+      border-radius:0;
+      cursor:pointer;
+      transition:var(--transition);
+    }
+    
+    .btn-reserve:hover{
+      background:transparent;
+      color:var(--gold);
+    }
+    
     /* Hero */
-    .hero{min-height:100svh;display:grid;place-items:center;position:relative;isolation:isolate;
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
       background:
-        radial-gradient(1000px 400px at 20% 20%, rgba(255,182,41,.18), transparent 60%),
-        radial-gradient(800px 320px at 80% 35%, rgba(255,90,61,.15), transparent 60%),
-        linear-gradient(180deg, rgba(12,12,15,.9), rgba(20,20,23,.9)),
-        url('https://images.unsplash.com/photo-1613470207359-78ac8b12cc2c?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;}
-    .hero .wrap{text-align:center;padding:120px 0 70px}
-    .logo-big{width:min(180px,38vw);margin:0 auto 16px;border-radius:24%;
-      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));
-      border:1px solid var(--stroke);backdrop-filter:blur(12px);padding:14px;box-shadow:var(--shadow)}
-    .badge{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;border:1px solid var(--stroke);
-      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));font-weight:800}
-    .title{font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(30px,6vw,64px);margin:12px 0;
-      background:linear-gradient(180deg,#fff 10%,#ffe8a8 90%);
-      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-    .tag{font-family:"Playfair Display",serif;color:var(--amber);font-style:italic}
-    .sub{color:var(--muted)}
-    .hero-ctas{display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap}
-
-    /* Sections */
-    .section{padding:80px 0}
-    .section-header{text-align:center;margin-bottom:28px}
-    .eyebrow{display:inline-flex;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid var(--stroke);
-      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));color:var(--muted);letter-spacing:.1em;text-transform:uppercase;font-size:12px}
-    .glow{height:3px;width:200px;margin:14px auto;background:linear-gradient(90deg,#ffb629,#ff5a3d);border-radius:999px;filter:drop-shadow(0 0 16px rgba(255,182,41,.3))}
-    .grid-2{display:grid;grid-template-columns:1.1fr 1fr;gap:22px}
-
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid var(--stroke);
-      border-radius:var(--r-lg);backdrop-filter:blur(12px);box-shadow:var(--shadow);padding:22px}
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .chip{padding:8px 12px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--stroke);font-weight:600}
-
-    .about-img{border-radius:var(--r-lg);overflow:hidden;height:420px}
-    .about-img img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.05)}
-
-    /* Gallery */
-    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-    .gallery-item{height:260px;border-radius:var(--r-lg);overflow:hidden;position:relative}
-    .gallery-item img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform .6s}
-    .gallery-item:hover img{transform:scale(1.07)}
-    .gal-cap{position:absolute;left:12px;bottom:12px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
-      border:1px solid var(--stroke);backdrop-filter:blur(8px);padding:8px 12px;border-radius:12px;font-weight:700}
-
-    /* Location + Hours */
-    .info-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
-    .map{height:420px;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--stroke);box-shadow:var(--shadow)}
-    .hours h3{margin-top:0;font-family:"Playfair Display",serif}
-    .hours .line{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.08)}
-    .hours .line:last-child{border-bottom:0}
-
-    /* Float Order Button */
-    .order-fab{position:fixed;right:18px;bottom:18px;z-index:60}
-    .order-fab a{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:999px;
-      background:linear-gradient(135deg,#ffb629,#ffd36a);color:#2a220b;font-weight:900;border:1px solid rgba(255,248,220,.65);
-      box-shadow:0 12px 30px rgba(255,182,41,.4)}
-    .order-fab a:hover{transform:translateY(-2px);transition:.2s}
-
-    /* Footer */
-    footer{padding:60px 0 24px;border-top:1px solid var(--stroke);background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0))}
-    .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:18px}
-    .foot-card{padding:18px;border-radius:var(--r-md);border:1px solid var(--stroke);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02))}
-    .foot-title{font-family:"Playfair Display",serif;color:var(--amber);margin:0 0 8px}
-    .foot-list{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:6px;color:var(--muted)}
-    .foot-bottom{text-align:center;color:var(--muted);margin-top:16px;font-size:14px}
-
-    /* Responsive */
-    @media (max-width:1000px){
-      .grid-2,.info-grid{grid-template-columns:1fr}
-      .foot-grid{grid-template-columns:1fr 1fr}
+        linear-gradient(rgba(10,10,10,0.4),rgba(10,10,10,0.6)),
+        url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+      background-attachment:fixed;
+      text-align:center;
+      color:white;
     }
-    @media (max-width:640px){
-      .menu{display:none}
-      .foot-grid{grid-template-columns:1fr}
+    
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:900px;
+      padding:120px 40px 80px;
+      animation:fadeInUp 1s ease-out;
+    }
+    
+    @keyframes fadeInUp{
+      from{opacity:0;transform:translateY(40px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+    
+    .hero-logo{
+      width:140px;
+      height:140px;
+      margin:0 auto 32px;
+      border-radius:50%;
+      border:3px solid rgba(212,175,55,0.4);
+      padding:12px;
+      background:rgba(255,255,255,0.1);
+      backdrop-filter:blur(10px);
+    }
+    
+    .hero-badge{
+      display:inline-block;
+      font-family:var(--serif);
+      font-size:14px;
+      font-style:italic;
+      letter-spacing:2px;
+      color:var(--gold-light);
+      margin-bottom:24px;
+      padding:8px 24px;
+      border:1px solid rgba(212,175,55,0.3);
+      background:rgba(255,255,255,0.05);
+    }
+    
+    .hero h1{
+      font-size:clamp(36px,6vw,72px);
+      font-weight:500;
+      color:white;
+      margin-bottom:20px;
+      line-height:1.1;
+      letter-spacing:-0.5px;
+    }
+    
+    .hero-subtitle{
+      font-family:var(--serif);
+      font-size:clamp(20px,3vw,28px);
+      font-style:italic;
+      color:var(--gold-light);
+      margin-bottom:16px;
+      font-weight:300;
+    }
+    
+    .hero-description{
+      font-size:16px;
+      font-weight:300;
+      color:rgba(255,255,255,0.85);
+      margin-bottom:40px;
+      letter-spacing:0.5px;
+    }
+    
+    .hero-cta{
+      display:flex;
+      gap:20px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    
+    .btn-primary{
+      padding:16px 40px;
+      background:var(--gold);
+      color:var(--charcoal);
+      font-size:13px;
+      font-weight:600;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      border:1px solid var(--gold);
+      transition:var(--transition);
+      display:inline-block;
+    }
+    
+    .btn-primary:hover{
+      background:var(--gold-dark);
+      border-color:var(--gold-dark);
+      transform:translateY(-2px);
+      box-shadow:0 8px 24px rgba(212,175,55,0.3);
+    }
+    
+    .btn-secondary{
+      padding:16px 40px;
+      background:transparent;
+      color:white;
+      font-size:13px;
+      font-weight:600;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      border:1px solid rgba(255,255,255,0.4);
+      transition:var(--transition);
+      display:inline-block;
+    }
+    
+    .btn-secondary:hover{
+      background:rgba(255,255,255,0.1);
+      border-color:white;
+    }
+    
+    /* Section Styling */
+    section{
+      padding:clamp(80px,12vw,140px) 0;
+    }
+    
+    .section-header{
+      text-align:center;
+      max-width:800px;
+      margin:0 auto 80px;
+    }
+    
+    .section-label{
+      display:inline-block;
+      font-size:12px;
+      font-weight:600;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      color:var(--gold);
+      margin-bottom:16px;
+    }
+    
+    .section-title{
+      font-size:clamp(32px,5vw,56px);
+      font-weight:500;
+      color:var(--charcoal);
+      margin-bottom:24px;
+      line-height:1.2;
+    }
+    
+    .section-divider{
+      width:80px;
+      height:1px;
+      background:linear-gradient(90deg,transparent,var(--gold),transparent);
+      margin:32px auto;
+    }
+    
+    .section-description{
+      font-size:18px;
+      font-weight:300;
+      color:var(--mid-gray);
+      line-height:1.8;
+      max-width:700px;
+      margin:0 auto;
+    }
+    
+    /* About Section */
+    .about{
+      background:white;
+    }
+    
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:clamp(40px,8vw,100px);
+      align-items:center;
+    }
+    
+    .about-content{
+      padding:40px 0;
+    }
+    
+    .about-content h3{
+      font-size:clamp(24px,3vw,36px);
+      margin-bottom:24px;
+      color:var(--charcoal);
+    }
+    
+    .about-content p{
+      margin-bottom:20px;
+      font-size:16px;
+      line-height:1.9;
+      color:var(--mid-gray);
+    }
+    
+    .about-content p:last-of-type{
+      margin-bottom:32px;
+    }
+    
+    .features{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+      margin-top:40px;
+    }
+    
+    .feature-item{
+      padding:20px;
+      background:var(--off-white);
+      border-left:2px solid var(--gold);
+      transition:var(--transition);
+    }
+    
+    .feature-item:hover{
+      background:var(--cream);
+      transform:translateX(8px);
+    }
+    
+    .feature-item h4{
+      font-size:14px;
+      font-weight:600;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      color:var(--gold);
+      margin-bottom:8px;
+    }
+    
+    .feature-item p{
+      font-size:14px;
+      margin:0;
+      color:var(--mid-gray);
+    }
+    
+    .about-image{
+      position:relative;
+      height:600px;
+      overflow:hidden;
+    }
+    
+    .about-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform 0.6s ease;
+    }
+    
+    .about-image:hover img{
+      transform:scale(1.05);
+    }
+    
+    /* Gallery */
+    .gallery{
+      background:var(--charcoal);
+      color:white;
+    }
+    
+    .gallery .section-title{
+      color:white;
+    }
+    
+    .gallery .section-description{
+      color:rgba(255,255,255,0.7);
+    }
+    
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:2px;
+      background:var(--charcoal);
+    }
+    
+    .gallery-item{
+      position:relative;
+      height:400px;
+      overflow:hidden;
+      cursor:pointer;
+    }
+    
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform 0.6s ease,filter 0.6s ease;
+      filter:brightness(0.85);
+    }
+    
+    .gallery-item:hover img{
+      transform:scale(1.1);
+      filter:brightness(1);
+    }
+    
+    .gallery-overlay{
+      position:absolute;
+      bottom:0;
+      left:0;
+      right:0;
+      padding:32px;
+      background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);
+      transform:translateY(10px);
+      opacity:0;
+      transition:var(--transition);
+    }
+    
+    .gallery-item:hover .gallery-overlay{
+      transform:translateY(0);
+      opacity:1;
+    }
+    
+    .gallery-overlay h3{
+      font-size:22px;
+      font-weight:500;
+      color:white;
+      margin-bottom:8px;
+    }
+    
+    .gallery-overlay p{
+      font-size:14px;
+      color:rgba(255,255,255,0.7);
+    }
+    
+    /* Location */
+    .location{
+      background:white;
+    }
+    
+    .location-grid{
+      display:grid;
+      grid-template-columns:1.2fr 1fr;
+      gap:60px;
+      align-items:start;
+    }
+    
+    .map-container{
+      height:500px;
+      border:1px solid rgba(212,175,55,0.2);
+      box-shadow:var(--shadow-md);
+      overflow:hidden;
+    }
+    
+    .map-container iframe{
+      width:100%;
+      height:100%;
+      border:0;
+      filter:grayscale(0.3) contrast(1.1);
+    }
+    
+    .hours-card{
+      background:var(--off-white);
+      padding:48px;
+      border-left:3px solid var(--gold);
+    }
+    
+    .hours-card h3{
+      font-size:28px;
+      margin-bottom:32px;
+      color:var(--charcoal);
+    }
+    
+    .hours-line{
+      display:flex;
+      justify-content:space-between;
+      padding:20px 0;
+      border-bottom:1px solid rgba(212,175,55,0.15);
+      font-size:15px;
+    }
+    
+    .hours-line:last-child{
+      border-bottom:0;
+    }
+    
+    .hours-line span{
+      color:var(--mid-gray);
+      font-weight:300;
+    }
+    
+    .hours-line strong{
+      color:var(--charcoal);
+      font-weight:600;
+    }
+    
+    .contact-info{
+      margin-top:40px;
+      padding-top:32px;
+      border-top:1px solid rgba(212,175,55,0.15);
+    }
+    
+    .contact-item{
+      margin-bottom:20px;
+    }
+    
+    .contact-item label{
+      display:block;
+      font-size:11px;
+      font-weight:600;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:var(--gold);
+      margin-bottom:8px;
+    }
+    
+    .contact-item p{
+      font-size:16px;
+      color:var(--charcoal);
+      font-weight:400;
+    }
+    
+    /* CTA Section */
+    .cta{
+      background:
+        linear-gradient(rgba(212,175,55,0.9),rgba(139,115,85,0.9)),
+        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2000&auto=format&fit=crop') center/cover;
+      background-attachment:fixed;
+      color:white;
+      text-align:center;
+    }
+    
+    .cta .section-title{
+      color:white;
+      margin-bottom:20px;
+    }
+    
+    .cta .section-description{
+      color:rgba(255,255,255,0.9);
+      margin-bottom:40px;
+    }
+    
+    /* Footer */
+    footer{
+      background:var(--black);
+      color:rgba(255,255,255,0.6);
+      padding:80px 0 40px;
+    }
+    
+    .footer-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr 1fr;
+      gap:60px;
+      margin-bottom:60px;
+    }
+    
+    .footer-brand{
+      max-width:350px;
+    }
+    
+    .footer-brand h4{
+      font-size:24px;
+      color:var(--gold);
+      margin-bottom:20px;
+    }
+    
+    .footer-brand p{
+      font-size:14px;
+      line-height:1.8;
+      color:rgba(255,255,255,0.5);
+    }
+    
+    .footer-section h4{
+      font-size:14px;
+      font-weight:600;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:var(--gold);
+      margin-bottom:24px;
+    }
+    
+    .footer-links{
+      list-style:none;
+    }
+    
+    .footer-links li{
+      margin-bottom:12px;
+    }
+    
+    .footer-links a{
+      font-size:14px;
+      color:rgba(255,255,255,0.6);
+      transition:color 0.3s ease;
+    }
+    
+    .footer-links a:hover{
+      color:var(--gold);
+    }
+    
+    .footer-bottom{
+      text-align:center;
+      padding-top:40px;
+      border-top:1px solid rgba(255,255,255,0.1);
+      font-size:13px;
+      color:rgba(255,255,255,0.4);
+    }
+    
+    /* Floating Reserve Button */
+    .float-reserve{
+      position:fixed;
+      bottom:40px;
+      right:40px;
+      z-index:999;
+      animation:float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-10px)}
+    }
+    
+    .float-reserve a{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:16px 28px;
+      background:var(--gold);
+      color:var(--charcoal);
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:1.2px;
+      text-transform:uppercase;
+      border-radius:50px;
+      box-shadow:0 8px 32px rgba(212,175,55,0.4);
+      transition:var(--transition);
+    }
+    
+    .float-reserve a:hover{
+      background:var(--gold-dark);
+      transform:translateY(-4px);
+      box-shadow:0 12px 40px rgba(212,175,55,0.5);
+    }
+    
+    /* Responsive */
+    @media (max-width:1024px){
+      .about-grid,.location-grid{
+        grid-template-columns:1fr;
+      }
+      
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+        gap:40px;
+      }
+      
+      .about-image{
+        height:400px;
+      }
+    }
+    
+    @media (max-width:768px){
+      .nav-links{
+        display:none;
+      }
+      
+      .gallery-grid{
+        grid-template-columns:1fr;
+      }
+      
+      .features{
+        grid-template-columns:1fr;
+      }
+      
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+      
+      .float-reserve{
+        bottom:20px;
+        right:20px;
+      }
+      
+      .hours-card{
+        padding:32px;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- NAV -->
-  <header>
-    <nav class="nav">
-      <a class="brand" href="#home"><img src="logo.png" alt="Loco Fries Logo"/><span>LOCO FRIES</span></a>
-      <ul class="menu">
+
+  <!-- Navigation -->
+  <div class="nav-wrapper" id="navbar">
+    <nav>
+      <a class="brand" href="#home">
+        <img src="logo.png" alt="Loco Fries"/>
+        <span>LOCO FRIES</span>
+      </a>
+      <ul class="nav-links">
         <li><a href="#home">Home</a></li>
+        <li><a href="#about">Our Story</a></li>
         <li><a href="menu.html">Menu</a></li>
         <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#location">Location</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#location">Visit</a></li>
       </ul>
-      <a class="btn" href="https://www.google.com/maps/place/240+N+Main+St,+Spring+Valley,+NY+10977,+United+States" target="_blank" rel="noopener">Order Now</a>
+      <a class="btn-reserve" href="https://www.google.com/maps/place/240+N+Main+St,+Spring+Valley,+NY+10977,+United+States" target="_blank" rel="noopener">Reserve</a>
     </nav>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero" id="home" aria-label="Hero">
-    <div class="container wrap">
-      <img class="logo-big" src="logo.png" alt="Loco Fries — Ecuadorian Street Food" />
-      <span class="badge">🏪 Restaurant Coming Soon</span>
-      <h1 class="title">Authentic Ecuadorian Street Food in Spring Valley, NY</h1>
-      <p class="tag">Taste the Passion of Latin America</p>
-      <p class="sub">Serving at <strong>240 N Main St</strong> • Open late 7 days</p>
-      <div class="hero-ctas">
-        <a class="btn" href="menu.html">View Full Menu</a>
-        <a class="btn secondary" href="#location">Get Directions</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Our Story</span>
-        <h2 class="title" style="font-size:36px">Where Ecuadorian Tradition Meets Street Food Culture</h2>
-        <div class="glow"></div>
-      </div>
-      <div class="grid-2">
-        <article class="card">
-          <h3 style="margin-top:0;font-family:'Playfair Display',serif">¡Sabor que te vuelve loco!</h3>
-          <p>Located at <strong>240 N Main St, Spring Valley, NY</strong>, LOCO FRIES offers an eclectic fusion of flavors that promises to excite your palate — from mouthwatering fries to succulent shrimp and authentic empanadas.</p>
-          <p>Guests like <em>Jazmin Acevedo</em> and <em>Connie Zhen</em> rave about generous portions and tasty options. Our friendly team — shoutout to <em>Diana</em> — is dedicated to making your visit awesome.</p>
-          <p>Whether you love Ecuadorian cuisine or just want a delightful meal, LOCO FRIES brings a taste of home and a vibrant atmosphere that’ll keep you coming back.</p>
-          <div class="chips">
-            <span class="chip">🇪🇨 Authentic Recipes</span>
-            <span class="chip">🍟 Made Fresh</span>
-            <span class="chip">🍤 Shrimp & Empanadas</span>
-            <span class="chip">❤️ Family Owned</span>
-          </div>
-        </article>
-        <div class="about-img">
-          <img src="https://images.unsplash.com/photo-1613470207359-78ac8b12cc2c?q=80&w=1600&auto=format&fit=crop" alt="Latin night market vibes"/>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY (tight) -->
-  <section class="section" id="gallery">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Gallery</span>
-        <h2 class="title" style="font-size:36px">A Visual Feast</h2>
-        <div class="glow"></div>
-      </div>
-      <div class="gallery-grid">
-        <a class="gallery-item" href="menu.html"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=80&auto=format&fit=crop" alt="Loaded fries"/><span class="gal-cap">Our Famous Salchi</span></a>
-        <a class="gallery-item" href="menu.html"><img src="https://images.unsplash.com/photo-1601924579440-834a34bfa5d2?w=1200&q=80&auto=format&fit=crop" alt="Pinchos skewers"/><span class="gal-cap">Authentic Pinchos</span></a>
-        <a class="gallery-item" href="menu.html"><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=1200&q=80&auto=format&fit=crop" alt="Patacón"/><span class="gal-cap">Patacón Perfection</span></a>
-        <a class="gallery-item" href="menu.html"><img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=1200&q=80&auto=format&fit=crop" alt="Food truck at night"/><span class="gal-cap">Our Orange Truck</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- LOCATION + HOURS -->
-  <section class="section" id="location">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Visit Us</span>
-        <h2 class="title" style="font-size:36px">Find Our Truck</h2>
-        <div class="glow"></div>
-      </div>
-      <div class="info-grid">
-        <div class="map">
-          <iframe title="Loco Fries on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3005.521169542277!2d-74.04314292395368!3d41.12314747133466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2dd8ed69e0fc5%3A0xf9247f0ea5c5f7f4!2sLOCO%20FRIES!5e0!3m2!1sen!2sus!4v1762366723430!5m2!1sen!2sus"></iframe>
-        </div>
-        <aside class="card hours" aria-label="Store Hours">
-          <h3>🕐 Store Hours</h3>
-          <div class="line"><span>Monday – Wednesday</span><strong>1:00 PM – 1:00 AM</strong></div>
-          <div class="line"><span>Thursday – Sunday</span><strong>12:00 PM – 1:00 AM</strong></div>
-          <div class="line"><span>Address</span><strong>240 N Main St, Spring Valley, NY 10977</strong></div>
-          <div class="line"><span>Hotline</span><strong>+1 845-535-1185</strong></div>
-          <div style="margin-top:12px"><a class="btn" href="https://www.google.com/maps/place/240+N+Main+St,+Spring+Valley,+NY+10977,+United+States" target="_blank" rel="noopener">Open in Google Maps</a></div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT / CTA -->
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="title" style="font-size:36px">¡Ven a Comer!</h2>
-        <div class="glow"></div>
-        <p style="color:var(--muted);max-width:760px;margin:0 auto">Experience the authentic taste of Ecuador in every bite.</p>
-      </div>
-      <div style="text-align:center;margin-top:16px">
-        <a class="btn" href="menu.html">View Full Menu</a>
-        <a class="btn secondary" href="https://www.google.com/maps/place/240+N+Main+St,+Spring+Valley,+NY+10977,+United+States" target="_blank" rel="noopener">Get Directions</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FLOAT ORDER NOW -->
-  <div class="order-fab">
-    <a href="https://www.google.com/maps/place/240+N+Main+St,+Spring+Valley,+NY+10977,+United+States" target="_blank" rel="noopener">🧭 Order Now</a>
   </div>
 
-  <!-- FOOTER -->
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <img class="hero-logo" src="logo.png" alt="Loco Fries Fine Dining"/>
+      <div class="hero-badge">Est. 2024 • Spring Valley</div>
+      <h1>Fine Ecuadorian Cuisine</h1>
+      <p class="hero-subtitle">Where Heritage Meets Contemporary Excellence</p>
+      <p class="hero-description">Experience the sophisticated evolution of traditional Latin American flavors, meticulously crafted with modern technique and unwavering dedication to culinary artistry.</p>
+      <div class="hero-cta">
+        <a class="btn-primary" href="menu.html">Explore Menu</a>
+        <a class="btn-secondary" href="#location">Plan Your Visit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Our Philosophy</span>
+        <h2 class="section-title">A Culinary Journey Through Ecuador</h2>
+        <div class="section-divider"></div>
+        <p class="section-description">At Loco Fries, we honor the rich culinary traditions of Ecuador while embracing contemporary techniques that elevate each dish to an art form.</p>
+      </div>
+      
+      <div class="about-grid">
+        <div class="about-content">
+          <h3>Passion Refined Through Excellence</h3>
+          <p>Located in the heart of Spring Valley, our intimate establishment reimagines Ecuadorian street food classics through the lens of fine dining. Every dish tells a story of heritage, crafted with locally-sourced ingredients and time-honored recipes passed down through generations.</p>
+          
+          <p>Our culinary team, led by visionary chefs with deep roots in Ecuadorian cuisine, brings decades of combined experience from renowned kitchens across Latin America and beyond. We source the finest ingredients, from sustainable seafood to heritage produce, ensuring each plate reflects our unwavering commitment to quality.</p>
+          
+          <p>Whether you're experiencing our signature Salchi preparations or exploring our refined Cevichochos, each visit promises an unforgettable journey through the vibrant flavors of Ecuador, executed with precision and presented with elegance.</p>
+          
+          <div class="features">
+            <div class="feature-item">
+              <h4>Heritage Recipes</h4>
+              <p>Authentic Ecuadorian techniques refined over generations</p>
+            </div>
+            <div class="feature-item">
+              <h4>Locally Sourced</h4>
+              <p>Premium ingredients from trusted regional partners</p>
+            </div>
+            <div class="feature-item">
+              <h4>Artisanal Craft</h4>
+              <p>Every dish prepared with meticulous attention to detail</p>
+            </div>
+            <div class="feature-item">
+              <h4>Intimate Setting</h4>
+              <p>Personalized service in an elegant atmosphere</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1600&auto=format&fit=crop" alt="Fine dining culinary presentation"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" style="color:var(--gold-light)">Experience</span>
+        <h2 class="section-title">Culinary Artistry</h2>
+        <div class="section-divider"></div>
+        <p class="section-description">Each dish is a carefully composed work of art, celebrating the vibrant colors, textures, and flavors of Ecuadorian cuisine.</p>
+      </div>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1595295333158-4742f28fbd85?q=80&w=1600&auto=format&fit=crop" alt="Artisanal cuisine plating"/>
+          <div class="gallery-overlay">
+            <h3>Refined Presentations</h3>
+            <p>Contemporary plating techniques meet traditional flavors</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600&auto=format&fit=crop" alt="Fresh ingredients preparation"/>
+          <div class="gallery-overlay">
+            <h3>Fresh Ingredients</h3>
+            <p>Sourced daily from premium suppliers</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1600&auto=format&fit=crop" alt="Grilled specialties"/>
+          <div class="gallery-overlay">
+            <h3>Grilled Perfection</h3>
+            <p>Master techniques for optimal flavor development</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop" alt="Intimate dining atmosphere"/>
+          <div class="gallery-overlay">
+            <h3>Elegant Ambiance</h3>
+            <p>An intimate setting for memorable experiences</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section class="location" id="location">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Visit Us</span>
+        <h2 class="section-title">Location & Hours</h2>
+        <div class="section-divider"></div>
+      </div>
+      
+      <div class="location-grid">
+        <div class="map-container">
+          <iframe 
+            title="Loco Fries Fine Dining Location" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade" 
+            allowfullscreen
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3005.521169542277!2d-74.04314292395368!3d41.12314747133466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2dd8ed69e0fc5%3A0xf9247f0ea5c5f7f4!2sLOCO%20FRIES!5e0!3m2!1sen!2sus!4v1762366723430!5m2!1sen!2sus">
+          </iframe>
+        </div>
+        
+        <div class="hours-card">
+          <h3>Dining Hours</h3>
+          
+          <div class="hours-line">
+            <span>Monday – Wednesday</span>
+            <strong>1:00 PM – 1:00 AM</strong>
+          </div>
+          <div class="hours-line">
+            <span>Thursday – Sunday</span>
+            <strong>12:00 PM – 1:00 AM</strong>
+          </div>
+          
+          <div class="contact-info">
+            <div class="contact-item">
+              <label>Address</label>
+              <p>240 North Main Street<br>Spring Valley, NY 10977</p>
+            </div>
+            
+            <div class="contact-item">
+              <label>Reservations</label>
+              <p>+1 (845) 535-1185</p>
+            </div>
+            
+            <div class="contact-item">
+              <label>Email</label>
+              <p>reservations@locofries.com</p>
+            </div>
+          </div>
+          
+          <a class="btn-primary" href="https://www.google.com/maps/place/240+N+Main+St,+Spring+Valley,+NY+10977,+United+States" target="_blank" rel="noopener" style="margin-top:32px;display:inline-block">Get Directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Experience Excellence</h2>
+        <p class="section-description">Join us for an unforgettable culinary journey through the flavors of Ecuador. Reservations are recommended for the optimal dining experience.</p>
+      </div>
+      <div class="hero-cta">
+        <a class="btn-primary" href="menu.html">View Full Menu</a>
+        <a class="btn-secondary" href="https://www.google.com/maps/place/240+N+Main+St,+Spring+Valley,+NY+10977,+United+States" target="_blank" rel="noopener">Make Reservation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
     <div class="container">
-      <div class="foot-grid">
-        <div class="foot-card">
-          <h4 class="foot-title">LOCO FRIES</h4>
-          <p>Discover LOCO FRIES at 240 N Main St, Spring Valley, NY. Delectable Ecuadorian-inspired fare with friendly service and vibrant vibes. Join us today!</p>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>LOCO FRIES</h4>
+          <p>Celebrating the rich culinary heritage of Ecuador through contemporary fine dining. Each dish honors tradition while embracing innovation, creating an experience that delights both the palate and the soul.</p>
         </div>
-        <div class="foot-card">
-          <h4 class="foot-title">Quick Links</h4>
-          <ul class="foot-list">
+        
+        <div class="footer-section">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
             <li><a href="#home">Home</a></li>
+            <li><a href="#about">Our Story</a></li>
             <li><a href="menu.html">Menu</a></li>
             <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#location">Location</a></li>
+            <li><a href="#location">Visit</a></li>
           </ul>
         </div>
-        <div class="foot-card">
-          <h4 class="foot-title">Visit Us</h4>
-          <ul class="foot-list">
+        
+        <div class="footer-section">
+          <h4>Hours</h4>
+          <ul class="footer-links">
+            <li>Mon – Wed: 1PM – 1AM</li>
+            <li>Thu – Sun: 12PM – 1AM</li>
+            <li><br></li>
+            <li>Reservations Recommended</li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul class="footer-links">
             <li>240 N Main Street</li>
             <li>Spring Valley, NY 10977</li>
-            <li>Mon–Wed: 1PM–1AM</li>
-            <li>Thu–Sun: 12PM–1AM</li>
-          </ul>
-        </div>
-        <div class="foot-card">
-          <h4 class="foot-title">Contact</h4>
-          <ul class="foot-list">
-            <li>Hotline: +1 845-535-1185</li>
-            <li><a href="https://www.google.com/maps/place/240+N+Main+St,+Spring+Valley,+NY+10977,+United+States" target="_blank" rel="noopener">Open in Maps</a></li>
+            <li><br></li>
+            <li>+1 (845) 535-1185</li>
+            <li><a href="mailto:reservations@locofries.com">reservations@locofries.com</a></li>
           </ul>
         </div>
       </div>
-      <div class="foot-bottom">© 2025 Loco Fries. All rights reserved. 🇪🇨</div>
+      
+      <div class="footer-bottom">
+        <p>© 2025 Loco Fries. All Rights Reserved. | Fine Ecuadorian Cuisine</p>
+      </div>
     </div>
   </footer>
+
+  <!-- Floating Reserve Button -->
+  <div class="float-reserve">
+    <a href="https://www.google.com/maps/place/240+N+Main+St,+Spring+Valley,+NY+10977,+United+States" target="_blank" rel="noopener">
+      <span>📞</span> Reserve Now
+    </a>
+  </div>
+
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll',()=>{
+      const navbar=document.getElementById('navbar');
+      if(window.scrollY>50){
+        navbar.classList.add('scrolled');
+      }else{
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
 </body>
 </html>
