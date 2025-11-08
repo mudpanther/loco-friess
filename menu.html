@@ -1,293 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Loco Fries | Authentic Ecuadorian Food Truck — Spring Valley, NY</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Full Menu — Loco Fries | Spring Valley, NY</title>
+  <meta name="description" content="Explore the full menu at Loco Fries: Loaded Fries (Salchi), Pinchos, Patacón, Cevichochos, Ensalada, Drinks, and more. Authentic Ecuadorian street food in Spring Valley, NY." />
+  <link rel="canonical" href="https://locofries.com/menu.html"/>
 
-  <!-- Primary SEO -->
-  <meta name="description" content="Authentic Ecuadorian street food in Spring Valley, NY. Salchi, Pinchos, Patacones & more. Open late. 240 N Main St. Restaurant coming soon." />
-  <link rel="canonical" href="https://locofries.com/" />
-  <meta name="theme-color" content="#141417" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800;900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="restaurant" />
-  <meta property="og:title" content="Loco Fries | Authentic Ecuadorian Food Truck — Spring Valley, NY" />
-  <meta property="og:description" content="Taste the Passion of Latin America. Open late 7 days. 240 N Main St, Spring Valley, NY." />
-  <meta property="og:site_name" content="Loco Fries" />
-  <meta property="og:url" content="https://locofries.com/" />
-  <meta property="og:image" content="https://locofries.com/logo.png" />
+  <style>
+    :root{
+      --bg:#0d0e11;           /* deep charcoal */
+      --panel:rgba(255,255,255,.06);
+      --panel2:rgba(255,255,255,.10);
+      --stroke:rgba(255,255,255,.16);
+      --text:#f2f2f7;
+      --muted:#b9b9c8;
+      --gold:#ffc75a;         /* warm amber */
+      --orange:#ff7a36;       /* loco orange */
+      --glow:0 10px 36px rgba(255,149,41,.35);
+      --r-lg:18px;--r-md:14px;
+      --shadow:0 14px 40px rgba(0,0,0,.55);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:
+      radial-gradient(800px 420px at 12% 10%, rgba(255,122,54,.14), transparent 60%),
+      radial-gradient(900px 420px at 88% 18%, rgba(255,199,90,.12), transparent 60%),
+      linear-gradient(180deg,#0b0c0f,#0d0e11);
+      color:var(--text);
+      font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet" />
+    .container{max-width:1140px;margin:0 auto;padding:0 22px}
 
-  <style>
-    :root{
-      --bg:#141417;--bg2:#0c0c0f;--text:#ececf3;--muted:#b4b2c0;
-      --glass:rgba(255,255,255,.08);--glass2:rgba(255,255,255,.12);--stroke:rgba(255,255,255,.16);
-      --amber:#ffd36a;--amber2:#ffb629;--lava:#ff5a3d;
-      --r-lg:20px;--r-md:14px;--shadow:0 10px 32px rgba(0,0,0,.55);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.65;overflow-x:hidden}
-    img{max-width:100%;display:block}
-    a{text-decoration:none;color:inherit}
-    .container{max-width:1200px;margin:0 auto;padding:0 22px}
+    /* NAV (minimal) */
+    header{position:sticky;top:0;z-index:50;background:rgba(13,14,17,.7);backdrop-filter:blur(8px);border-bottom:1px solid var(--stroke)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand img{width:40px;height:40px;filter:drop-shadow(0 10px 26px rgba(255,180,60,.35))}
+    .brand span{font-family:"DM Sans",sans-serif;font-weight:900;letter-spacing:.5px;
+      background:linear-gradient(120deg,#fff 10%,#ffe8ad 55%,#ff8b4a);
+      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .nav-actions{display:flex;gap:10px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;
+      border:1px solid rgba(255,248,220,.55);font-weight:800}
+    .btn.primary{background:linear-gradient(135deg,#ff8b3b,#ffc95d);color:#241b0a;box-shadow:var(--glow)}
+    .btn.ghost{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));color:#fff;border:1px solid var(--stroke)}
 
-    /* Nav */
-    header{position:fixed;inset:16px 16px auto;z-index:50}
-    .nav{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;
-      padding:12px 16px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));
-      border:1px solid var(--stroke);backdrop-filter:blur(12px);box-shadow:var(--shadow)}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{width:50px;height:50px;filter:drop-shadow(0 8px 24px rgba(255,182,41,.25))}
-    .brand span{font-family:"Playfair Display",serif;font-weight:900;
-      background:linear-gradient(120deg,#fff,#ffe39a 55%,#ff8a58);
-      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:1.5px}
-    .menu{display:flex;justify-content:center;gap:18px;list-style:none;margin:0}
-    .menu a{padding:8px 10px;border-radius:10px;color:var(--muted);position:relative}
-    .menu a:hover{color:#fff}
-    .menu a::after{content:"";position:absolute;left:10px;right:10px;bottom:4px;height:2px;background:linear-gradient(90deg,#ffb629,#ff5a3d);opacity:.6;transform:scaleX(0);transform-origin:left;transition:.25s}
-    .menu a:hover::after{transform:scaleX(1)}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;font-weight:800;border:1px solid rgba(255,248,220,.55);
-      background:linear-gradient(135deg,#ffb629,#ffd36a);color:#2a220b;box-shadow:0 10px 26px rgba(255,182,41,.35)}
-    .btn.secondary{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));color:#fff;border:1px solid var(--stroke)}
+    /* HERO */
+    .hero{position:relative;min-height:44svh;display:grid;place-items:center;isolation:isolate;
+      background:
+        radial-gradient(900px 360px at 20% 35%, rgba(255,122,54,.18), transparent 60%),
+        radial-gradient(800px 300px at 80% 30%, rgba(255,199,90,.14), transparent 60%),
+        linear-gradient(180deg,rgba(13,14,17,.6),rgba(13,14,17,.85)),
+        url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;}
+    .hero-inner{text-align:center;padding:80px 0}
+    .hero-logo{width:min(160px,32vw);margin:0 auto 12px;border-radius:24%;
+      background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.02));
+      border:1px solid var(--stroke);backdrop-filter:blur(10px);padding:12px;box-shadow:var(--shadow)}
+    .hero-title{font-family:"DM Sans",sans-serif;font-weight:900;font-size:clamp(28px,5.6vw,56px);margin:8px 0}
+    .hero-sub{color:var(--muted);max-width:760px;margin:6px auto 0}
+    .hero-cta{margin-top:14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 
-    /* Hero */
-    .hero{min-height:100svh;display:grid;place-items:center;position:relative;isolation:isolate;
-      background:
-        radial-gradient(1000px 400px at 20% 20%, rgba(255,182,41,.18), transparent 60%),
-        radial-gradient(800px 320px at 80% 35%, rgba(255,90,61,.15), transparent 60%),
-        linear-gradient(180deg, rgba(12,12,15,.9), rgba(20,20,23,.9)),
-        url('https://images.unsplash.com/photo-1613470207359-78ac8b12cc2c?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;}
-    .hero .wrap{text-align:center;padding:120px 0 70px}
-    .logo-big{width:min(180px,38vw);margin:0 auto 16px;border-radius:24%;
-      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));
-      border:1px solid var(--stroke);backdrop-filter:blur(12px);padding:14px;box-shadow:var(--shadow)}
-    .badge{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;border:1px solid var(--stroke);
-      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));font-weight:800}
-    .title{font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(30px,6vw,64px);margin:12px 0;
-      background:linear-gradient(180deg,#fff 10%,#ffe8a8 90%);
-      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-    .tag{font-family:"Playfair Display",serif;color:var(--amber);font-style:italic}
-    .sub{color:var(--muted)}
-    .hero-ctas{display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+    /* SECTION HEAD */
+    .section{padding:70px 0}
+    .section-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+    .section-head h2{margin:0;font-family:"DM Sans",sans-serif;font-size:32px;font-weight:900}
+    .divider{height:3px;width:180px;background:linear-gradient(90deg,#ff8b3b,#ffc95d);border-radius:999px;filter:drop-shadow(0 0 16px rgba(255,165,60,.35));margin:12px 0 18px}
 
-    /* Sections */
-    .section{padding:80px 0}
-    .section-header{text-align:center;margin-bottom:28px}
-    .eyebrow{display:inline-flex;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid var(--stroke);
-      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));color:var(--muted);letter-spacing:.1em;text-transform:uppercase;font-size:12px}
-    .glow{height:3px;width:200px;margin:14px auto;background:linear-gradient(90deg,#ffb629,#ff5a3d);border-radius:999px;filter:drop-shadow(0 0 16px rgba(255,182,41,.3))}
-    .grid-2{display:grid;grid-template-columns:1.1fr 1fr;gap:22px}
+    /* CATEGORY CARD BLOCK */
+    .cat{display:grid;grid-template-columns:.34fr 1fr;gap:18px;align-items:start;margin-bottom:34px}
+    .cat-photo{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--stroke);height:200px;box-shadow:var(--shadow)}
+    .cat-photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
+    .items-card{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid var(--stroke);
+      border-radius:var(--r-lg);box-shadow:var(--shadow);padding:14px}
 
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid var(--stroke);
-      border-radius:var(--r-lg);backdrop-filter:blur(12px);box-shadow:var(--shadow);padding:22px}
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .chip{padding:8px 12px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--stroke);font-weight:600}
+    /* ITEM GRID */
+    .item-grid{display:grid;grid-template-columns:1fr auto;column-gap:16px;row-gap:8px}
+    .item{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center;padding:10px;border-radius:12px;
+      border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02))}
+    .thumb{width:44px;height:44px;border-radius:10px;object-fit:cover;
+      box-shadow:0 0 0 2px rgba(255,255,255,.65),0 6px 18px rgba(255,255,255,.18)}
+    .name{font-weight:700}
+    .desc{font-size:.9rem;color:var(--muted)}
+    .price{align-self:center;font-weight:800;color:var(--gold);font-family:"DM Sans",sans-serif}
 
-    .about-img{border-radius:var(--r-lg);overflow:hidden;height:420px}
-    .about-img img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.05)}
+    /* FLOAT ACTIONS */
+    .order-fab{position:fixed;right:16px;bottom:16px;z-index:60}
+    .order-fab a{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:999px;
+      background:linear-gradient(135deg,#ff8b3b,#ffc95d);color:#241b0a;font-weight:900;border:1px solid rgba(255,248,220,.65);box-shadow:var(--glow)}
+    .order-fab a:hover{transform:translateY(-2px);transition:.2s}
 
-    /* Gallery */
-    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-    .gallery-item{height:260px;border-radius:var(--r-lg);overflow:hidden;position:relative}
-    .gallery-item img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform .6s}
-    .gallery-item:hover img{transform:scale(1.07)}
-    .gal-cap{position:absolute;left:12px;bottom:12px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
-      border:1px solid var(--stroke);backdrop-filter:blur(8px);padding:8px 12px;border-radius:12px;font-weight:700}
+    /* HOURS FAB */
+    .hours-fab{position:fixed;right:16px;bottom:78px;z-index:59;
+      background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.03));border:1px solid var(--stroke);
+      backdrop-filter:blur(10px);box-shadow:var(--shadow);border-radius:16px;padding:12px 14px;min-width:260px}
+    .hours-fab h4{margin:0 0 6px;font-family:"DM Sans",sans-serif}
+    .hline{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:.92rem;padding:4px 0;border-bottom:1px dashed rgba(255,255,255,.10)}
+    .hline:last-child{border-bottom:0}
 
-    /* Location + Hours */
-    .info-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
-    .map{height:420px;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--stroke);box-shadow:var(--shadow)}
-    .hours h3{margin-top:0;font-family:"Playfair Display",serif}
-    .hours .line{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.08)}
-    .hours .line:last-child{border-bottom:0}
-
-    /* Float Order Button */
-    .order-fab{position:fixed;right:18px;bottom:18px;z-index:60}
-    .order-fab a{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:999px;
-      background:linear-gradient(135deg,#ffb629,#ffd36a);color:#2a220b;font-weight:900;border:1px solid rgba(255,248,220,.65);
-      box-shadow:0 12px 30px rgba(255,182,41,.4)}
-    .order-fab a:hover{transform:translateY(-2px);transition:.2s}
-
-    /* Footer */
-    footer{padding:60px 0 24px;border-top:1px solid var(--stroke);background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0))}
-    .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:18px}
-    .foot-card{padding:18px;border-radius:var(--r-md);border:1px solid var(--stroke);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02))}
-    .foot-title{font-family:"Playfair Display",serif;color:var(--amber);margin:0 0 8px}
-    .foot-list{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:6px;color:var(--muted)}
-    .foot-bottom{text-align:center;color:var(--muted);margin-top:16px;font-size:14px}
-
-    /* Responsive */
-    @media (max-width:1000px){
-      .grid-2,.info-grid{grid-template-columns:1fr}
-      .foot-grid{grid-template-columns:1fr 1fr}
-    }
-    @media (max-width:640px){
-      .menu{display:none}
-      .foot-grid{grid-template-columns:1fr}
-    }
-  </style>
+    footer{padding:46px 0 22px;border-top:1px solid var(--stroke);text-align:center;color:var(--muted)}
+    @media (max-width:980px){.cat{grid-template-columns:1fr}}
+    @media (max-width:640px){
+      .hours-fab{position:static;margin:16px;min-width:unset}
+      .order-fab{right:12px;bottom:12px}
+    }
+  </style>
 </head>
 <body>
-  <!-- NAV -->
-  <header>
-    <nav class="nav">
-      <a class="brand" href="#home"><img src="logo.png" alt="Loco Fries Logo"/><span>LOCO FRIES</span></a>
-      <ul class="menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#location">Location</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <a class="btn" href="https://www.google.com/maps/place/240+N+Main+St,+Spring+Valley,+NY+10977,+United+States" target="_blank" rel="noopener">Order Now</a>
-    </nav>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero" id="home" aria-label="Hero">
-    <div class="container wrap">
-      <img class="logo-big" src="logo.png" alt="Loco Fries — Ecuadorian Street Food" />
-      <span class="badge"> Restaurant Coming Soon</span>
-      <h1 class="title">Authentic Ecuadorian Street Food in Spring Valley, NY</h1>
-      <p class="tag">Taste the Passion of Latin America</p>
-      <p class="sub">Serving at <strong>240 N Main St</strong> • Open late 7 days</p>
-      <div class="hero-ctas">
-        <a class="btn" href="menu.html">View Full Menu</a>
-        <a class="btn secondary" href="#location">Get Directions</a>
-      </div>
-    </div>
-  </section>
+  <!-- NAV -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html"><img src="logo.png" alt="Loco Fries Logo"/><span>LOCO FRIES</span></a>
+      <div class="nav-actions">
+        <a class="btn ghost" href="index.html">← Home</a>
+        <a class="btn primary" href="https://www.google.com/maps/place/240+N+Main+St,+Spring+Valley,+NY+10977,+United+States" target="_blank" rel="noopener">Order Now</a>
+      </div>
+    </div>
+  </header>
 
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Our Story</span>
-        <h2 class="title" style="font-size:36px">Where Ecuadorian Tradition Meets Street Food Culture</h2>
-        <div class="glow"></div>
-      </div>
-      <div class="grid-2">
-        <article class="card">
-          <h3 style="margin-top:0;font-family:'Playfair Display',serif">¡Sabor que te vuelve loco!</h3>
-          <p>Located at <strong>240 N Main St, Spring Valley, NY</strong>, LOCO FRIES offers an eclectic fusion of flavors that promises to excite your palate — from mouthwatering fries to succulent shrimp and authentic empanadas.</p>
-          <p>Guests like <em>Jazmin Acevedo</em> and <em>Connie Zhen</em> rave about generous portions and tasty options. Our friendly team — shoutout to <em>Diana</em> — is dedicated to making your visit awesome.</p>
-          <p>Whether you love Ecuadorian cuisine or just want a delightful meal, LOCO FRIES brings a taste of home and a vibrant atmosphere that’ll keep you coming back.</p>
-          <div class="chips">
-            <span class="chip"> Authentic Recipes</span>
-            <span class="chip"> Made Fresh</span>
-            <span class="chip"> Shrimp & Empanadas</span>
-            <span class="chip"> Family Owned</span>
-          </div>
-        </article>
-        <div class="about-img">
-          <img src="https://images.unsplash.com/photo-1613470207359-78ac8b12cc2c?q=80&w=1600&auto=format&fit=crop" alt="Latin night market vibes"/>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- HERO -->
+  <section class="hero" aria-label="Menu Hero">
+    <div class="container hero-inner">
+      <img class="hero-logo" src="logo.png" alt="Loco Fries logo"/>
+      <h1 class="hero-title">Our Full Menu</h1>
+      <p class="hero-sub">Real Ecuadorian street flavor — curated with love, served with glow ✨</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#loaded-fries">Jump to Salchi Specials</a>
+        <a class="btn ghost" href="#pinchos">Pinchos</a>
+      </div>
+    </div>
+  </section>
 
-  <!-- GALLERY (tight) -->
-  <section class="section" id="gallery">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Gallery</span>
-        <h2 class="title" style="font-size:36px">A Visual Feast</h2>
-        <div class="glow"></div>
-      </div>
-      <div class="gallery-grid">
-        <a class="gallery-item" href="menu.html"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=80&auto=format&fit=crop" alt="Loaded fries"/><span class="gal-cap">Our Famous Salchi</span></a>
-        <a class="gallery-item" href="menu.html"><img src="https://images.unsplash.com/photo-1601924579440-834a34bfa5d2?w=1200&q=80&auto=format&fit=crop" alt="Pinchos skewers"/><span class="gal-cap">Authentic Pinchos</span></a>
-        <a class="gallery-item" href="menu.html"><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=1200&q=80&auto=format&fit=crop" alt="Patacón"/><span class="gal-cap">Patacón Perfection</span></a>
-        <a class="gallery-item" href="menu.html"><img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=1200&q=80&auto=format&fit=crop" alt="Food truck at night"/><span class="gal-cap">Our Orange Truck</span></a>
-      </div>
-    </div>
-  </section>
+  <main class="container">
 
-  <!-- LOCATION + HOURS -->
-  <section class="section" id="location">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Visit Us</span>
-        <h2 class="title" style="font-size:36px">Find Our Truck</h2>
-        <div class="glow"></div>
-      </div>
-      <div class="info-grid">
-        <div class="map">
-          <iframe title="Loco Fries on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3005.521169542277!2d-74.04314292395368!3d41.12314747133466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2dd8ed69e0fc5%3A0xf9247f0ea5c5f7f4!2sLOCO%20FRIES!5e0!3m2!1sen!2sus!4v1762366723430!5m2!1sen!2sus"></iframe>
-        </div>
-        <aside class="card hours" aria-label="Store Hours">
-          <h3> Store Hours</h3>
-          <div class="line"><span>Monday – Wednesday</span><strong>1:00 PM – 1:00 AM</strong></div>
-          <div class="line"><span>Thursday – Sunday</span><strong>12:00 PM – 1:00 AM</strong></div>
-          <div class="line"><span>Address</span><strong>240 N Main St, Spring Valley, NY 10977</strong></div>
-          <div class="line"><span>Hotline</span><strong>+1 845-535-1185</strong></div>
-          <div style="margin-top:12px"><a class="btn" href="https://www.google.com/maps/place/240+N+Main+St,+Spring+Valley,+NY+10977,+United+States" target="_blank" rel="noopener">Open in Google Maps</a></div>
-        </aside>
-      </div>
-    </div>
-  </section>
+    <!-- 1) LOADED FRIES -->
+    <section class="section" id="loaded-fries">
+      <div class="section-head"><h2>🍟 Loaded Fries (Salchi Specials)</h2></div>
+      <div class="divider"></div>
+      <div class="cat">
+        <figure class="cat-photo">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1400&q=80&auto=format&fit=crop" alt="Golden loaded fries with toppings">
+        </figure>
+        <div class="items-card">
+          <div class="item-grid">
+            <!-- name+desc column / price column -->
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=300&q=80&auto=format&fit=crop" alt="Salchi Classic">
+              <div>
+                <div class="name">Salchi Classic</div>
+                <div class="desc">Fries, beef hot dog, onion & tomato salad, signature sauces</div>
+              </div>
+            </div><div class="price">US$9.00</div>
 
-  <!-- CONTACT / CTA -->
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="title" style="font-size:36px">¡Ven a Comer!</h2>
-        <div class="glow"></div>
-        <p style="color:var(--muted);max-width:760px;margin:0 auto">Experience the authentic taste of Ecuador in every bite.</p>
-      </div>
-      <div style="text-align:center;margin-top:16px">
-        <a class="btn" href="menu.html">View Full Menu</a>
-        <a class="btn secondary" href="https://www.google.com/maps/place/240+N+Main+St,+Spring+Valley,+NY+10977,+United+States" target="_blank" rel="noopener">Get Directions</a>
-      </div>
-    </div>
-  </section>
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1604908554027-8fd7723f2f9b?w=300&q=80&auto=format&fit=crop" alt="Salchi Chicken">
+              <div>
+                <div class="name">Salchi Chicken</div>
+                <div class="desc">Fries topped with grilled chicken & zesty house sauces</div>
+              </div>
+            </div><div class="price">US$11.00</div>
 
-  <!-- FLOAT ORDER NOW -->
-  <div class="order-fab">
-    <a href="https://www.google.com/maps/place/240+N+Main+St,+Spring+Valley,+NY+10977,+United+States" target="_blank" rel="noopener"> Order Now</a>
-  </div>
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1550317138-10000687a72b?w=300&q=80&auto=format&fit=crop" alt="Salchi Carne Asada">
+              <div>
+                <div class="name">Salchi Carne Asada</div>
+                <div class="desc">Fries crowned with marinated grilled steak</div>
+              </div>
+            </div><div class="price">US$11.00</div>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="foot-grid">
-        <div class="foot-card">
-          <h4 class="foot-title">LOCO FRIES</h4>
-          <p>Discover LOCO FRIES at 240 N Main St, Spring Valley, NY. Delectable Ecuadorian-inspired fare with friendly service and vibrant vibes. Join us today!</p>
-        </div>
-        <div class="foot-card">
-          <h4 class="foot-title">Quick Links</h4>
-          <ul class="foot-list">
-            <li><a href="#home">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#location">Location</a></li>
-          </ul>
-        </div>
-        <div class="foot-card">
-          <h4 class="foot-title">Visit Us</h4>
-          <ul class="foot-list">
-            <li>240 N Main Street</li>
-            <li>Spring Valley, NY 10977</li>
-            <li>Mon–Wed: 1PM–1AM</li>
-            <li>Thu–Sun: 12PM–1AM</li>
-          </ul>
-        </div>
-        <div class="foot-card">
-          <h4 class="foot-title">Contact</h4>
-          <ul class="foot-list">
-            <li>Hotline: +1 845-535-1185</li>
-            <li><a href="https://www.google.com/maps/place/240+N+Main+St,+Spring+Valley,+NY+10977,+United+States" target="_blank" rel="noopener">Open in Maps</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="foot-bottom">© 2025 Loco Fries. All rights reserved. </div>
-    </div>
-  </footer>
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1612392061783-2c24483dba4f?w=300&q=80&auto=format&fit=crop" alt="Salchi Mix">
+              <div>
+                <div class="name">Salchi Mix</div>
+                <div class="desc">Chicken, shrimp, carne asada, encebollado drizzle</div>
+              </div>
+            </div><div class="price">US$13.38</div>
+
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1544025162-d76694265947?w=300&q=80&auto=format&fit=crop" alt="Salchi Churrasco">
+              <div>
+                <div class="name">Salchi Churrasco</div>
+                <div class="desc">Grilled steak, fried egg, chorizo, sweet plantains</div>
+              </div>
+            </div><div class="price">US$13.38</div>
+
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=300&q=80&auto=format&fit=crop" alt="Chicken Wings">
+              <div>
+                <div class="name">Chicken Wings</div>
+                <div class="desc">Crispy wings over fries with house sauces</div>
+              </div>
+            </div><div class="price">US$12.00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2) PINCHOS -->
+    <section class="section" id="pinchos">
+      <div class="section-head"><h2>🍢 Pinchos (Grilled Skewers)</h2></div>
+      <div class="divider"></div>
+      <div class="cat">
+        <figure class="cat-photo">
+          <img src="https://images.unsplash.com/photo-1601924579440-834a34bfa5d2?w=1400&q=80&auto=format&fit=crop" alt="Pinchos on grill">
+        </figure>
+        <div class="items-card">
+          <div class="item-grid">
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1601924579440-834a34bfa5d2?w=300&q=80&auto=format&fit=crop" alt="Pinchos de Carne">
+              <div><div class="name">Pinchos De Carne</div><div class="desc">Grilled steak skewer with chorizo & maduros</div></div>
+            </div><div class="price">US$11.00</div>
+
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=300&q=80&auto=format&fit=crop" alt="Pinchos de Pollo">
+              <div><div class="name">Pinchos De Pollo</div><div class="desc">Tender chicken skewer, peppers, chorizo</div></div>
+            </div><div class="price">US$11.00</div>
+
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=300&q=80&auto=format&fit=crop" alt="Pinchos de Camaron">
+              <div><div class="name">Pinchos De Camaron</div><div class="desc">Shrimp skewer with sweet plantain & peppers</div></div>
+            </div><div class="price">US$13.25</div>
+
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=300&q=80&auto=format&fit=crop" alt="Pincho Mix">
+              <div><div class="name">Pincho Mix</div><div class="desc">Steak + chicken + chorizo + maduros</div></div>
+            </div><div class="price">US$13.25</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) PATACON -->
+    <section class="section" id="patacon">
+      <div class="section-head"><h2>🥪 Patacón Sandwiches</h2></div>
+      <div class="divider"></div>
+      <div class="cat">
+        <figure class="cat-photo">
+          <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=1400&q=80&auto=format&fit=crop" alt="Patacón sandwich">
+        </figure>
+        <div class="items-card">
+          <div class="item-grid">
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1523986371872-9d3ba2e2f642?w=300&q=80&auto=format&fit=crop" alt="Chicken Patacon">
+              <div><div class="name">Chicken Patacon</div><div class="desc">Crispy green plantain “buns” + juicy grilled chicken</div></div>
+            </div><div class="price">US$11.25</div>
+
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=300&q=80&auto=format&fit=crop" alt="Steak Patacon">
+              <div><div class="name">Steak Patacon</div><div class="desc">Carne asada, lettuce, tomato, secret sauces</div></div>
+            </div><div class="price">US$11.25</div>
+
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1570197571499-166b36435e9f?w=300&q=80&auto=format&fit=crop" alt="Patacon Mix">
+              <div><div class="name">Patacon Mix</div><div class="desc">Steak + chicken, double flavor</div></div>
+            </div><div class="price">US$13.00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) CEVICHOCHOS -->
+    <section class="section" id="cevichochos">
+      <div class="section-head"><h2>🫘 Cevichochos (Ecuadorian Bowls)</h2></div>
+      <div class="divider"></div>
+      <div class="cat">
+        <figure class="cat-photo">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=1400&q=80&auto=format&fit=crop" alt="Ceviche style bowl with chochos">
+        </figure>
+        <div class="items-card">
+          <div class="item-grid">
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1544025162-d76694265947?w=300&q=80&auto=format&fit=crop" alt="Cevichcocho De Pollo">
+              <div><div class="name">Cevichcocho De Pollo</div><div class="desc">Lupini beans, chicken, citrus ceviche marinade</div></div>
+            </div><div class="price">US$10.25</div>
+
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=300&q=80&auto=format&fit=crop" alt="Cevichocho De Cuero">
+              <div><div class="name">Cevichocho De Cuero</div><div class="desc">Traditional pork skin, chochos, lime & red onion</div></div>
+            </div><div class="price">US$10.25</div>
+
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1604908554027-8fd7723f2f9b?w=300&q=80&auto=format&fit=crop" alt="Cevichocho De Camaron">
+              <div><div class="name">Cevichocho De Camaron</div><div class="desc">Shrimp, chochos, cilantro, crunchy toppings</div></div>
+            </div><div class="price">US$11.25</div>
+
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1544025162-d76694265947?w=300&q=80&auto=format&fit=crop" alt="Cevichocho Mix">
+              <div><div class="name">Cevichocho Mix</div><div class="desc">Shrimp + chicken + pork skin combo</div></div>
+            </div><div class="price">US$12.25</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5) ENSALADA -->
+    <section class="section" id="ensalada">
+      <div class="section-head"><h2>🥗 Ensalada (Fresh Plates)</h2></div>
+      <div class="divider"></div>
+      <div class="cat">
+        <figure class="cat-photo">
+          <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=1400&q=80&auto=format&fit=crop" alt="Grilled chicken salad">
+        </figure>
+        <div class="items-card">
+          <div class="item-grid">
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=300&q=80&auto=format&fit=crop" alt="Grilled Chicken Salad">
+              <div><div class="name">Grilled Chicken Salad</div><div class="desc">Lettuce, tomato, cucumber, mozzarella, carrots</div></div>
+            </div><div class="price">US$13.00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6) DRINKS -->
+    <section class="section" id="drinks">
+      <div class="section-head"><h2>🥤 Drinks / Bebidas</h2></div>
+      <div class="divider"></div>
+      <div class="cat">
+        <figure class="cat-photo">
+          <img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=1400&q=80&auto=format&fit=crop" alt="Tropical juices and sodas">
+        </figure>
+        <div class="items-card">
+          <div class="item-grid">
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=300&q=80&auto=format&fit=crop" alt="Natural Juices">
+              <div><div class="name">Natural Juices</div><div class="desc">Maracuyá, Limonada, Mora, Machica (fresh)</div></div>
+            </div><div class="price">US$5.25</div>
+
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1598133894008-5b3e7f1c1a5c?w=300&q=80&auto=format&fit=crop" alt="Sodas & Water">
+              <div><div class="name">Sodas & Water</div><div class="desc">Coca Cola, Ginger Ale, Brisk, Orange Soda, Water</div></div>
+            </div><div class="price">US$1.50</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7) OTHERS / SIDES -->
+    <section class="section" id="others">
+      <div class="section-head"><h2>🍴 Others, Sides & Add-ons</h2></div>
+      <div class="divider"></div>
+      <div class="cat">
+        <figure class="cat-photo">
+          <img src="https://images.unsplash.com/photo-1432139509613-5c4255815697?w=1400&q=80&auto=format&fit=crop" alt="Ecuadorian specialties">
+        </figure>
+        <div class="items-card">
+          <div class="item-grid">
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1432139509613-5c4255815697?w=300&q=80&auto=format&fit=crop" alt="Encebollado">
+              <div><div class="name">Encebollado Ecuatoriano</div><div class="desc">Traditional tuna stew, rice, tostado, plantain chips</div></div>
+            </div><div class="price">US$14.00</div>
+
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1604908554027-8fd7723f2f9b?w=300&q=80&auto=format&fit=crop" alt="Maduros con Queso">
+              <div><div class="name">Maduros Con Queso</div><div class="desc">Sweet plantains with melted cheese</div></div>
+            </div><div class="price">US$7.50</div>
+
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1599785209796-d54e3e2dc93b?w=300&q=80&auto=format&fit=crop" alt="Elote con Queso">
+              <div><div class="name">Elote Con Queso</div><div class="desc">Grilled corn covered in cheese</div></div>
+            </div><div class="price">US$5.00</div>
+
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1558818498-28c1e002b655?w=300&q=80&auto=format&fit=crop" alt="White Rice">
+              <div><div class="name">White Rice (Side)</div><div class="desc">Fluffy arroz blanco</div></div>
+            </div><div class="price">—</div>
+
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1604908554027-8fd7723f2f9b?w=300&q=80&auto=format&fit=crop" alt="Tostones / Maduros">
+              <div><div class="name">Tostones / Maduros</div><div class="desc">Green crispy or sweet caramelized plantains</div></div>
+            </div><div class="price">US$1.50</div>
+
+            <div class="item">
+              <img class="thumb" src="https://images.unsplash.com/photo-1606756790138-261d2b21cd0c?w=300&q=80&auto=format&fit=crop" alt="Extras">
+              <div><div class="name">Extras</div><div class="desc">Cheese, Chorizo, Egg, Plantains +US$1.50 • Shrimp +US$3 • Extra Meat +US$2</div></div>
+            </div><div class="price">Varies</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FLOATING HOURS (glass) -->
+  <aside class="hours-fab" aria-label="Store Hours">
+    <h4>🕐 Store Hours</h4>
+    <div class="hline"><span>Mon – Wed</span><strong>1:00 PM – 1:00 AM</strong></div>
+    <div class="hline"><span>Thu – Sun</span><strong>12:00 PM – 1:00 AM</strong></div>
+    <div class="hline"><span>Address</span><strong>240 N Main St, NY 10977</strong></div>
+    <div class="hline"><span>Hotline</span><strong>+1 845-535-1185</strong></div>
+  </aside>
+
+  <!-- FLOAT ORDER NOW -->
+  <div class="order-fab">
+    <a href="https://www.google.com/maps/place/240+N+Main+St,+Spring+Valley,+NY+10977,+United+States" target="_blank" rel="noopener">🧭 Order Now</a>
+  </div>
+
+  <footer>
+    <div class="container">
+      © 2025 Loco Fries — Authentic Latin American & Ecuadorian Cuisine. 🇪🇨
+    </div>
+  </footer>
 </body>
 </html>
